@@ -10,7 +10,7 @@ body {
 header {
   background-image: linear-gradient(0deg, #75d3ff 0%, #3f89ff 100%);
   background-repeat: no-repeat;
-  height: 50vh;
+  padding: 50px 0;
 }
 header h1 {
   font-size: 32px;
