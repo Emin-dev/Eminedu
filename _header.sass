@@ -1,0 +1,41 @@
+header
+    background-image: linear-gradient(0deg,#75d3ff 0%,#3f89ff 100%)
+    background-repeat: no-repeat
+    height: 50vh
+    h1
+        font-size: 32px
+        margin: 50px
+        line-height: 1.5
+
+    h2
+        font-size: 22px
+        margin: 20px
+        line-height: 1.6
+
+    #card
+        position: absolute
+        top: 1em
+        width: 6em
+        height: 10em
+        transform: translate( -50%,-50%)
+        z-index: 2
+        background: rgba(255, 255, 255, 0.05)
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)
+        box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4),1px 1px 3px rgba(0, 0, 0, 0.1)
+        backdrop-filter: blur(3px)
+        -webkit-backdrop-filter: blur(3px)
+        border-radius: 5px
+        border: 1px solid rgba(255, 255, 255, 0.18)
+
+        animation: move 5s ease-in-out infinite
+        background-clip: padding-box
+
+        @keyframes move
+            0%
+                transform: translateX(0)
+
+            50%
+                transform: translateX(67vw)
+
+            100%
+                transform: translateX(0)

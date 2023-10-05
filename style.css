@@ -1,13 +1,157 @@
 body {
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   font-weight: 500;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
 }
 
-a {
-  color: orange;
+header {
+  background-image: linear-gradient(0deg, #75d3ff 0%, #3f89ff 100%);
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+header h1 {
+  font-size: 32px;
+  margin: 50px;
+  line-height: 1.5;
+}
+header h2 {
+  font-size: 22px;
+  margin: 20px;
+  line-height: 1.6;
+}
+header #card {
+  position: absolute;
+  top: 1em;
+  width: 6em;
+  height: 10em;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: move 5s ease-in-out infinite;
+  background-clip: padding-box;
+}
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(67vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-a:hover {
-  color: black;
+#start h1 {
+  font-size: 32px;
+  margin: 50px;
+  line-height: 1.5;
 }
-/*# sourceMappingURL=style.css.map */
+#start h2 {
+  font-size: 22px;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+.bg-animation {
+  background-image: linear-gradient(0deg, #3f89ff 0%, #75d3ff 100%);
+  width: 100%;
+  height: 100vh;
+}
+.bg-animation-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 4;
+}
+.bg-animation-box li {
+  position: fixed;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: bg-animate-01 20s linear infinite;
+  top: 100vh;
+}
+.bg-animation-box li.circle-box {
+  border-radius: 50%;
+}
+.bg-animation-box li.corners-box-20 {
+  border-radius: 20%;
+}
+.bg-animation-box li.corners-box-35 {
+  border-radius: 35%;
+}
+.bg-animation-box li:nth-child(1) {
+  left: 4%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.bg-animation-box li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.bg-animation-box li:nth-child(3) {
+  left: 18%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+.bg-animation-box li:nth-child(4) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.bg-animation-box li:nth-child(5) {
+  left: 43%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.bg-animation-box li:nth-child(6) {
+  left: 60%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+.bg-animation-box li:nth-child(7) {
+  left: 70%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 6.5s;
+}
+.bg-animation-box li:nth-child(8) {
+  left: 95%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 1.5s;
+}
+@keyframes bg-animate-01 {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70vh) rotate(360deg);
+    opacity: 0;
+  }
+}
