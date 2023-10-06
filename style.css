@@ -167,6 +167,10 @@ header #card {
   background-repeat: no-repeat;
 }
 
+#yes {
+  margin-bottom: 50px;
+}
+
 #top {
   background-color: #1e293b;
   position: relative;
