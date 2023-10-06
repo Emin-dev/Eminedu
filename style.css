@@ -22,13 +22,12 @@ h2 {
 header {
   background-image: linear-gradient(0deg, #75d3ff 0%, #3f89ff 100%);
   background-repeat: no-repeat;
-  padding: 50px 0;
 }
 header #card {
   position: absolute;
-  top: 3em;
+  top: 1em;
   width: 6em;
-  height: 10em;
+  height: 9em;
   transform: translate(-50%, -50%);
   z-index: 2;
   background: rgba(255, 255, 255, 0.05);
