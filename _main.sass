@@ -5,6 +5,19 @@ body
     text-align: center
     letter-spacing: 0.1em
     word-spacing: 0.2em
+    background: linear-gradient(-45deg, #475e99, #7ea3ff, #789eff, #436ace)
+    background-size: 400% 400%
+    animation: gradient 10s ease infinite
+
+    @keyframes gradient
+        0%
+            background-position: 0% 50%
+
+        50%
+            background-position: 100% 50%
+
+        100%
+            background-position: 0% 50% 
 
 h1
     font-size: 32px
