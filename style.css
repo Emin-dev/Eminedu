@@ -65,7 +65,7 @@ header #card {
 #start .bg-animation {
   width: 100%;
 }
-#start-box {
+#start .bg-animation-box {
   position: fixed;
   top: 0;
   left: 0;
@@ -74,7 +74,7 @@ header #card {
   overflow: hidden;
   z-index: 4;
 }
-#start-box li {
+#start .bg-animation-box li {
   position: fixed;
   display: block;
   list-style: none;
@@ -84,60 +84,60 @@ header #card {
   animation: bg-animate-01 20s linear infinite;
   top: 100vh;
 }
-#start-box li.circle-box {
+#start .bg-animation-box li.circle-box {
   border-radius: 50%;
 }
-#start-box li.corners-box-20 {
+#start .bg-animation-box li.corners-box-20 {
   border-radius: 20%;
 }
-#start-box li.corners-box-35 {
+#start .bg-animation-box li.corners-box-35 {
   border-radius: 35%;
 }
-#start-box li:nth-child(1) {
+#start .bg-animation-box li:nth-child(1) {
   left: 4%;
   width: 80px;
   height: 80px;
   animation-delay: 0s;
 }
-#start-box li:nth-child(2) {
+#start .bg-animation-box li:nth-child(2) {
   left: 12%;
   width: 30px;
   height: 30px;
   animation-delay: 1.5s;
   animation-duration: 10s;
 }
-#start-box li:nth-child(3) {
+#start .bg-animation-box li:nth-child(3) {
   left: 18%;
   width: 100px;
   height: 100px;
   animation-delay: 5.5s;
 }
-#start-box li:nth-child(4) {
+#start .bg-animation-box li:nth-child(4) {
   left: 35%;
   width: 150px;
   height: 150px;
   animation-delay: 0s;
   animation-duration: 15s;
 }
-#start-box li:nth-child(5) {
+#start .bg-animation-box li:nth-child(5) {
   left: 43%;
   width: 40px;
   height: 40px;
   animation-delay: 0s;
 }
-#start-box li:nth-child(6) {
+#start .bg-animation-box li:nth-child(6) {
   left: 60%;
   width: 110px;
   height: 110px;
   animation-delay: 3.5s;
 }
-#start-box li:nth-child(7) {
+#start .bg-animation-box li:nth-child(7) {
   left: 70%;
   width: 110px;
   height: 110px;
   animation-delay: 6.5s;
 }
-#start-box li:nth-child(8) {
+#start .bg-animation-box li:nth-child(8) {
   left: 95%;
   width: 110px;
   height: 110px;
@@ -149,7 +149,7 @@ header #card {
     opacity: 1;
   }
   100% {
-    transform: translateY(-70vh) rotate(360deg);
+    transform: translateY(-80vh) rotate(360deg);
     opacity: 0;
   }
 }
@@ -258,7 +258,6 @@ header #card {
 }
 #info h1 {
   color: white;
-  font-family: "Rubik", sans-serif;
   font-size: clamp(2em, 2vw, 4em);
   font-weight: 400;
   margin: 0px;
@@ -295,3 +294,188 @@ header #card {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
+#info .key {
+  font-size: 9vw;
+  display: inline-block;
+  letter-spacing: -1vw;
+  transition: transform 0.4s;
+  margin: 5px 1px;
+}
+#info .keyboard {
+  margin: 20px 0;
+}
+@keyframes pressDown1 {
+  30%, 40%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown2 {
+  70%, 80%, 100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown3 {
+  30%, 40%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown4 {
+  40%, 50%, 100% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown5 {
+  20%, 30%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown6 {
+  60%, 70%, 100% {
+    transform: translateY(0);
+  }
+  65% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown7 {
+  10%, 20%, 100% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(10px);
+  }
+}
+@keyframes pressDown8 {
+  35%, 45%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+}
+#info .key:nth-child(1) {
+  animation: pressDown1 2s infinite;
+}
+#info .key:nth-child(2) {
+  animation: pressDown2 3s infinite;
+}
+#info .key:nth-child(3) {
+  animation: pressDown3 4s infinite;
+}
+#info .key:nth-child(4) {
+  animation: pressDown4 2.5s infinite;
+}
+#info .key:nth-child(5) {
+  animation: pressDown5 2.5s infinite;
+}
+#info .key:nth-child(6) {
+  animation: pressDown6 3.5s infinite;
+}
+#info .key:nth-child(7) {
+  animation: pressDown7 2.2s infinite;
+}
+#info .key:nth-child(8) {
+  animation: pressDown8 3.2s infinite;
+}
+#info .key:nth-child(9) {
+  animation: pressDown8 2s infinite;
+}
+#info .key:nth-child(10) {
+  animation: pressDown8 3s infinite;
+}
+#info .key:nth-child(11) {
+  animation: pressDown8 4s infinite;
+}
+#info .key:nth-child(12) {
+  animation: pressDown8 2.5s infinite;
+}
+#info .key:nth-child(13) {
+  animation: pressDown8 3.5s infinite;
+}
+#info .key:nth-child(14) {
+  animation: pressDown8 2.2s infinite;
+}
+#info .key:nth-child(15) {
+  animation: pressDown8 3.2s infinite;
+}
+#info .key:nth-child(16) {
+  animation: pressDown8 4s infinite;
+}
+#info .key:nth-child(17) {
+  animation: pressDown8 2s infinite;
+}
+#info .key:nth-child(18) {
+  animation: pressDown8 3s infinite;
+}
+#info .key:nth-child(19) {
+  animation: pressDown8 2.5s infinite;
+}
+#info .key:nth-child(20) {
+  animation: pressDown8 3.5s infinite;
+}
+#info .key:nth-child(21) {
+  animation: pressDown8 2.2s infinite;
+}
+#info .key:nth-child(22) {
+  animation: pressDown8 3.2s infinite;
+}
+#info .key:nth-child(23) {
+  animation: pressDown8 4s infinite;
+}
+#info .key:nth-child(24) {
+  animation: pressDown8 2s infinite;
+}
+#info .key:nth-child(25) {
+  animation: pressDown8 3s infinite;
+}
+#info .key:nth-child(26) {
+  animation: pressDown8 2.5s infinite;
+}
+#info .key:nth-child(27) {
+  animation: pressDown8 3.5s infinite;
+}
+#info .key:nth-child(28) {
+  animation: pressDown8 4s infinite;
+}
+#info .key:nth-child(29) {
+  animation: pressDown8 2s infinite;
+}
+#info .key:nth-child(30) {
+  animation: pressDown8 3s infinite;
+}
+#info .key:nth-child(31) {
+  animation: pressDown8 3.5s infinite;
+}
+#info .key:nth-child(32) {
+  animation: pressDown8 2.5s infinite;
+}
+
+/* extra stuff */
+ *  a
+ *      text-decoration: none
+ *      color: inherit
+ *      font-weight: 400
+ *      border: 1px solid rgba(255,255,255,0.2)
+ *      padding: 5px 10px
+ *      border-radius: 5px
+ *      position: absolute
+ *      bottom: 20px
+ *      left: 20px
+ *
+ *  a:hover
+ *      border: 1px solid rgba(255,255,255,0.6) */
