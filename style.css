@@ -5,9 +5,9 @@ body {
   text-align: center;
   letter-spacing: 0.1em;
   word-spacing: 0.2em;
-  background: linear-gradient(-45deg, #475e99, #7ea3ff, #789eff, #436ace);
+  background: linear-gradient(-45deg, #97b3ff, #7ba1ff, #6b95ff, #5686ff);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 6s ease infinite;
 }
 @keyframes gradient {
   0% {
@@ -153,7 +153,8 @@ header #card {
     opacity: 0;
   }
 }
-#start .arealight {
+
+.arealight {
   width: 100vw;
   height: 20vh;
   user-select: none;
