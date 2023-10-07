@@ -18,18 +18,18 @@ window.onload = function() {
     if (!isMobile) {
         document.body.innerHTML = '';
         var h1 = document.createElement('h1');
-        h1.innerText = 'Sorry, this content is only available for mobile users.';
+        h1.innerText = 'Sorry, this content is only available for mobile users. Zəhmət olmasa smartfondan daxil olun. Eminedu.com';
 
         // Add styles directly to the h1 element
         h1.style.fontWeight = 'bold';
         h1.style.color = 'red';
-        h1.style.fontSize = '3em';
+        h1.style.fontSize = '2em';
         h1.style.textAlign = 'center';
         h1.style.position = 'absolute';
         h1.style.top = '50%';
         h1.style.left = '50%';
         h1.style.transform = 'translate(-50%, -50%)';
-        h1.style.animation = 'pulse 1s infinite alternate';
+        h1.style.animation = 'pulse 2s infinite alternate';
 
         // Create and add pulse animation to the document
         var style = document.createElement('style');
