@@ -108,3 +108,13 @@ body {
 body::-webkit-scrollbar-thumb {
     background: transparent; 
 }
+
+/* This will target the whole page */
+body::-webkit-scrollbar {
+    width: 0 !important; /* For vertical scrollbars */
+    height: 0 !important; /* For horizontal scrollbars */
+}
+
+body {
+    -webkit-overflow-scrolling: touch !important;
+}
