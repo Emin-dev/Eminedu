@@ -174,7 +174,8 @@ header #card {
 }
 
 #yes {
-  margin-bottom: 50px;
+  padding: 50px 0;
+  background-color: #4462bd;
 }
 
 #top {
@@ -556,7 +557,7 @@ header #card {
   overflow: hidden;
   background-color: white;
   position: relative;
-  height: 30vh;
+  height: 25vh;
 }
 @keyframes tuyan {
   0% {
