@@ -142,7 +142,7 @@ $(document).ready(function () {
         const yDuration = 0.25
 
         const tl = gsap.timeline()
-        tl.timeScale(randomRange(0.2, 2.2))
+        tl.timeScale(randomRange(0.4, 2))
         tl.to(peep, {
             duration: xDuration,
             x: endX,
