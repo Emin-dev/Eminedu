@@ -1,6 +1,5 @@
 #btt
     background: #1e293b
-    font-size: 20px
     padding-bottom: 50px
 
     @keyframes rotate
@@ -16,7 +15,6 @@
         align-items: center
         justify-content: center
         padding: 16px
-    
 
     .btm
         display: flex
@@ -44,8 +42,6 @@
             background-position: 0px 0px
             background-image: conic-gradient(from 0deg at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 33%, #58DD93 50%, rgba(0,0,0,0) 66%, rgba(0,0,0,0) 100%)
             animation: rotate 4s infinite linear
-            
-
 
         .ner
             position: relative
@@ -61,4 +57,84 @@
             background: rgba(0, 0, 0, 0.3)
             backdrop-filter: blur(40px)
             backface-visibility: hidden
-            
+
+    $prime: #00FF80
+    $second: #0c1016
+
+    #gooey-button
+        padding: 20px
+        font-size: 25px
+        border-radius: 100px
+        width: 140px
+        border: none
+        color: $second
+        filter: url('#gooey')
+        position: relative
+        background-color: $prime
+
+        &:focus
+            outline: none
+
+        .bubbles
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+
+            .bubble
+                background-color: $prime
+                border-radius: 100%
+                position: absolute
+                top: 0
+                left: 0
+                display: block
+                z-index: -1
+
+                @for $bubble from 1 through 10
+                    &:nth-child(#{$bubble})
+                        $size: 25px
+                        left: (random(90) + 10)+px
+                        width: $size
+                        height: $size
+                        animation: move-#{$bubble} #{3 + $bubble*0.02}s infinite
+                        animation-delay: #{$bubble*0.2}s
+
+    @for $bubble from 1 through 10
+        @keyframes move-#{$bubble}
+            0%
+                transform: translate(0, 0)
+            99%
+                transform: translate(0, -(random(80) + 50)+px)
+            100%
+                transform: translate(0, 0)
+                opacity: 0
+
+    .box
+        text-align: center
+        padding: 18px
+        border-radius: 100px
+        font-size: 25px
+        width: 160px
+        height: 60px
+        background: #1e293b
+        box-shadow: 0 0 0 #cccccc, 0 0 0 #1e293b, 10px 10px 10px #040507 inset, -10px -10px 10px #1e293b inset
+        animation: anime 5s cubic-bezier(.86,.12,.09,.87) infinite alternate
+
+    @keyframes anime
+        0% 
+            background: #1e293b
+            box-shadow: 0 0 0 #040507, 0 0 0 #1e293b, 10px 10px 10px #040507 inset, -10px -10px 10px #1e293b inset
+
+        20%
+            background: #1e293b
+            box-shadow: 10px 10px 10px #040507, 10px 10px 10px #1e293b, 0 0 0 #040507 inset, 0 0 0 #1e293b inset
+    
+        40% 
+            background: #1e293b
+            box-shadow: 0 0 0 #040507, 0 0 0 #1e293b, 10px 10px 10px #040507 inset, -10px -10px 10px #1e293b inset
+
+        100%
+            background: #1e293b
+            box-shadow: 10px 10px 10px #040507, 10px 10px 10px #1e293b, 0 0 0 #040507 inset, 0 0 0 #1e293b inset
+    
