@@ -1,6 +1,65 @@
 "use strict";
 
 
+
+window.onload = function() {
+    var userAgent = navigator.userAgent;
+
+    // List of popular mobile user agents
+    var mobileAgents = [
+        "Android",
+        "iPhone"
+    ];
+
+    var isMobile = mobileAgents.some(function(agent) {
+        return userAgent.includes(agent);
+    });
+
+    if (!isMobile) {
+        document.body.innerHTML = '';
+        var h1 = document.createElement('h1');
+        h1.innerText = 'Sorry, this content is only available for mobile users.';
+
+        // Add styles directly to the h1 element
+        h1.style.fontWeight = 'bold';
+        h1.style.color = 'red';
+        h1.style.fontSize = '3em';
+        h1.style.textAlign = 'center';
+        h1.style.position = 'absolute';
+        h1.style.top = '50%';
+        h1.style.left = '50%';
+        h1.style.transform = 'translate(-50%, -50%)';
+        h1.style.animation = 'pulse 1s infinite alternate';
+
+        // Create and add pulse animation to the document
+        var style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes pulse {
+                0% {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Append h1 to the body
+        document.body.appendChild(h1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 function scrollToTop() {
     window.scrollTo(0, 0);
 }

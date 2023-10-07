@@ -581,70 +581,70 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 26px;
+  left: 16px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 83px;
+  left: 15px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 22px;
+  left: 88px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 15px;
+  left: 98px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 71px;
+  left: 24px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 14px;
+  left: 49px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 56px;
+  left: 61px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 77px;
+  left: 33px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 73px;
+  left: 74px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 59px;
+  left: 90px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
@@ -655,7 +655,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -97px);
+    transform: translate(0, -92px);
   }
   100% {
     transform: translate(0, 0);
@@ -667,7 +667,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -107px);
+    transform: translate(0, -57px);
   }
   100% {
     transform: translate(0, 0);
@@ -679,7 +679,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -89px);
+    transform: translate(0, -80px);
   }
   100% {
     transform: translate(0, 0);
@@ -691,7 +691,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -107px);
+    transform: translate(0, -109px);
   }
   100% {
     transform: translate(0, 0);
@@ -703,7 +703,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -61px);
+    transform: translate(0, -75px);
   }
   100% {
     transform: translate(0, 0);
@@ -715,7 +715,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -129px);
+    transform: translate(0, -95px);
   }
   100% {
     transform: translate(0, 0);
@@ -727,7 +727,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -64px);
+    transform: translate(0, -104px);
   }
   100% {
     transform: translate(0, 0);
@@ -739,7 +739,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -78px);
+    transform: translate(0, -113px);
   }
   100% {
     transform: translate(0, 0);
@@ -751,7 +751,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -85px);
+    transform: translate(0, -129px);
   }
   100% {
     transform: translate(0, 0);
@@ -763,7 +763,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -84px);
+    transform: translate(0, -69px);
   }
   100% {
     transform: translate(0, 0);
@@ -866,7 +866,8 @@ header #card {
 
 #qeyd {
   position: relative;
-  height: 600px;
+  height: 700px;
+  min-height: 600px;
   margin: 0;
 }
 #qeyd #canvas {
@@ -876,6 +877,17 @@ header #card {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+#mum {
+  padding: 50px 0;
+}
+#mum img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 20px 0;
 }
 
 * {
