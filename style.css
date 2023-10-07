@@ -5,9 +5,9 @@ body {
   text-align: center;
   letter-spacing: 0.1em;
   word-spacing: 0.2em;
-  background: linear-gradient(-45deg, #97b3ff, #7ba1ff, #6b95ff, #5686ff);
+  background: linear-gradient(-45deg, #1e293b, #7ba1ff, #6b95ff, #1e293b);
   background-size: 400% 400%;
-  animation: gradient 6s ease infinite;
+  animation: gradient 2s ease infinite;
 }
 @keyframes gradient {
   0% {
@@ -33,6 +33,9 @@ h2 {
   line-height: 1.6;
 }
 
+header {
+  padding-bottom: 50px;
+}
 header #card {
   position: absolute;
   top: 0.8em;
@@ -62,6 +65,9 @@ header #card {
   }
 }
 
+#start {
+  padding: 50px 0;
+}
 #start .bg-animation {
   width: 100%;
 }
@@ -155,7 +161,7 @@ header #card {
 
 .arealight {
   width: 100vw;
-  height: 20vh;
+  height: 10vh;
   user-select: none;
   background-image: conic-gradient(from 90deg at 70% 50%, white, #2753F5), conic-gradient(from 270deg at 30% 50%, #2753F5, white);
   -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
@@ -173,12 +179,12 @@ header #card {
 
 #top {
   background-color: #1e293b;
-  padding: 50px 0 0;
+  padding: 50px 0;
   position: relative;
+  overflow: hidden;
 }
 #top .tag-list {
-  width: 100%;
-  max-width: 500px;
+  width: 150%;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -226,11 +232,6 @@ header #card {
     transform: translateX(-40%);
   }
 }
-
-#info {
-  padding: 20px 0;
-  background-color: #1e293b;
-}
 @keyframes background-pan {
   from {
     background-position: 0% center;
@@ -255,7 +256,7 @@ header #card {
     transform: rotate(180deg);
   }
 }
-#info h1 {
+#top h1 {
   color: white;
   font-size: clamp(2em, 2vw, 4em);
   font-weight: 400;
@@ -263,11 +264,14 @@ header #card {
   padding: 20px;
   text-align: center;
 }
-#info h1 .magic {
+#top h1 span {
+  font-size: 32px;
+}
+#top h1 .magic {
   display: inline-block;
   position: relative;
 }
-#info h1 .magic .magic-star {
+#top h1 .magic .magic-star {
   --size: clamp(20px, 1.5vw, 30px);
   animation: scale 700ms ease forwards;
   display: block;
@@ -277,21 +281,26 @@ header #card {
   top: var(--star-top);
   width: var(--size);
 }
-#info h1 .magic .magic-star svg {
+#top h1 .magic .magic-star svg {
   animation: rotate 6000ms linear infinite;
   display: block;
   opacity: 0.7;
 }
-#info h1 .magic .magic-star svg path {
+#top h1 .magic .magic-star svg path {
   fill: rgb(103, 58, 183);
 }
-#info h1 .magic .magic-text {
+#top h1 .magic .magic-text {
   animation: background-pan 4s linear infinite;
   background: linear-gradient(to right, rgb(123, 31, 162), rgb(103, 58, 183), rgb(244, 143, 177), rgb(123, 31, 162));
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
+}
+
+#info {
+  padding: 20px 0;
+  background-color: #1e293b;
 }
 #info .key {
   font-size: 9vw;
