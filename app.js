@@ -63,18 +63,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     console.clear()
     console.log('lsakdfalskjdflnksd')
 
