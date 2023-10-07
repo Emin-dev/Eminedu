@@ -18,7 +18,7 @@ window.onload = function() {
     if (!isMobile) {
         document.body.innerHTML = '';
         var h1 = document.createElement('h1');
-        h1.innerText = 'Sorry, this content is only available for mobile users. Zəhmət olmasa smartfondan daxil olun. Eminedu.com';
+        h1.innerText = 'Zəhmət olmasa smartfondan daxil olun. Digər brozerdən istifadə edin. Eminedu.com. © 2024';
 
         // Add styles directly to the h1 element
         h1.style.fontWeight = 'bold';
