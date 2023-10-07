@@ -5,7 +5,7 @@ $(document).ready(function () {
         window.scrollTo(0, 0);
     }
 
-    window.addEventListener('load', scrollToTop);
+    window.addEventListener('DOMContentLoaded', scrollToTop);
     window.addEventListener('beforeunload', scrollToTop);
 
 
