@@ -1,6 +1,14 @@
 "use strict";
 $(document).ready(function () {
 
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('load', scrollToTop);
+    window.addEventListener('beforeunload', scrollToTop);
+
+
     let index = 0,
         interval = 1000;
 
