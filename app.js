@@ -1,4 +1,15 @@
 "use strict";
+
+
+function scrollToTop() {
+    window.scrollTo(0, 0);
+}
+
+window.addEventListener('DOMContentLoaded', scrollToTop);
+window.addEventListener('load', scrollToTop);
+window.addEventListener('beforeunload', scrollToTop);
+
+
 $(document).ready(function () {
 
     function scrollToTop() {
@@ -6,6 +17,7 @@ $(document).ready(function () {
     }
 
     window.addEventListener('DOMContentLoaded', scrollToTop);
+    window.addEventListener('load', scrollToTop);
     window.addEventListener('beforeunload', scrollToTop);
 
 
