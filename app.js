@@ -48,6 +48,7 @@ if (!isMobile) {
 }
 
 window.onload = function () {
+
     var userAgent = navigator.userAgent;
 
     // List of popular mobile user agents
@@ -65,8 +66,7 @@ window.onload = function () {
         document.body.innerHTML = '';
         document.body.style.background = '#ffff'
         var h1 = document.createElement('h1');
-        h1.innerText = 'Zəhmət olmasa smartfondan daxil olun. Digər brauzerdən istifadə edin. Eminedu.com. © 2024';
-
+        h1.innerHTML = 'Zəhmət olmasa smartfondan daxil olun.<br>Digər brauzerdən istifadə edin.';
         // Add styles directly to the h1 element
         h1.style.fontWeight = 'bold';
         h1.style.color = 'red';
@@ -81,15 +81,15 @@ window.onload = function () {
         // Create and add pulse animation to the document
         var style = document.createElement('style');
         style.innerHTML = `
-            @keyframes pulse {
-                0% {
-                    transform: translate(-50%, -50%) scale(1);
-                }
-                100% {
-                    transform: translate(-50%, -50%) scale(1.1);
-                }
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
             }
-        `;
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    `;
         document.head.appendChild(style);
 
         // Append h1 to the body
