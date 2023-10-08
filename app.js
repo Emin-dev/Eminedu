@@ -18,6 +18,7 @@ window.onload = function () {
 
     if (!isMobile) {
         document.body.innerHTML = '';
+        document.body.style.background = '#ffff'
         var h1 = document.createElement('h1');
         h1.innerText = 'Zəhmət olmasa smartfondan daxil olun. Digər brauzerdən istifadə edin. Eminedu.com. © 2024';
 
@@ -419,4 +420,34 @@ $(document).ready(function () {
     }
 
 
+
+
+
+
+    // preloader
+
+
+
+
+
+
+
+
+
+
+
+    // Hide main content initially
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(function () {
+        document.getElementById('preloader1').style.display = 'none';
+        document.getElementById('preloader2').style.display = 'flex';
+
+        setTimeout(function () {
+            document.getElementById('preloader2').style.display = 'none';
+
+            // Show main content
+            document.body.style.overflow = 'auto'; // re-enable scrolling
+        }, 6000);
+    }, 4000);
 });
