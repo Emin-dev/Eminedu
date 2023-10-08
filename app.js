@@ -1,6 +1,52 @@
 "use strict";
 
+var userAgent = navigator.userAgent;
 
+// List of popular mobile user agents
+var mobileAgents = [
+    "Android",
+    "iPad",
+    "iPhone"
+];
+
+var isMobile = mobileAgents.some(function (agent) {
+    return userAgent.includes(agent);
+});
+
+if (!isMobile) {
+    document.body.innerHTML = '';
+    document.body.style.background = '#ffff'
+    var h1 = document.createElement('h1');
+    h1.innerText = 'Zəhmət olmasa smartfondan daxil olun. Digər brauzerdən istifadə edin. Eminedu.com. © 2024';
+
+    // Add styles directly to the h1 element
+    h1.style.fontWeight = 'bold';
+    h1.style.color = 'red';
+    h1.style.fontSize = '2em';
+    h1.style.textAlign = 'center';
+    h1.style.position = 'absolute';
+    h1.style.top = '50%';
+    h1.style.left = '50%';
+    h1.style.transform = 'translate(-50%, -50%)';
+    h1.style.animation = 'pulse 2s infinite alternate';
+
+    // Create and add pulse animation to the document
+    var style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Append h1 to the body
+    document.body.appendChild(h1);
+}
 
 window.onload = function () {
     var userAgent = navigator.userAgent;
