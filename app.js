@@ -159,13 +159,6 @@ window.onload = function () {
 
 
 
-function scrollToTop() {
-    window.scrollTo(0, 0);
-}
-
-window.addEventListener('DOMContentLoaded', scrollToTop);
-window.addEventListener('load', scrollToTop);
-window.addEventListener('beforeunload', scrollToTop);
 
 
 $(document).ready(function () {
@@ -495,4 +488,35 @@ $(document).ready(function () {
             document.body.style.overflow = 'auto'; // re-enable scrolling
         }, 6000);
     }, 4000);
+
+
+
+
+
+    setTimeout(function () {
+
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('DOMContentLoaded', scrollToTop);
+        window.addEventListener('load', scrollToTop);
+        window.addEventListener('beforeunload', scrollToTop);
+
+    }, 2000);  // 2000 milliseconds is equal to 2 seconds
 });
+
+
+
+
+setTimeout(function () {
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('DOMContentLoaded', scrollToTop);
+    window.addEventListener('load', scrollToTop);
+    window.addEventListener('beforeunload', scrollToTop);
+
+}, 2000);  // 2000 milliseconds is equal to 2 seconds
