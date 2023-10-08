@@ -637,70 +637,70 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 44px;
+  left: 92px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 81px;
+  left: 25px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 74px;
+  left: 80px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 50px;
+  left: 32px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 66px;
+  left: 20px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 94px;
+  left: 54px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 24px;
+  left: 74px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 72px;
+  left: 70px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 51px;
+  left: 63px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 48px;
+  left: 92px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
@@ -711,7 +711,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -120px);
+    transform: translate(0, -67px);
   }
   100% {
     transform: translate(0, 0);
@@ -723,7 +723,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -126px);
+    transform: translate(0, -99px);
   }
   100% {
     transform: translate(0, 0);
@@ -735,7 +735,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -110px);
+    transform: translate(0, -118px);
   }
   100% {
     transform: translate(0, 0);
@@ -747,7 +747,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -53px);
+    transform: translate(0, -79px);
   }
   100% {
     transform: translate(0, 0);
@@ -759,7 +759,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -108px);
+    transform: translate(0, -88px);
   }
   100% {
     transform: translate(0, 0);
@@ -771,7 +771,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -99px);
+    transform: translate(0, -129px);
   }
   100% {
     transform: translate(0, 0);
@@ -783,7 +783,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -90px);
+    transform: translate(0, -84px);
   }
   100% {
     transform: translate(0, 0);
@@ -795,7 +795,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -91px);
+    transform: translate(0, -116px);
   }
   100% {
     transform: translate(0, 0);
@@ -807,7 +807,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -78px);
+    transform: translate(0, -110px);
   }
   100% {
     transform: translate(0, 0);
@@ -819,7 +819,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -125px);
+    transform: translate(0, -106px);
   }
   100% {
     transform: translate(0, 0);
@@ -947,6 +947,56 @@ header #card {
   margin: 20px 0;
   position: relative;
   z-index: 9;
+}
+
+#big {
+  background-color: #1e293b;
+  padding: 50px 0;
+}
+
+.faq-container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.faq-item {
+  position: relative;
+  z-index: 9;
+  padding: 20px;
+  background-color: rgba(35, 58, 95, 0.9333333333);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.faq-answer {
+  padding: 0px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 3s ease, opacity 2s ease;
+  transform-origin: top;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  line-height: 1.6;
+  margin-top: 0px;
+}
+
+.faq-answer.show {
+  opacity: 1;
+  margin-top: 11px;
+  max-height: 1111px;
+  transform: scaleY(1);
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
 }
 
 * {

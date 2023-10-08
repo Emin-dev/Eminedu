@@ -241,8 +241,69 @@ $(document).ready(function () {
     window.addEventListener('load', function () {
         setTimeout(function () {
             window.scrollTo(0, 0);
-        }, 5000);
+        }, 3000);
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(function (question) {
+        question.addEventListener('click', function () {
+            let currentAnswer = this.nextElementSibling;
+
+            // Close any currently open answers
+            let openAnswer = document.querySelector('.faq-answer.show');
+            if (openAnswer && openAnswer !== currentAnswer) {
+                openAnswer.classList.remove('show');
+            }
+
+            // Toggle current answer
+            if (currentAnswer.classList.contains('show')) {
+                currentAnswer.classList.remove('show');
+            } else {
+                currentAnswer.classList.add('show');
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 
@@ -250,4 +311,4 @@ $(document).ready(function () {
 
 setTimeout(function () {
     window.scrollTo(0, 0);
-}, 5000); 
+}, 3000); 

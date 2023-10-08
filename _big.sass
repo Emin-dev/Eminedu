@@ -1,2 +1,45 @@
 #big
+    background-color: #1e293b
+    padding: 50px 0
+
+.faq-container
+    max-width: 90%
+    margin: 0 auto
+
+.faq-item
+    position: relative
+    z-index: 9
+    padding: 20px
+    background-color: #233a5fee
+    border-radius: 20px
+    margin-bottom: 20px
+
+.faq-question
+    border-radius: 20px
+    // padding: 15px
+    cursor: pointer
+    letter-spacing: 0.1em
+    word-spacing: 0.2em
+    line-height: 1.6
+    font-size: 20px
+
+.faq-answer
+    padding: 0px
+    opacity: 0
+    max-height: 0
+    overflow: hidden
+    transition: max-height 3s ease, opacity 2s ease
+    transform-origin: top
+    letter-spacing: 0.1em
+    word-spacing: 0.2em
+    line-height: 1.6
+    margin-top: 0px
     
+
+.faq-answer.show
+    opacity: 1
+    margin-top:11px
+    max-height: 1111px
+    transform: scaleY(1)
+    letter-spacing: 0.1em
+    word-spacing: 0.2em
