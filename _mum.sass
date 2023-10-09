@@ -1,10 +1,22 @@
 #mum
     padding: 50px 0
-    img
+    height: 60vh
+    overflow-y: scroll
+    overflow-x: hidden
+    position: relative
+
+    .container
+        display: flex
+        flex-direction: column
+
+    .image-container
         width: 100%
-        border-radius: 20px
-        object-fit: cover
-        object-position: 50% 50%
-        margin: 20px 0
-        position: relative
-        z-index: 9
+
+        img
+            max-width: 80%
+            border-radius: 20px
+            object-fit: cover
+            object-position: 50% 50%
+            margin: 20px 0
+            pointer-events: none
+            
