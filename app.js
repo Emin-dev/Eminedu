@@ -297,19 +297,19 @@ $(document).ready(function () {
 
 
     ////////
-    // Create the scroll indicator element
-    const scrollIndicator = document.createElement("div");
-    scrollIndicator.classList.add("scroll-indicator");
-    document.body.appendChild(scrollIndicator);
+// Create the scroll indicator element
+const scrollIndicator = document.createElement("div");
+scrollIndicator.classList.add("scroll-indicator");
+document.body.appendChild(scrollIndicator);
 
-    // Create the arrow element
-    const arrow = document.createElement("div");
-    arrow.classList.add("arrow");
-    scrollIndicator.appendChild(arrow);
+// Create the arrow element
+const arrow = document.createElement("div");
+arrow.classList.add("arrow");
+scrollIndicator.appendChild(arrow);
 
-    // Create the CSS styles dynamically with a glassmorphism design
-    const style = document.createElement("style");
-    style.textContent = `
+// Create the CSS styles dynamically with a glassmorphism design
+const q = document.createElement("style");
+q.textContent = `
   .scroll-indicator {
     position: fixed;
     bottom: 20vh;
@@ -352,27 +352,23 @@ $(document).ready(function () {
     }
   }
 `;
-    
-    // Flag to track whether the user has scrolled
-    let userScrolled = false;
 
-    // Function to handle scroll event
-    function handleScroll() {
-        userScrolled = true;
-        // Hide the scroll indicator with a smooth fade-out
-        scrollIndicator.style.opacity = 0;
-        // Remove the scroll event listener
-        window.removeEventListener("scroll", handleScroll);
-    }
+// Flag to track whether the user has scrolled
+let userScrolled = false;
 
+// Function to handle scroll event
+function handleScroll() {
+  userScrolled = true;
+  // Hide the scroll indicator with a smooth fade-out
+  scrollIndicator.style.opacity = 0;
+  // Remove the scroll event listener
+  window.removeEventListener("scroll", handleScroll);
+}
 
-
-    setTimeout(function () {
-        window.addEventListener("scroll", handleScroll);
-        document.head.appendChild(style);
-
-    }, 15000);
-    
+setTimeout(function () {
+  window.addEventListener("scroll", handleScroll);
+  document.head.appendChild(q);
+}, 15000);
     ////////
 
 
@@ -383,8 +379,390 @@ $(document).ready(function () {
 
 
 
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper');
+
+    const navBg = document.createElement('div');
+    navBg.id = 'nav-bg';
+    navBg.classList.add('btn');
+
+    const toggleBtn = document.createElement('div');
+    toggleBtn.id = 'toggle-btn';
+    toggleBtn.classList.add('btn');
+
+    for (let i = 0; i < 3; i++) {
+        const span = document.createElement('span');
+        toggleBtn.appendChild(span);
+    }
+
+    const content = document.createElement('div');
+    content.id = 'content';
+
+    const heading = document.createElement('h1');
+    
+
+    content.appendChild(heading);
+    wrapper.appendChild(navBg);
+    wrapper.appendChild(toggleBtn);
+    wrapper.appendChild(content);
+    document.body.appendChild(wrapper);
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+    
+      :root {
+        --offset-value: 30;
+        --btn-size: 60;
+        --green: #4ECA78;
+      }
+    
+      .wrapper {
+        font-weight: 600;
+        width: 100%;
+        position: relative;
+      }
+    
+      #nav-bg {
+        transform-origin: center center;
+        transition: transform .3s;
+        transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
+        will-change: transform;
+        pointer-events: none;
+      }
+    
+      .btn {
+        position: fixed;
+        height: calc(var(--btn-size)*1px);
+        width: calc(var(--btn-size)*1px);
+        bottom: calc((var(--offset-value))*1px);
+        left: calc(var(--offset-value)*1px);
+        border-radius: 50%;
+        background: #fafafa;
+        cursor: pointer;
+        margin: 0;
+        padding: 0 15px;
+        border: none;
+        z-index: 100;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+    
+      #toggle-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--green);
+      }
+    
+      #toggle-btn span {
+        position: relative;
+        width: 100%;
+      }
+    
+      #toggle-btn span {
+        margin-top: -4px;
+      }
+      #toggle-btn span + span {
+        margin-top: 8px;
+      }
+    
+      #toggle-btn span:before,
+      #toggle-btn span:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        background: currentColor;
+        opacity: .8;
+        height: 100%;
+        width: 50%;
+        height: 4px;
+        transition: .25s cubic-bezier(.6,0,.3,1);
+        transform-origin: center center;
+      }
+    
+      #toggle-btn span:before {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+    
+      #toggle-btn span:after {
+        right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+    
+      #toggle-btn.shown span:nth-of-type(1):before {
+        transform: translate3d(3px, 3.5px, 0) rotate(45deg);
+      }
+    
+      #toggle-btn.shown span:nth-of-type(1):after {
+        transform: translate3d(-3px, 3.5px, 0) rotate(-45deg);
+      }
+    
+      #toggle-btn.shown span:nth-of-type(3):before {
+        transform: translate3d(3px, -3.5px, 0) rotate(-45deg);
+      }
+    
+      #toggle-btn.shown span:nth-of-type(3):after {
+        transform: translate3d(-3px, -3.5px, 0) rotate(45deg);
+      }
+    
+      #toggle-btn.shown span:nth-of-type(2):before,
+      #toggle-btn.shown span:nth-of-type(2):after {
+        opacity: 0.0001;
+      }
+    
+      #toggle-btn.shown span:nth-of-type(2):before {
+        transform: translateX(-200%);
+      }
+    
+      #toggle-btn.shown span:nth-of-type(2):after {
+        transform: translateX(200%);
+      }
+    
+      #toggle-btn.shown:before {
+        transform: scale(.6);
+        transition: .2s;
+      }
+    
+      #toggle-btn:before {
+        content: '';
+        transition: .2s .2s;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.1);
+        border-radius: inherit;
+        filter: blur(5px);
+        z-index: -2;
+      }
+      #toggle-btn:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        background: #fafafa;
+        z-index: -1;
+      }
+    
+      nav {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        display: flex;
+        z-index: 200;
+        pointer-events: none;
+      }
+    
+      nav ul {
+        margin: auto;
+        pointer-events: auto;
+        text-align
+            text-align: center;
+      }
+    
+      nav li {
+        font-size: 30px;
+        color: #212121;
+        user-select: none;
+        transform: translate(-20px,20px) scale(.9);
+        transition: 0s;
+        opacity: 0.0001;
+        visibility: hidden;
+        will-change: transform;
+      }
+    
+      nav li + li {
+        margin-top: 30px;
+      }
+    
+      #toggle-btn.shown ~ .wrapper nav li {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        transition: .35s cubic-bezier(.4,2.08,.55,1);
+      }
+    
+      #toggle-btn.shown ~ .wrapper nav li:nth-child(1) {
+        transition-delay: .15s;
+      }
+      #toggle-btn.shown ~ .wrapper nav li:nth-child(2) {
+        transition-delay: .125s;
+      }
+      #toggle-btn.shown ~ .wrapper nav li:nth-child(3) {
+        transition-delay: .1s;
+      }
+    
+      .link {
+        position: relative;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+      }
+    
+      .link:before,
+      .link:after {
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 50%;
+        background: #4ECA78;
+        top: calc(50% + 2px);
+        transition: transform .3s cubic-bezier(.5,.5,0,1);
+      }
+    
+      .link:before {
+        left: 0;
+        transform: translateX(calc(-100% - 10px)) scaleX(0);
+        transform-origin: left;
+      }
+    
+      .link:after {
+        right: 0;
+        transform: translateX(calc(100% + 10px)) scaleX(0);
+        transform-origin: right;
+      }
+    
+      .link:hover:before {
+        transform: translateX(calc(-100% - 10px)) scaleX(1);
+        transform-origin: right;
+      }
+    
+      .link:hover:after {
+        transform: translateX(calc(100% + 10px)) scaleX(1);
+        transform-origin: left;
+      }
+    
+      #content {
+        display: flex;
+        height: 100%;
+      }
+    
+      #content h1 {
+        font-size: calc(4vmin + 1em);
+        text-align: center;
+        margin: auto;
+        color: #fff;
+        text-shadow: 0 6px 18px rgba(0,0,0,.1);
+      }
+    
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    
+      html, body {
+        height: 100%;
+      }
+    
+      a,
+      a:visited,
+      a:focus,
+      a:active,
+      a:link {
+        text-decoration: none;
+        outline: 0;
+      }
+    
+      a {
+        color: currentColor;
+        transition: .2s ease-in-out;
+      }
+    
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+    
+      img {
+        vertical-align: middle;
+        height: auto;
+        width: 100%;
+      }
+    `;
+
+    document.head.appendChild(style);
+
+    const elemH = navBg.getBoundingClientRect().height;
+    const elemW = navBg.getBoundingClientRect().width;
+
+    let open = false;
+    let scale, offsetX, offsetY;
+
+    const calculateValues = () => {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const offsetValue = Number(getComputedStyle(navBg).getPropertyValue('--offset-value'));
+
+        offsetX = (w / 2) - (elemW / 2) - offsetValue;
+        offsetY = (h / 2) - (elemH / 2) - offsetValue;
+
+        const radius = Math.sqrt((h ** 2) + (w ** 2));
+        scale = radius / (elemW / 2) / 2 + .1;
+        return scale;
+    };
+
+    const openMenu = () => {
+        navBg.style.setProperty("--translate-x", `${offsetX}px`);
+        navBg.style.setProperty("--translate-y", `-${offsetY}px`);
+        navBg.style.setProperty("--scale", scale);
+    };
+
+    const closeMenu = () => {
+        navBg.style.setProperty("--scale", 1);
+        navBg.style.setProperty("--translate-x", 0);
+        navBg.style.setProperty("--translate-y", 0);
+    };
+
+    const animateMenu = () => {
+        open ? openMenu() : closeMenu();
+    };
+
+    const toggleMenu = () => {
+        open = !open;
+        animateMenu();
+        toggleBtn.classList.toggle('shown');
+    };
+
+    const resizeHandler = () => {
+        window.requestAnimationFrame(() => {
+            calculateValues();
+            animateMenu();
+        });
+    };
+
+    calculateValues();
+    toggleBtn.addEventListener('click', toggleMenu, false);
+    window.addEventListener("resize", resizeHandler, false);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////
 
 
 
