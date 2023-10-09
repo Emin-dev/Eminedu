@@ -318,7 +318,7 @@ $(document).ready(function () {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
@@ -334,8 +334,8 @@ $(document).ready(function () {
     border-width: 2px 2px 0 0;
     transform: rotate(-45deg);
     margin-top: 30px;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -372,7 +372,7 @@ $(document).ready(function () {
             // Hide the scroll indicator with a smooth fade-out
             scrollIndicator.style.opacity = 0;
         }
-    }, 18000); // Adjust the delay as needed
+    }, 15000); // Adjust the delay as needed
 
     // Add a scroll event listener
     window.addEventListener("scroll", handleScroll);
