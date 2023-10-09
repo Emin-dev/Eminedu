@@ -369,7 +369,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
   }, 15000);
-  ////////
+//   ////////
 
 
 
@@ -379,454 +379,462 @@ $(document).ready(function () {
 
 
 
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('wrapper');
 
-  const navBg = document.createElement('div');
-  navBg.id = 'nav-bg';
-  navBg.classList.add('btn');
 
-  const toggleBtn = document.createElement('div');
-  toggleBtn.id = 'toggle-btn';
-  toggleBtn.classList.add('btn');
 
-  for (let i = 0; i < 3; i++) {
-    const span = document.createElement('span');
-    toggleBtn.appendChild(span);
-  }
+//   const wrapper = document.createElement('div');
+//   wrapper.classList.add('wrapper');
 
-  const content = document.createElement('div');
-  content.id = 'content';
+//   const navBg = document.createElement('div');
+//   navBg.id = 'nav-bg';
+//   navBg.classList.add('btn');
 
-  const heading = document.createElement('h1');
-  // ... (Your existing code)
+//   const toggleBtn8 = document.createElement('div');
+//   toggleBtn8.id = 'toggle-btn';
+//   toggleBtn8.classList.add('btn');
 
-  // Create the nav element
-  const nav = document.createElement("nav");
+//   for (let i = 0; i < 3; i++) {
+//     const span = document.createElement('span');
+//     toggleBtn8.appendChild(span);
+//   }
 
-  // Create the ul element for the navigation list
-  const ul = document.createElement("ul");
+//   const content = document.createElement('div');
+//   content.id = 'content';
 
-  // Create an array of link names
-  const linkNames = ["Projects", "About", "Contact"];
+//   const heading = document.createElement('h1');
+//   // ... (Your existing code)
 
-  // Loop through the link names and create list items and links
-  linkNames.forEach((name) => {
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
-    link.classList.add("link");
-    link.href = "#0";
-    link.textContent = name;
-    listItem.appendChild(link);
-    ul.appendChild(listItem);
-  });
+//   // Create the nav element
+//   const nav = document.createElement("nav");
 
-  // Append the ul to the nav element
-  nav.appendChild(ul);
+//   // Create the ul element for the navigation list
+//   const ul = document.createElement("ul");
 
-  // Append the nav element to your existing wrapper
-  wrapper.appendChild(nav);
+//   // Create an array of link names
+//   const linkNames = ["Projects", "About", "Contact"];
 
-  // Function to toggle the 'shown' class on the nav element
-  const toggleNav = () => {
-    nav.classList.toggle('shown');
-  };
+//   // Loop through the link names and create list items and links
+//   linkNames.forEach((name) => {
+//     const listItem = document.createElement("li");
+//     const link = document.createElement("a");
+//     link.classList.add("link");
+//     link.href = "#0";
+//     link.textContent = name;
+//     listItem.appendChild(link);
+//     ul.appendChild(listItem);
+//   });
 
-  toggleBtn.addEventListener('click', toggleNav, false);
-  // ... (The rest of your existing code)
+//   // Append the ul to the nav element
+//   nav.appendChild(ul);
 
-  // Add the event listener for the animationend event to handle visibility
-  nav.addEventListener('animationend', () => {
-    if (!nav.classList.contains('shown')) {
-      // Hide the nav after animation ends
-      nav.style.visibility = 'hidden';
-    }
-  }, false);
+//   // Append the nav element to your existing wrapper
+//   wrapper.appendChild(nav);
 
-  content.appendChild(heading);
-  wrapper.appendChild(navBg);
-  wrapper.appendChild(toggleBtn);
-  wrapper.appendChild(content);
-  document.body.appendChild(wrapper);
+//   // Function to toggle the 'shown' class on the nav element
+//   const toggleNav = () => {
+//     nav.classList.toggle('shown');
+//   };
 
-  const style = document.createElement('style');
-  style.innerHTML = `/* =======
-  IMPORTS
-  ======= */
-  @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+//   toggleBtn8.addEventListener('click', toggleNav, false);
+//   // ... (The rest of your existing code)
+
+//   // Add the event listener for the animationend event to handle visibility
+//   nav.addEventListener('animationend', () => {
+//     if (!nav.classList.contains('shown')) {
+//       // Hide the nav after animation ends
+//       nav.style.visibility = 'hidden';
+//     }
+//   }, false);
+
+//   content.appendChild(heading);
+//   wrapper.appendChild(navBg);
+//   wrapper.appendChild(toggleBtn8);
+//   wrapper.appendChild(content);
+//   document.body.appendChild(wrapper);
+
+//   const style = document.createElement('style');
+//   style.innerHTML = `/* =======
+//   IMPORTS
+//   ======= */
+//   @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
   
   
-  /* =========
-  VARIABLES
-  ========= */
-  :root {
-    --offset-value: 30;
-    --btn-size: 60;
+//   /* =========
+//   VARIABLES
+//   ========= */
+//   :root {
+//     --offset-value: 30;
+//     --btn-size: 60;
     
-    --green: #4ECA78;
-  }
+//     --green: #4ECA78;
+//   }
   
   
-  /* =======
-  WRAPPER
-  ======= */
-  .wrapper {
-    font-family: 'Encode Sans Condensed', sans-serif;
-    font-weight: 600;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    background: linear-gradient(to top right, #4ECA78, #D0DB68);
-  }
+//   /* =======
+//   WRAPPER
+//   ======= */
+//   .wrapper {
+//     font-family: 'Encode Sans Condensed', sans-serif;
+//     font-weight: 600;
+//     height: 100vh;
+//     width: 100%;
+//     position: relative;
+//     background: linear-gradient(to top right, #4ECA78, #D0DB68);
+//   }
   
   
-  /* =====================
-  NAVIGATION BACKGROUND
-  ===================== */
-  #nav-bg {
-    transform-origin: center center;
-    transition: transform .3s;
-    transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
-    will-change: transform;
-    pointer-events: none;
-  }
+//   /* =====================
+//   NAVIGATION BACKGROUND
+//   ===================== */
+//   #nav-bg {
+//     transform-origin: center center;
+//     transition: transform .3s;
+//     transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
+//     will-change: transform;
+//     pointer-events: none;
+//   }
   
   
-  /* ======
-  BUTTON
-  ====== */
-  .btn {
-    position: fixed;
-    height: calc(var(--btn-size)*1px);
-    width: calc(var(--btn-size)*1px);
-    bottom: calc((var(--offset-value))*1px);
-    left: calc(var(--offset-value)*1px);
-    /*left: calc(50% - (var(--btn-size)/2*1px)); if you wish to center it */
-    border-radius: 50%;
-    background: #fafafa;
-    cursor: pointer;
-    margin: 0;
-    padding: 0 15px;
-    border: none;
-    z-index: 100;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-  }
+//   /* ======
+//   BUTTON
+//   ====== */
+//   .btn {
+//     position: fixed;
+//     height: calc(var(--btn-size)*1px);
+//     width: calc(var(--btn-size)*1px);
+//     bottom: calc((var(--offset-value))*1px);
+//     left: calc(var(--offset-value)*1px);
+//     /*left: calc(50% - (var(--btn-size)/2*1px)); if you wish to center it */
+//     border-radius: 50%;
+//     background: #fafafa;
+//     cursor: pointer;
+//     margin: 0;
+//     padding: 0 15px;
+//     border: none;
+//     z-index: 100;
+//     user-select: none;
+//     -webkit-tap-highlight-color: rgba(0,0,0,0);
+//   }
   
-  #toggle-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--green);
-    /*box-shadow: 0 6px 12px rgba(0,0,0,.1);*/
-    transition: transform .3s;
-  }
+//   #toggle-btn {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     color: var(--green);
+//     /*box-shadow: 0 6px 12px rgba(0,0,0,.1);*/
+//     transition: transform .3s;
+//   }
   
-  #toggle-btn span {
-    position: relative;
-    width: 100%;
-  }
+//   #toggle-btn span {
+//     position: relative;
+//     width: 100%;
+//   }
   
-  #toggle-btn span {
-    margin-top: -4px;
-  }
-  #toggle-btn span + span {
-    margin-top: 8px;
-  }
+//   #toggle-btn span {
+//     margin-top: -4px;
+//   }
+//   #toggle-btn span + span {
+//     margin-top: 8px;
+//   }
   
-  #toggle-btn span:before,
-  #toggle-btn span:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    background: currentColor;
-    opacity: .8;
-    height: 100%;
-    width: 50%;
-    height: 4px;
-    transition: .25s cubic-bezier(.6,0,.3,1);
-    transform-origin: center center;
-  }
+//   #toggle-btn span:before,
+//   #toggle-btn span:after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     background: currentColor;
+//     opacity: .8;
+//     height: 100%;
+//     width: 50%;
+//     height: 4px;
+//     transition: .25s cubic-bezier(.6,0,.3,1);
+//     transform-origin: center center;
+//   }
   
-  #toggle-btn span:before {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-  }
+//   #toggle-btn span:before {
+//     left: 0;
+//     border-radius: 3px 0 0 3px;
+//   }
   
-  #toggle-btn span:after {
-    right: 0;
-    border-radius: 0 3px 3px 0;
-  }
+//   #toggle-btn span:after {
+//     right: 0;
+//     border-radius: 0 3px 3px 0;
+//   }
   
-  #toggle-btn.shown span:nth-of-type(1):before {
-    transform: translate3d(3px, 3.5px, 0) rotate(45deg);
-  }
+//   #toggle-btn.shown span:nth-of-type(1):before {
+//     transform: translate3d(3px, 3.5px, 0) rotate(45deg);
+//   }
   
-  #toggle-btn.shown span:nth-of-type(1):after {
-    transform: translate3d(-3px, 3.5px, 0) rotate(-45deg);
-  }
+//   #toggle-btn.shown span:nth-of-type(1):after {
+//     transform: translate3d(-3px, 3.5px, 0) rotate(-45deg);
+//   }
   
-  #toggle-btn.shown span:nth-of-type(3):before {
-    transform: translate3d(3px, -3.5px, 0) rotate(-45deg);
-  }
+//   #toggle-btn.shown span:nth-of-type(3):before {
+//     transform: translate3d(3px, -3.5px, 0) rotate(-45deg);
+//   }
   
-  #toggle-btn.shown span:nth-of-type(3):after {
-    transform: translate3d(-3px, -3.5px, 0) rotate(45deg);
-  }
+//   #toggle-btn.shown span:nth-of-type(3):after {
+//     transform: translate3d(-3px, -3.5px, 0) rotate(45deg);
+//   }
   
-  #toggle-btn.shown span:nth-of-type(2):before,
-  #toggle-btn.shown span:nth-of-type(2):after {
-    opacity: 0.0001;
-  }
+//   #toggle-btn.shown span:nth-of-type(2):before,
+//   #toggle-btn.shown span:nth-of-type(2):after {
+//     opacity: 0.0001;
+//   }
   
-  #toggle-btn.shown span:nth-of-type(2):before {
-    transform: translateX(-200%);
-  }
+//   #toggle-btn.shown span:nth-of-type(2):before {
+//     transform: translateX(-200%);
+//   }
   
-  #toggle-btn.shown span:nth-of-type(2):after {
-    transform: translateX(200%);
-  }
+//   #toggle-btn.shown span:nth-of-type(2):after {
+//     transform: translateX(200%);
+//   }
   
-  #toggle-btn.shown:before {
-    transform: scale(.6);
-    transition: .2s;
-  }
+//   #toggle-btn.shown:before {
+//     transform: scale(.6);
+//     transition: .2s;
+//   }
   
-  #toggle-btn:before {
-    content: '';
-    transition: .2s .2s;
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.1);
-    border-radius: inherit;
-    filter: blur(5px);
-    z-index: -2;
-  }
-  #toggle-btn:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background: #fafafa;
-    z-index: -1;
-  }
+//   #toggle-btn:before {
+//     content: '';
+//     transition: .2s .2s;
+//     position: absolute;
+//     top: 3px;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0,0,0,.1);
+//     border-radius: inherit;
+//     filter: blur(5px);
+//     z-index: -2;
+//   }
+//   #toggle-btn:after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: inherit;
+//     background: #fafafa;
+//     z-index: -1;
+//   }
   
-  /* ==========
-  NAVIGATION
-  ========== */
-  nav {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    display: flex;
-    z-index: 200;
-    pointer-events: none;
-  }
+//   /* ==========
+//   NAVIGATION
+//   ========== */
+//   nav {
+//     width: 100%;
+//     height: 100%;
+//     background: transparent;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     overflow: hidden;
+//     display: flex;
+//     z-index: 200;
+//     pointer-events: none;
+//   }
   
-  nav ul {
-    margin: auto;
-    pointer-events: auto;
-    text-align: center;
-  }
+//   nav ul {
+//     margin: auto;
+//     pointer-events: auto;
+//     text-align: center;
+//   }
   
-  nav li {
-    font-size: 30px;
-    color: #212121;
-    user-select: none;
-    transform: translate(-20px,20px) scale(.9);
-    transition: 0s;
-    opacity: 0.0001;
-    visibility: hidden;
-    will-change: transform;
-  }
+//   nav li {
+//     font-size: 30px;
+//     color: #212121;
+//     user-select: none;
+//     transform: translate(-20px,20px) scale(.9);
+//     transition: 0s;
+//     opacity: 0.0001;
+//     visibility: hidden;
+//     will-change: transform;
+//   }
   
-  nav li + li {
-    margin-top: 30px;
-  }
+//   nav li + li {
+//     margin-top: 30px;
+//   }
   
-  #toggle-btn.shown ~ .wrapper nav li {
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    transition: .35s cubic-bezier(.4,2.08,.55,1);
-  }
+//   .wrapper #toggle-btn.shown ~ nav li {
+//     transform: none;
+//     opacity: 1;
+//     visibility: visible;
+//     transition: .35s cubic-bezier(.4,2.08,.55,1);
+//   }
   
-  #toggle-btn.shown ~ .wrapper nav li:nth-child(1) {
-    transition-delay: .15s;
-  }
-  #toggle-btn.shown ~ .wrapper nav li:nth-child(2) {
-    transition-delay: .125s;
-  }
-  #toggle-btn.shown ~ .wrapper nav li:nth-child(3) {
-    transition-delay: .1s;
-  }
+//   .wrapper #toggle-btn.shown ~ nav li:nth-child(1) {
+//     transition-delay: .15s;
+//   }
+//   .wrapper #toggle-btn.shown ~ nav li:nth-child(2) {
+//     transition-delay: .125s;
+//   }
+//   .wrapper #toggle-btn.shown ~ nav li:nth-child(3) {
+//     transition-delay: .1s;
+//   }
   
-  /* ============
-  LINK EFFECT
-  ============ */
-  .link {
-    position: relative;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-  }
+//   /* ============
+//   LINK EFFECT
+//   ============ */
+//   .link {
+//     position: relative;
+//     touch-action: manipulation;
+//     -webkit-tap-highlight-color: rgba(0,0,0,0);
+//   }
   
-  .link:before,
-  .link:after {
-    position: absolute;
-    content: '';
-    height: 3px;
-    width: 50%;
-    background: #4ECA78;
-    top: calc(50% + 2px);
-    transition: transform .3s cubic-bezier(.5,.5,0,1);
-  }
+//   .link:before,
+//   .link:after {
+//     position: absolute;
+//     content: '';
+//     height: 3px;
+//     width: 50%;
+//     background: #4ECA78;
+//     top: calc(50% + 2px);
+//     transition: transform .3s cubic-bezier(.5,.5,0,1);
+//   }
   
-  .link:before {
-    left: 0;
-    transform: translateX(calc(-100% - 10px)) scaleX(0);
-    transform-origin: left;
-  }
+//   .link:before {
+//     left: 0;
+//     transform: translateX(calc(-100% - 10px)) scaleX(0);
+//     transform-origin: left;
+//   }
   
-  .link:after {
-    right: 0;
-    transform: translateX(calc(100% + 10px)) scaleX(0);
-    transform-origin: right;
-  }
+//   .link:after {
+//     right: 0;
+//     transform: translateX(calc(100% + 10px)) scaleX(0);
+//     transform-origin: right;
+//   }
   
-  .link:hover:before {
-    transform: translateX(calc(-100% - 10px)) scaleX(1);
-    transform-origin: right;
-  }
+//   .link:hover:before {
+//     transform: translateX(calc(-100% - 10px)) scaleX(1);
+//     transform-origin: right;
+//   }
   
-  .link:hover:after {
-    transform: translateX(calc(100% + 10px)) scaleX(1);
-    transform-origin: left;
-  }
-  
-  
-  /* =======
-  CONTENT
-  ======= */
-  #content {
-    display: flex;
-    height: 100%;
-  }
-  
-  #content h1 {
-    font-size: calc(4vmin + 1em);
-    text-align: center;
-    margin: auto;
-    color: #fff;
-    text-shadow: 0 6px 18px rgba(0,0,0,.1);
-  }
+//   .link:hover:after {
+//     transform: translateX(calc(100% + 10px)) scaleX(1);
+//     transform-origin: left;
+//   }
   
   
+//   /* =======
+//   CONTENT
+//   ======= */
+//   #content {
+//     display: flex;
+//     height: 100%;
+//   }
+  
+//   #content h1 {
+//     font-size: calc(4vmin + 1em);
+//     text-align: center;
+//     margin: auto;
+//     color: #fff;
+//     text-shadow: 0 6px 18px rgba(0,0,0,.1);
+//   }
   
   
-  /* Usual suspects */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
   
-  html, body {
-    height: 100%;
-  }
   
-  a,
-  a:visited,
-  a:focus,
-  a:active,
-  a:link {
-    text-decoration: none;
-    outline: 0;
-  }
+//   /* Usual suspects */
+//   * {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+//   }
   
-  a {
-    color: currentColor;
-    transition: .2s ease-in-out;
-  }
+//   html, body {
+//     height: 100%;
+//   }
   
-  ul {
-    padding: 0;
-    list-style: none;
-  }
+//   a,
+//   a:visited,
+//   a:focus,
+//   a:active,
+//   a:link {
+//     text-decoration: none;
+//     outline: 0;
+//   }
   
-  img {
-    vertical-align: middle;
-    height: auto;
-    width: 100%;
-  }`;
+//   a {
+//     color: currentColor;
+//     transition: .2s ease-in-out;
+//   }
+  
+//   ul {
+//     padding: 0;
+//     list-style: none;
+//   }
+  
+//   img {
+//     vertical-align: middle;
+//     height: auto;
+//     width: 100%;
+//   }`;
 
-  document.head.appendChild(style);
+//   document.head.appendChild(style);
+//   const elem = document.querySelector('#nav-bg'),
+//     toggleBtn = document.querySelector('#toggle-btn'),
+//     elemH = elem.getBoundingClientRect().height,
+//     elemW = elem.getBoundingClientRect().width;
 
-  const elemH = navBg.getBoundingClientRect().height;
-  const elemW = navBg.getBoundingClientRect().width;
+//   let open = false;
+//   let scale, offsetX, offsetY;
 
-  let open = false;
-  let scale, offsetX, offsetY;
+//   const calculateValues = (() => {
+//     const w = window.innerWidth;
+//     const h = window.innerHeight;
+//     //const cssStyles = getComputedStyle(elem);
+//     //const offsetValue = Number(cssStyles.getPropertyValue('--offset-value'));
+//     const offsetValue = Number(getComputedStyle(elem).getPropertyValue('--offset-value'));
 
-  const calculateValues = () => {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const offsetValue = Number(getComputedStyle(navBg).getPropertyValue('--offset-value'));
+//     //  Offsets to center the circle
+//     offsetX = (w / 2) - (elemW / 2) - offsetValue;
+//     offsetY = (h / 2) - (elemH / 2) - offsetValue;
 
-    offsetX = (w / 2) - (elemW / 2) - offsetValue;
-    offsetY = (h / 2) - (elemH / 2) - offsetValue;
-
-    const radius = Math.sqrt((h ** 2) + (w ** 2));
-    scale = radius / (elemW / 2) / 2 + .1;
-    return scale;
-  };
-
-  const openMenu = () => {
-    navBg.style.setProperty("--translate-x", `${offsetX}px`);
-    navBg.style.setProperty("--translate-y", `-${offsetY}px`);
-    navBg.style.setProperty("--scale", scale);
-  };
-
-  const closeMenu = () => {
-    navBg.style.setProperty("--scale", 1);
-    navBg.style.setProperty("--translate-x", 0);
-    navBg.style.setProperty("--translate-y", 0);
-  };
-
-  const animateMenu = () => {
-    open ? openMenu() : closeMenu();
-  };
-
-  const toggleMenu = () => {
-    open = !open;
-    animateMenu();
-    toggleBtn.classList.toggle('shown');
-  };
-
-  const resizeHandler = () => {
-    window.requestAnimationFrame(() => {
-      calculateValues();
-      animateMenu();
-    });
-  };
-
-  calculateValues();
-  toggleBtn.addEventListener('click', toggleMenu, false);
-  window.addEventListener("resize", resizeHandler, false);
+//     // Good old pythagoras
+//     const radius = Math.sqrt((h ** 2) + (w ** 2));
+//     scale = radius / (elemW / 2) / 2 + .1; // Add '.1' to compensate for Safari sub pixel blur issue
+//     return scale;
+//   })
 
 
+//   const openMenu = () => {
+//     elem.style.setProperty("--translate-x", `${offsetX}px`);
+//     elem.style.setProperty("--translate-y", `-${offsetY}px`);
+//     elem.style.setProperty("--scale", scale);
+//   }
+//   const closeMenu = () => {
+//     elem.style.setProperty("--scale", 1);
+//     elem.style.setProperty("--translate-x", 0);
+//     elem.style.setProperty("--translate-y", 0);
+//   }
+//   const animateMenu = () => {
+//     open ? openMenu() : closeMenu();
+//   };
 
+//   const toggleMenu = () => {
+//     open = !open;
+//     animateMenu();
+//     toggleBtn.classList.toggle('shown');
+//     nav.classList.toggle('shown');
+// }
 
+// toggleBtn.addEventListener('click', toggleMenu, false);
+
+//   const resizeHandler = () => {
+//     window.requestAnimationFrame(() => {
+//       calculateValues();
+//       animateMenu();
+//     });
+//   }
+
+//   calculateValues();
+
+//   //toggleBtn.onclick = toggleMenu;
+//   toggleBtn.addEventListener('click', toggleMenu, false);
+//   window.addEventListener("resize", resizeHandler, false);
 
 
 
