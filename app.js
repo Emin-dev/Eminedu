@@ -293,6 +293,32 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
     window.scrollTo(0, 0);
 });
 
@@ -301,7 +327,13 @@ $(document).ready(function () {
 
 setTimeout(function () {
     window.scrollTo(0, 0);
-}, 10000);
+}, 6000);
+
+
+
+setTimeout(function () {
+    window.scrollTo(0, 0);
+}, 8000);
 
 setTimeout(function () {
     window.scrollTo(0, 0);
