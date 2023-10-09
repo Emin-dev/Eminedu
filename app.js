@@ -442,6 +442,7 @@ $(document).ready(function () {
     const preloader1 = document.getElementById('preloader1');
     preloader1.style.transition = 'opacity 2s';
     preloader1.style.opacity = 0;
+    
 
     // Add styles and fonts for preloader2
     const styleSheet = document.createElement("style");
@@ -515,6 +516,7 @@ $(document).ready(function () {
       const preloader2 = document.getElementById('preloader2');
       preloader2.style.transition = 'opacity 6s';
       preloader2.style.opacity = 0;
+      preloader1.style.display = 'none';
 
       // After the fade-out animation completes, hide preloader2 and enable scrolling
       setTimeout(() => {
