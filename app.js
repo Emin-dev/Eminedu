@@ -296,6 +296,87 @@ $(document).ready(function () {
 
 
 
+    ////////
+    // Create the scroll indicator element
+    const scrollIndicator = document.createElement("div");
+    scrollIndicator.classList.add("scroll-indicator");
+    document.body.appendChild(scrollIndicator);
+
+    // Create the arrow element
+    const arrow = document.createElement("div");
+    arrow.classList.add("arrow");
+    scrollIndicator.appendChild(arrow);
+
+    // Create the CSS styles dynamically with a glassmorphism design
+    const style = document.createElement("style");
+    style.textContent = `
+  .scroll-indicator {
+    position: fixed;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s;
+  }
+
+  .arrow {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-width: 2px 2px 0 0;
+    transform: rotate(-45deg);
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 4s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+  }
+`;
+    document.head.appendChild(style);
+
+    // Flag to track whether the user has scrolled
+    let userScrolled = false;
+
+    // Function to handle scroll event
+    function handleScroll() {
+        userScrolled = true;
+        // Hide the scroll indicator with a smooth fade-out
+        scrollIndicator.style.opacity = 0;
+        // Remove the scroll event listener
+        window.removeEventListener("scroll", handleScroll);
+    }
+
+    // Set a timer to remove the scroll indicator if the user hasn't scrolled
+    setTimeout(function () {
+        if (!userScrolled) {
+            // Hide the scroll indicator with a smooth fade-out
+            scrollIndicator.style.opacity = 0;
+        }
+    }, 18000); // Adjust the delay as needed
+
+    // Add a scroll event listener
+    window.addEventListener("scroll", handleScroll);
+    ////////
 
 
 
@@ -316,7 +397,6 @@ $(document).ready(function () {
 
 
 
-    
 
 
     window.scrollTo(0, 0);
@@ -340,6 +420,6 @@ setTimeout(function () {
     document.body.style.overflow = "auto";
 
     // Re-enable scrolling
-    document.body.removeEventListener('touchmove', preventScroll, { passive: true});
+    document.body.removeEventListener('touchmove', preventScroll, { passive: true });
 }, 12000);
 
