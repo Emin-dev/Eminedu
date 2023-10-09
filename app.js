@@ -1,5 +1,17 @@
 "use strict";
 
+document.body.style.overflow = 'hidden';
+
+
+// Disable scrolling
+document.body.addEventListener('touchmove', preventScroll, { passive: false });
+
+// Function to prevent scrolling
+function preventScroll(event) {
+    event.preventDefault();
+}
+
+
 const userAgent = navigator.userAgent;
 const mobileAgents = ["Android", "iPad", "iPhone"];
 const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
@@ -223,6 +235,11 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
     document.body.style.overflow = 'hidden';
 
     setTimeout(function () {
@@ -233,33 +250,13 @@ $(document).ready(function () {
             document.getElementById('preloader2').style.display = 'none';
 
             window.scrollTo(0, 0);
-            // Show main content
-            document.body.style.overflow = 'auto'; // re-enable scrolling
+
         }, 6000);
     }, 4000);
 
 
 
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            window.scrollTo(0, 0);
-        }, 3000);
-    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
@@ -296,22 +293,7 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    window.scrollTo(0, 0);
 });
 
 
@@ -319,4 +301,13 @@ $(document).ready(function () {
 
 setTimeout(function () {
     window.scrollTo(0, 0);
-}, 3000); 
+}, 10000);
+
+setTimeout(function () {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = "auto";
+
+    // Re-enable scrolling
+    document.body.removeEventListener('touchmove', preventScroll, { passive: true});
+}, 12000);
+
