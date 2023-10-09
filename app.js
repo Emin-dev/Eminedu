@@ -609,8 +609,7 @@ $(document).ready(function () {
       nav ul {
         margin: auto;
         pointer-events: auto;
-        text-align
-            text-align: center;
+        text-align: center;
       }
     
       nav li {
