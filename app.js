@@ -293,7 +293,7 @@ $(document).ready(function () {
   q.textContent = `
   .scroll-indicator {
     position: fixed;
-    bottom: 40vh;
+    bottom: 30vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -309,8 +309,8 @@ $(document).ready(function () {
   }
 
   .arrow {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border: 4px solid rgba(255, 255, 255, 0.5);
     border-width: 2px 2px 0 0;
     transform: rotate(-45deg);
