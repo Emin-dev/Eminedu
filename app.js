@@ -352,8 +352,7 @@ $(document).ready(function () {
     }
   }
 `;
-    document.head.appendChild(style);
-
+    
     // Flag to track whether the user has scrolled
     let userScrolled = false;
 
@@ -366,16 +365,14 @@ $(document).ready(function () {
         window.removeEventListener("scroll", handleScroll);
     }
 
-    // Set a timer to remove the scroll indicator if the user hasn't scrolled
-    setTimeout(function () {
-        if (!userScrolled) {
-            // Hide the scroll indicator with a smooth fade-out
-            scrollIndicator.style.opacity = 0;
-        }
-    }, 15000); // Adjust the delay as needed
 
-    // Add a scroll event listener
-    window.addEventListener("scroll", handleScroll);
+
+    setTimeout(function () {
+        window.addEventListener("scroll", handleScroll);
+        document.head.appendChild(style);
+
+    }, 15000);
+    
     ////////
 
 
