@@ -240,25 +240,6 @@ $(document).ready(function () {
 
 
 
-  document.body.style.overflow = 'hidden';
-
-  setTimeout(function () {
-    document.getElementById('preloader1').style.display = 'none';
-    document.getElementById('preloader2').style.display = 'flex';
-
-    setTimeout(function () {
-      document.getElementById('preloader2').style.display = 'none';
-
-      window.scrollTo(0, 0);
-
-    }, 6000);
-  }, 4000);
-
-
-
-
-
-
 
 
 
@@ -312,7 +293,7 @@ $(document).ready(function () {
   q.textContent = `
   .scroll-indicator {
     position: fixed;
-    bottom: 20vh;
+    bottom: 40vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -368,473 +349,10 @@ $(document).ready(function () {
   setTimeout(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
-  }, 15000);
-//   ////////
+  }, 17000);
+  //   ////////
 
 
-
-
-
-
-
-
-
-
-
-
-//   const wrapper = document.createElement('div');
-//   wrapper.classList.add('wrapper');
-
-//   const navBg = document.createElement('div');
-//   navBg.id = 'nav-bg';
-//   navBg.classList.add('btn');
-
-//   const toggleBtn8 = document.createElement('div');
-//   toggleBtn8.id = 'toggle-btn';
-//   toggleBtn8.classList.add('btn');
-
-//   for (let i = 0; i < 3; i++) {
-//     const span = document.createElement('span');
-//     toggleBtn8.appendChild(span);
-//   }
-
-//   const content = document.createElement('div');
-//   content.id = 'content';
-
-//   const heading = document.createElement('h1');
-//   // ... (Your existing code)
-
-//   // Create the nav element
-//   const nav = document.createElement("nav");
-
-//   // Create the ul element for the navigation list
-//   const ul = document.createElement("ul");
-
-//   // Create an array of link names
-//   const linkNames = ["Projects", "About", "Contact"];
-
-//   // Loop through the link names and create list items and links
-//   linkNames.forEach((name) => {
-//     const listItem = document.createElement("li");
-//     const link = document.createElement("a");
-//     link.classList.add("link");
-//     link.href = "#0";
-//     link.textContent = name;
-//     listItem.appendChild(link);
-//     ul.appendChild(listItem);
-//   });
-
-//   // Append the ul to the nav element
-//   nav.appendChild(ul);
-
-//   // Append the nav element to your existing wrapper
-//   wrapper.appendChild(nav);
-
-//   // Function to toggle the 'shown' class on the nav element
-//   const toggleNav = () => {
-//     nav.classList.toggle('shown');
-//   };
-
-//   toggleBtn8.addEventListener('click', toggleNav, false);
-//   // ... (The rest of your existing code)
-
-//   // Add the event listener for the animationend event to handle visibility
-//   nav.addEventListener('animationend', () => {
-//     if (!nav.classList.contains('shown')) {
-//       // Hide the nav after animation ends
-//       nav.style.visibility = 'hidden';
-//     }
-//   }, false);
-
-//   content.appendChild(heading);
-//   wrapper.appendChild(navBg);
-//   wrapper.appendChild(toggleBtn8);
-//   wrapper.appendChild(content);
-//   document.body.appendChild(wrapper);
-
-//   const style = document.createElement('style');
-//   style.innerHTML = `/* =======
-//   IMPORTS
-//   ======= */
-//   @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
-  
-  
-//   /* =========
-//   VARIABLES
-//   ========= */
-//   :root {
-//     --offset-value: 30;
-//     --btn-size: 60;
-    
-//     --green: #4ECA78;
-//   }
-  
-  
-//   /* =======
-//   WRAPPER
-//   ======= */
-//   .wrapper {
-//     font-family: 'Encode Sans Condensed', sans-serif;
-//     font-weight: 600;
-//     height: 100vh;
-//     width: 100%;
-//     position: relative;
-//     background: linear-gradient(to top right, #4ECA78, #D0DB68);
-//   }
-  
-  
-//   /* =====================
-//   NAVIGATION BACKGROUND
-//   ===================== */
-//   #nav-bg {
-//     transform-origin: center center;
-//     transition: transform .3s;
-//     transform: translate(var(--translate-x), var(--translate-y)) scale(var(--scale));
-//     will-change: transform;
-//     pointer-events: none;
-//   }
-  
-  
-//   /* ======
-//   BUTTON
-//   ====== */
-//   .btn {
-//     position: fixed;
-//     height: calc(var(--btn-size)*1px);
-//     width: calc(var(--btn-size)*1px);
-//     bottom: calc((var(--offset-value))*1px);
-//     left: calc(var(--offset-value)*1px);
-//     /*left: calc(50% - (var(--btn-size)/2*1px)); if you wish to center it */
-//     border-radius: 50%;
-//     background: #fafafa;
-//     cursor: pointer;
-//     margin: 0;
-//     padding: 0 15px;
-//     border: none;
-//     z-index: 100;
-//     user-select: none;
-//     -webkit-tap-highlight-color: rgba(0,0,0,0);
-//   }
-  
-//   #toggle-btn {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     color: var(--green);
-//     /*box-shadow: 0 6px 12px rgba(0,0,0,.1);*/
-//     transition: transform .3s;
-//   }
-  
-//   #toggle-btn span {
-//     position: relative;
-//     width: 100%;
-//   }
-  
-//   #toggle-btn span {
-//     margin-top: -4px;
-//   }
-//   #toggle-btn span + span {
-//     margin-top: 8px;
-//   }
-  
-//   #toggle-btn span:before,
-//   #toggle-btn span:after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     background: currentColor;
-//     opacity: .8;
-//     height: 100%;
-//     width: 50%;
-//     height: 4px;
-//     transition: .25s cubic-bezier(.6,0,.3,1);
-//     transform-origin: center center;
-//   }
-  
-//   #toggle-btn span:before {
-//     left: 0;
-//     border-radius: 3px 0 0 3px;
-//   }
-  
-//   #toggle-btn span:after {
-//     right: 0;
-//     border-radius: 0 3px 3px 0;
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(1):before {
-//     transform: translate3d(3px, 3.5px, 0) rotate(45deg);
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(1):after {
-//     transform: translate3d(-3px, 3.5px, 0) rotate(-45deg);
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(3):before {
-//     transform: translate3d(3px, -3.5px, 0) rotate(-45deg);
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(3):after {
-//     transform: translate3d(-3px, -3.5px, 0) rotate(45deg);
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(2):before,
-//   #toggle-btn.shown span:nth-of-type(2):after {
-//     opacity: 0.0001;
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(2):before {
-//     transform: translateX(-200%);
-//   }
-  
-//   #toggle-btn.shown span:nth-of-type(2):after {
-//     transform: translateX(200%);
-//   }
-  
-//   #toggle-btn.shown:before {
-//     transform: scale(.6);
-//     transition: .2s;
-//   }
-  
-//   #toggle-btn:before {
-//     content: '';
-//     transition: .2s .2s;
-//     position: absolute;
-//     top: 3px;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(0,0,0,.1);
-//     border-radius: inherit;
-//     filter: blur(5px);
-//     z-index: -2;
-//   }
-//   #toggle-btn:after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     border-radius: inherit;
-//     background: #fafafa;
-//     z-index: -1;
-//   }
-  
-//   /* ==========
-//   NAVIGATION
-//   ========== */
-//   nav {
-//     width: 100%;
-//     height: 100%;
-//     background: transparent;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     overflow: hidden;
-//     display: flex;
-//     z-index: 200;
-//     pointer-events: none;
-//   }
-  
-//   nav ul {
-//     margin: auto;
-//     pointer-events: auto;
-//     text-align: center;
-//   }
-  
-//   nav li {
-//     font-size: 30px;
-//     color: #212121;
-//     user-select: none;
-//     transform: translate(-20px,20px) scale(.9);
-//     transition: 0s;
-//     opacity: 0.0001;
-//     visibility: hidden;
-//     will-change: transform;
-//   }
-  
-//   nav li + li {
-//     margin-top: 30px;
-//   }
-  
-//   .wrapper #toggle-btn.shown ~ nav li {
-//     transform: none;
-//     opacity: 1;
-//     visibility: visible;
-//     transition: .35s cubic-bezier(.4,2.08,.55,1);
-//   }
-  
-//   .wrapper #toggle-btn.shown ~ nav li:nth-child(1) {
-//     transition-delay: .15s;
-//   }
-//   .wrapper #toggle-btn.shown ~ nav li:nth-child(2) {
-//     transition-delay: .125s;
-//   }
-//   .wrapper #toggle-btn.shown ~ nav li:nth-child(3) {
-//     transition-delay: .1s;
-//   }
-  
-//   /* ============
-//   LINK EFFECT
-//   ============ */
-//   .link {
-//     position: relative;
-//     touch-action: manipulation;
-//     -webkit-tap-highlight-color: rgba(0,0,0,0);
-//   }
-  
-//   .link:before,
-//   .link:after {
-//     position: absolute;
-//     content: '';
-//     height: 3px;
-//     width: 50%;
-//     background: #4ECA78;
-//     top: calc(50% + 2px);
-//     transition: transform .3s cubic-bezier(.5,.5,0,1);
-//   }
-  
-//   .link:before {
-//     left: 0;
-//     transform: translateX(calc(-100% - 10px)) scaleX(0);
-//     transform-origin: left;
-//   }
-  
-//   .link:after {
-//     right: 0;
-//     transform: translateX(calc(100% + 10px)) scaleX(0);
-//     transform-origin: right;
-//   }
-  
-//   .link:hover:before {
-//     transform: translateX(calc(-100% - 10px)) scaleX(1);
-//     transform-origin: right;
-//   }
-  
-//   .link:hover:after {
-//     transform: translateX(calc(100% + 10px)) scaleX(1);
-//     transform-origin: left;
-//   }
-  
-  
-//   /* =======
-//   CONTENT
-//   ======= */
-//   #content {
-//     display: flex;
-//     height: 100%;
-//   }
-  
-//   #content h1 {
-//     font-size: calc(4vmin + 1em);
-//     text-align: center;
-//     margin: auto;
-//     color: #fff;
-//     text-shadow: 0 6px 18px rgba(0,0,0,.1);
-//   }
-  
-  
-  
-  
-//   /* Usual suspects */
-//   * {
-//     box-sizing: border-box;
-//     margin: 0;
-//     padding: 0;
-//   }
-  
-//   html, body {
-//     height: 100%;
-//   }
-  
-//   a,
-//   a:visited,
-//   a:focus,
-//   a:active,
-//   a:link {
-//     text-decoration: none;
-//     outline: 0;
-//   }
-  
-//   a {
-//     color: currentColor;
-//     transition: .2s ease-in-out;
-//   }
-  
-//   ul {
-//     padding: 0;
-//     list-style: none;
-//   }
-  
-//   img {
-//     vertical-align: middle;
-//     height: auto;
-//     width: 100%;
-//   }`;
-
-//   document.head.appendChild(style);
-//   const elem = document.querySelector('#nav-bg'),
-//     toggleBtn = document.querySelector('#toggle-btn'),
-//     elemH = elem.getBoundingClientRect().height,
-//     elemW = elem.getBoundingClientRect().width;
-
-//   let open = false;
-//   let scale, offsetX, offsetY;
-
-//   const calculateValues = (() => {
-//     const w = window.innerWidth;
-//     const h = window.innerHeight;
-//     //const cssStyles = getComputedStyle(elem);
-//     //const offsetValue = Number(cssStyles.getPropertyValue('--offset-value'));
-//     const offsetValue = Number(getComputedStyle(elem).getPropertyValue('--offset-value'));
-
-//     //  Offsets to center the circle
-//     offsetX = (w / 2) - (elemW / 2) - offsetValue;
-//     offsetY = (h / 2) - (elemH / 2) - offsetValue;
-
-//     // Good old pythagoras
-//     const radius = Math.sqrt((h ** 2) + (w ** 2));
-//     scale = radius / (elemW / 2) / 2 + .1; // Add '.1' to compensate for Safari sub pixel blur issue
-//     return scale;
-//   })
-
-
-//   const openMenu = () => {
-//     elem.style.setProperty("--translate-x", `${offsetX}px`);
-//     elem.style.setProperty("--translate-y", `-${offsetY}px`);
-//     elem.style.setProperty("--scale", scale);
-//   }
-//   const closeMenu = () => {
-//     elem.style.setProperty("--scale", 1);
-//     elem.style.setProperty("--translate-x", 0);
-//     elem.style.setProperty("--translate-y", 0);
-//   }
-//   const animateMenu = () => {
-//     open ? openMenu() : closeMenu();
-//   };
-
-//   const toggleMenu = () => {
-//     open = !open;
-//     animateMenu();
-//     toggleBtn.classList.toggle('shown');
-//     nav.classList.toggle('shown');
-// }
-
-// toggleBtn.addEventListener('click', toggleMenu, false);
-
-//   const resizeHandler = () => {
-//     window.requestAnimationFrame(() => {
-//       calculateValues();
-//       animateMenu();
-//     });
-//   }
-
-//   calculateValues();
-
-//   //toggleBtn.onclick = toggleMenu;
-//   toggleBtn.addEventListener('click', toggleMenu, false);
-//   window.addEventListener("resize", resizeHandler, false);
 
 
 
@@ -851,6 +369,161 @@ $(document).ready(function () {
 
   //////////
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // CSS styles
+  const styles = `
+
+.loading {
+  color: white;
+  font-size: 5em;
+  margin-right: 20px; // Space between text and ghost
+}
+
+.loading span {
+  display: inline-block;
+  animation: bounce 0.3s ease infinite alternate;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes bounce {
+  0% {
+    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(20px);
+  }
+  100% {
+    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+  }
+}
+
+.ghost {
+  animation: float 3s ease-out infinite;
+  position: relative;
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+`;
+
+
+
+
+
+
+
+
+  document.body.style.overflow = 'hidden';
+
+  // Display preloader1 for 4 seconds
+  setTimeout(() => {
+    document.getElementById('preloader2').style.display = 'flex';
+    
+    const preloader1 = document.getElementById('preloader1');
+    preloader1.style.transition = 'opacity 2s';
+    preloader1.style.opacity = 0;
+
+    // Add styles and fonts for preloader2
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
+
+    const fontLink = document.createElement('link');
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap';
+    fontLink.rel = 'stylesheet';
+    document.head.appendChild(fontLink);
+
+    // Add the modified HTML for preloader2
+    document.getElementById('preloader2').innerHTML = `
+    <div class="container">
+      <div class="loading">Loading</div>
+     
+<svg class="ghost" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+width="127.433px" height="132.743px" viewBox="0 0 127.433 132.743" enable-background="new 0 0 127.433 132.743"
+xml:space="preserve">
+<path fill="#FFF6F4" d="M116.223,125.064c1.032-1.183,1.323-2.73,1.391-3.747V54.76c0,0-4.625-34.875-36.125-44.375
+s-66,6.625-72.125,44l-0.781,63.219c0.062,4.197,1.105,6.177,1.808,7.006c1.94,1.811,5.408,3.465,10.099-0.6
+c7.5-6.5,8.375-10,12.75-6.875s5.875,9.75,13.625,9.25s12.75-9,13.75-9.625s4.375-1.875,7,1.25s5.375,8.25,12.875,7.875
+s12.625-8.375,12.625-8.375s2.25-3.875,7.25,0.375s7.625,9.75,14.375,8.125C114.739,126.01,115.412,125.902,116.223,125.064z"/>
+<circle fill="#013E51" cx="86.238" cy="57.885" r="6.667"/>
+<circle fill="#013E51" cx="40.072" cy="57.885" r="6.667"/>
+<path fill="#013E51" d="M71.916,62.782c0.05-1.108-0.809-2.046-1.917-2.095c-0.673-0.03-1.28,0.279-1.667,0.771
+c-0.758,0.766-2.483,2.235-4.696,2.358c-1.696,0.094-3.438-0.625-5.191-2.137c-0.003-0.003-0.007-0.006-0.011-0.009l0.002,0.005
+c-0.332-0.294-0.757-0.488-1.235-0.509c-1.108-0.049-2.046,0.809-2.095,1.917c-0.032,0.724,0.327,1.37,0.887,1.749
+c-0.001,0-0.002-0.001-0.003-0.001c2.221,1.871,4.536,2.88,6.912,2.986c0.333,0.014,0.67,0.012,1.007-0.01
+c3.163-0.191,5.572-1.942,6.888-3.166l0.452-0.453c0.021-0.019,0.04-0.041,0.06-0.061l0.034-0.034
+c-0.007,0.007-0.015,0.014-0.021,0.02C71.666,63.771,71.892,63.307,71.916,62.782z"/>
+<circle fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" cx="18.614" cy="99.426" r="3.292"/>
+<circle fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" cx="95.364" cy="28.676" r="3.291"/>
+<circle fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" cx="24.739" cy="93.551" r="2.667"/>
+<circle fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" cx="101.489" cy="33.051" r="2.666"/>
+<circle fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" cx="18.738" cy="87.717" r="2.833"/>
+<path fill="#FCEFED" stroke="#FEEBE6" stroke-miterlimit="10" d="M116.279,55.814c-0.021-0.286-2.323-28.744-30.221-41.012
+c-7.806-3.433-15.777-5.173-23.691-5.173c-16.889,0-30.283,7.783-37.187,15.067c-9.229,9.736-13.84,26.712-14.191,30.259
+l-0.748,62.332c0.149,2.133,1.389,6.167,5.019,6.167c1.891,0,4.074-1.083,6.672-3.311c4.96-4.251,7.424-6.295,9.226-6.295
+c1.339,0,2.712,1.213,5.102,3.762c4.121,4.396,7.461,6.355,10.833,6.355c2.713,0,5.311-1.296,7.942-3.962
+c3.104-3.145,5.701-5.239,8.285-5.239c2.116,0,4.441,1.421,7.317,4.473c2.638,2.8,5.674,4.219,9.022,4.219
+c4.835,0,8.991-2.959,11.27-5.728l0.086-0.104c1.809-2.2,3.237-3.938,5.312-3.938c2.208,0,5.271,1.942,9.359,5.936
+c0.54,0.743,3.552,4.674,6.86,4.674c1.37,0,2.559-0.65,3.531-1.932l0.203-0.268L116.279,55.814z M114.281,121.405
+c-0.526,0.599-1.096,0.891-1.734,0.891c-2.053,0-4.51-2.82-5.283-3.907l-0.116-0.136c-4.638-4.541-7.975-6.566-10.82-6.566
+c-3.021,0-4.884,2.267-6.857,4.667l-0.086,0.104c-1.896,2.307-5.582,4.999-9.725,4.999c-2.775,0-5.322-1.208-7.567-3.59
+c-3.325-3.528-6.03-5.102-8.772-5.102c-3.278,0-6.251,2.332-9.708,5.835c-2.236,2.265-4.368,3.366-6.518,3.366
+c-2.772,0-5.664-1.765-9.374-5.723c-2.488-2.654-4.29-4.395-6.561-4.395c-2.515,0-5.045,2.077-10.527,6.777
+c-2.727,2.337-4.426,2.828-5.37,2.828c-2.662,0-3.017-4.225-3.021-4.225l0.745-62.163c0.332-3.321,4.767-19.625,13.647-28.995
+c3.893-4.106,10.387-8.632,18.602-11.504c-0.458,0.503-0.744,1.165-0.744,1.898c0,1.565,1.269,2.833,2.833,2.833
+c1.564,0,2.833-1.269,2.833-2.833c0-1.355-0.954-2.485-2.226-2.764c4.419-1.285,9.269-2.074,14.437-2.074
+c7.636,0,15.336,1.684,22.887,5.004c26.766,11.771,29.011,39.047,29.027,39.251V121.405z"/>
+</svg>
+
+    `;
+
+    // Animation for Loading text
+    let loading = document.querySelector(".loading");
+    let letters = loading.textContent.split("");
+    loading.textContent = "";
+    letters.forEach((letter, i) => {
+      let span = document.createElement("span");
+      span.textContent = letter;
+      span.style.setProperty('--i', i + 1); // Set custom property for delay
+      loading.append(span);
+    });
+
+
+    // 4 seconds after showing the ghost, begin fade-out animation
+    setTimeout(() => {
+      const preloader2 = document.getElementById('preloader2');
+      preloader2.style.transition = 'opacity 6s';
+      preloader2.style.opacity = 0;
+
+      // After the fade-out animation completes, hide preloader2 and enable scrolling
+      setTimeout(() => {
+        preloader2.style.display = 'none';
+      }, 7000); // 4 seconds for fade-out
+
+    }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+
+  }, 4000); // Display preloader1 for 4 seconds
 
 
 
@@ -883,5 +556,5 @@ setTimeout(function () {
 
   // Re-enable scrolling
   document.body.removeEventListener('touchmove', preventScroll, { passive: true });
-}, 12000);
+}, 16000);
 
