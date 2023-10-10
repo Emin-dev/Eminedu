@@ -65,6 +65,7 @@ document.body.style.overflow = 'hidden';
 // Display preloader1 for 4 seconds
 setTimeout(() => {
   document.getElementById('preloader2').style.display = 'flex';
+  document.getElementById('preloader2').style.zIndex = '99999999';
   document.getElementById('preloader3').style.display = 'none';
 
   const preloader1 = document.getElementById('preloader1');
@@ -171,57 +172,15 @@ function showPreloader() {
 
 
   // CSS styles
-  const styles = `
-  
-    .loading {
-      color: white;
-      font-size: 5em;
-      margin-right: 20px; // Space between text and ghost
-    }
-  
-    .loading span {
-      display: inline-block;
-      animation: bounce 0.3s ease infinite alternate;
-      animation-delay: calc(0.1s * var(--i));
-    }
-  
-    @keyframes bounce {
-      0% {
-        text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4);
-        transform: translateY(20px);
-      }
-      100% {
-        text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
-        transform: translateY(-20px);
-      }
-    }
-  
-    .ghost {
-      animation: float 3s ease-out infinite;
-      position: relative;
-      filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
-    }
-  
-  
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-  
-    `;
 
 
   // Display preloader1 for 4 seconds
   setTimeout(() => {
-    
-  document.body.style.overflow = 'hidden';
-    document.getElementById('preloader3').style.display = 'flex';
-    // document.getElementById('preloader2').style.display = 'none';
 
+    document.body.style.overflow = 'hidden';
+    document.getElementById('preloader3').style.display = 'flex';
+    document.getElementById('preloader2').style.display = 'none';
+    document.getElementById('preloader3').style.opacity = '100%';
     // const preloader1 = document.getElementById('preloader1');
     // preloader1.style.transition = 'opacity 2s';
     // preloader1.style.opacity = 0;
@@ -297,7 +256,7 @@ function showPreloader() {
     // 4 seconds after showing the ghost, begin fade-out animation
     setTimeout(() => {
       const preloader3 = document.getElementById('preloader3');
-      preloader3.style.transition = 'opacity .5s';
+      preloader3.style.transition = 'opacity 2s';
       preloader3.style.opacity = 0;
       // preloader1.style.display = 'none';
 
@@ -318,73 +277,74 @@ function showPreloader() {
 
 
 
+setTimeout(() => {
 
 
 
-let touchStartPosition = null;
-let touchEndPosition = null;
-let startingPosition = null;
-let startTime = null;
-let isLocked = false;
-let lockedPosition = 0;
-let isTouching = false;
+  let touchStartPosition = null;
+  let touchEndPosition = null;
+  let startingPosition = null;
+  let startTime = null;
+  let isLocked = false;
+  let lockedPosition = 0;
+  let isTouching = false;
 
-// Track when a user starts and ends touching the screen
-window.addEventListener('touchstart', function () {
-  isTouching = true;
-  touchStartPosition = window.pageYOffset;
-}, { passive: true });
+  // Track when a user starts and ends touching the screen
+  window.addEventListener('touchstart', function () {
+    isTouching = true;
+    touchStartPosition = window.pageYOffset;
+  }, { passive: true });
 
-window.addEventListener('touchmove', function () {
-  if (touchStartPosition !== null) {
-    touchEndPosition = window.pageYOffset;
-  }
-  if (startingPosition === null || startTime === null) {
-    startingPosition = window.pageYOffset;
-    startTime = Date.now();
-  }
-  const traveledDistance = Math.abs(window.pageYOffset - startingPosition);
-  const elapsedTime = Date.now() - startTime;
-  const speed = traveledDistance / elapsedTime;  // pixels per millisecond
+  window.addEventListener('touchmove', function () {
+    if (touchStartPosition !== null) {
+      touchEndPosition = window.pageYOffset;
+    }
+    if (startingPosition === null || startTime === null) {
+      startingPosition = window.pageYOffset;
+      startTime = Date.now();
+    }
+    const traveledDistance = Math.abs(window.pageYOffset - startingPosition);
+    const elapsedTime = Date.now() - startTime;
+    const speed = traveledDistance / elapsedTime;  // pixels per millisecond
 
-  if (isLocked) {
-    // showPreloader();
-    let adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
-    window.scrollTo(0, adjustedLockPosition);
-    return;
-  }
+    if (isLocked) {
+      let adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
+      window.scrollTo(0, adjustedLockPosition);
+      return;
+    }
 
-  // If the speed exceeds a threshold (e.g., 0.3 pixels per millisecond), lock scrolling
-  if (speed > 1) {
-    showPreloader();
-    // document.body.addEventListener('touchmove', preventScroll, { passive: false });
-    isLocked = true;
-    lockedPosition = window.pageYOffset;
+    // If the speed exceeds a threshold (e.g., 0.3 pixels per millisecond), lock scrolling
+    if (speed > 2) {
+      showPreloader();
+      // document.body.addEventListener('touchmove', preventScroll, { passive: false });
+      isLocked = true;
+      lockedPosition = window.pageYOffset;
 
-    setTimeout(() => {
-      // document.body.addEventListener('touchmove', preventScroll, { passive: true });
-      isLocked = false;
-    }, 5000);  // Lock scrolling for 1 second
-  }
-}, { passive: false });
+      setTimeout(() => {
+        // document.body.addEventListener('touchmove', preventScroll, { passive: true });
+        isLocked = false;
 
-window.addEventListener('touchend', function () {
-  isTouching = false;
-  if (touchEndPosition !== null) {
-    // showPreloader();
-    window.scrollTo(0, touchEndPosition); // This sets the scroll position to where it was when the touch ended
-  }
-  touchStartPosition = null;
-  touchEndPosition = null;
-  startingPosition = null;
-  startTime = null;
-}, { passive: true });
+      }, 2000);  // Lock scrolling for 1 second
+    }
+  }, { passive: false });
 
+  window.addEventListener('touchend', function () {
+    isTouching = false;
+    if (touchEndPosition !== null) {
+      window.scrollTo(0, touchEndPosition); // This sets the scroll position to where it was when the touch ended
+    }
+    touchStartPosition = null;
+    touchEndPosition = null;
+    startingPosition = null;
+    startTime = null;
+  }, { passive: true });
 
 
 
 
 
+
+}, 2000);
 
 
 
