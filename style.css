@@ -32,54 +32,19 @@ h2 {
 
 #preloader1 {
   display: flex;
-  background-color: #000000;
+  background: linear-gradient(to top right, #4ECA78, #D0DB68);
   z-index: 9999;
+  opacity: 1;
 }
 
 #preloader2, #preloader3 {
   display: none;
-  animation: fadeOut 4s;
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: #ff4814;
   font-family: "Dosis", sans-serif;
   text-align: center;
-}
-
-#preloader3 .loading {
-  color: white;
-  font-size: 5em;
-  margin-right: 20px;
-}
-#preloader3 .loading .loading span {
-  display: inline-block;
-  animation: bounce 0.3s ease infinite alternate;
-  animation-delay: calc(0.1s * var(--i));
-}
-@keyframes bounce {
-  0% {
-    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4);
-    transform: translateY(20px);
-  }
-  100% {
-    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
-    transform: translateY(-20px);
-  }
-}
-#preloader3 .loading .ghost {
-  animation: float 3s ease-out infinite;
-  position: relative;
-  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
-}
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
 .wra {
@@ -95,8 +60,8 @@ h2 {
 }
 
 .typing-demo {
-  width: 20ch;
-  animation: typing 3s steps(20), blink 0.4s step-end infinite alternate;
+  width: 15ch;
+  animation: typing 3s steps(15), blink 0.4s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -669,70 +634,70 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 23px;
+  left: 28px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 73px;
+  left: 23px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 50px;
+  left: 77px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 85px;
+  left: 29px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 65px;
+  left: 28px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 88px;
+  left: 91px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 38px;
+  left: 50px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 12px;
+  left: 87px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 100px;
+  left: 26px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 53px;
+  left: 66px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
@@ -743,7 +708,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -66px);
+    transform: translate(0, -90px);
   }
   100% {
     transform: translate(0, 0);
@@ -755,7 +720,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -95px);
+    transform: translate(0, -96px);
   }
   100% {
     transform: translate(0, 0);
@@ -767,7 +732,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -62px);
+    transform: translate(0, -55px);
   }
   100% {
     transform: translate(0, 0);
@@ -779,7 +744,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -55px);
+    transform: translate(0, -121px);
   }
   100% {
     transform: translate(0, 0);
@@ -791,7 +756,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -79px);
+    transform: translate(0, -96px);
   }
   100% {
     transform: translate(0, 0);
@@ -803,7 +768,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -103px);
+    transform: translate(0, -63px);
   }
   100% {
     transform: translate(0, 0);
@@ -815,7 +780,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -113px);
+    transform: translate(0, -86px);
   }
   100% {
     transform: translate(0, 0);
@@ -827,7 +792,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -107px);
+    transform: translate(0, -120px);
   }
   100% {
     transform: translate(0, 0);
@@ -851,7 +816,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -112px);
+    transform: translate(0, -82px);
   }
   100% {
     transform: translate(0, 0);

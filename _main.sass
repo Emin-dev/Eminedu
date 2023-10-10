@@ -28,12 +28,11 @@ h2
 
 #preloader1
     display: flex
-    background-color: #000000
+    background: linear-gradient(to top right, #4ECA78, #D0DB68)
     z-index: 9999
+    opacity: 1
 #preloader2,#preloader3
     display: none
-    animation: fadeOut 4s
-    display: flex
     justify-content: center
     align-items: center
     height: 100vh
@@ -41,36 +40,6 @@ h2
     font-family: "Dosis", sans-serif
     text-align: center
 
-#preloader3
-
-    .loading
-        color: white
-        font-size: 5em
-        margin-right: 20px
-
-        .loading span
-            display: inline-block
-            animation: bounce 0.3s ease infinite alternate
-            animation-delay: calc(0.1s * var(--i))
-
-        @keyframes bounce
-            0%
-                text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4)
-                transform: translateY(20px)
-            100%
-                text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2)
-                transform: translateY(-20px)
-
-        .ghost
-            animation: float 3s ease-out infinite
-            position: relative
-            filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3))
-
-        @keyframes float
-            0%, 100%
-                transform: translateY(0)
-            50%
-                transform: translateY(-10px)
 
 .wra
     height: 100vh
@@ -84,8 +53,8 @@ h2
     background: linear-gradient(to top right, #4ECA78, #D0DB68)
 
 .typing-demo
-    width: 20ch
-    animation: typing 3s steps(20), blink .4s step-end infinite alternate
+    width: 15ch
+    animation: typing 3s steps(15), blink .4s step-end infinite alternate
     white-space: nowrap
     overflow: hidden
     border-right: 3px solid
