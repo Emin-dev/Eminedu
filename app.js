@@ -20,24 +20,24 @@ $(document).ready(function () {
   }
 
 
-  const userAgent = navigator.userAgent;
-  const mobileAgents = ["Android", "iPad", "iPhone"];
-  const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
+  // const userAgent = navigator.userAgent;
+  // const mobileAgents = ["Android", "iPad", "iPhone"];
+  // const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
 
-  if (!isMobile) {
-    document.body.innerHTML = '';
-    document.body.style.cssText = 'background:#ffff';
+  // if (!isMobile) {
+  //   document.body.innerHTML = '';
+  //   document.body.style.cssText = 'background:#ffff';
 
-    const h1 = document.createElement('h1');
-    h1.innerHTML = 'Zəhmət olmasa smartfondan daxil olun.<br>Digər brauzerdən istifadə edin.';
-    h1.style.cssText = 'font-weight:bold;color:red;font-size:2em;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 2s infinite alternate';
+  //   const h1 = document.createElement('h1');
+  //   h1.innerHTML = 'Zəhmət olmasa smartfondan daxil olun.<br>Digər brauzerdən istifadə edin.';
+  //   h1.style.cssText = 'font-weight:bold;color:red;font-size:2em;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 2s infinite alternate';
 
-    const style = document.createElement('style');
-    style.innerHTML = '@keyframes pulse {0% {transform:translate(-50%,-50%) scale(1);}100% {transform:translate(-50%,-50%) scale(1.1);}}';
+  //   const style = document.createElement('style');
+  //   style.innerHTML = '@keyframes pulse {0% {transform:translate(-50%,-50%) scale(1);}100% {transform:translate(-50%,-50%) scale(1.1);}}';
 
-    document.head.appendChild(style);
-    document.body.appendChild(h1);
-  }
+  //   document.head.appendChild(style);
+  //   document.body.appendChild(h1);
+  // }
 
 
 
@@ -363,13 +363,115 @@ $(document).ready(function () {
 
 
 
+  const jobRoles = [
+    'Cloud Consultant', 'Big Data Engineer', 'Firmware Developer', 'Release Engineer',
+    'Full Stack Developer', 'Full Stack Devops Engineer', 'Mid/Senior Full Stack PHP (Laravel) Developer',
+    'Full-Stack Software Developer (Middle)', 'Full Stack Net Developer', 'Middle Full-Stack Developer',
+    'Full Stack Developer Intern', 'Proqram təminatı üzrə mühəndis (Full-Stack Developer)',
+    'Full Stack Engineer', 'Senior Full Stack Developer', 'Fullstack Developer',
+    'Junior Web Front-End Developer', 'Backend Developer', 'JUNIOR DEVELOPER'
+  ];
+
+  const companyNames = [
+    'AzeriCloud', 'BakuDataSolutions', 'CaspianTechCraft', 'AzeriWebPros',
+    'IT Grup SRL', 'Webzool Creative Inc.', 'Limak AZ MMC', 'PASHA Bank',
+    'AzInTelecom', 'Radius Plus MMC', 'DOST Rəqəmsal İnnovasiyalar Mərkəzi',
+    'Yup Technology LLC', 'Kontakt Home', 'Oawo', 'TayqaTech LLC',
+    'Qafqaz NET LLC', 'Safaroff Agency', 'Onveiv', 'Affiliati',
+    'MyNextFilm Azerbaijan', 'Qbit Technologies Baku', 'Cytric Azerbaijan',
+    'Turing Azerbaijan'
+  ];
+  const salaryValues = [1000, 1500, 1200, 1800, 2000, 3000, 2400, 2600, 2500, 2000];
 
 
 
+  function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 
-  //////////
+  function getRandomSalary() {
+    return getRandomItem(salaryValues) + ' AZN';
+  }
 
+  const style = `
+  <style>
+    .job {
+      background-color: #f1f3f7;
+      padding: 30px;
+      display: flex;
+      max-height: 50vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+  
+    form {
+      width: 98%;
+      max-width: 98vw;
+      border-radius: 20px;
+      background-color: #f1f3f7;
+      box-shadow: 12px 12px 24px #d0d0d0, -12px -12px 24px #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+  
+    theader, tr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+  
+    td {
+      padding: 16px 12px;
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  
+    tbody {
+      overflow-y: auto;
+      max-height: 350px;
+    }
+  </style>
+  `;
 
+  const tableHTML = `
+  ${style}
+  <form>
+    <section>
+      <table>
+        <theader>
+          <tr>
+            <td>Company Name</td>
+            <td>Job Role</td>
+            <td>Salary</td>
+          </tr>
+        </theader>
+        <tbody>
+          ${Array.from({ length: 100 }).map(() => `
+            <tr>
+              <td>${getRandomItem(companyNames)}</td>
+              <td>${getRandomItem(jobRoles)}</td>
+              <td>${getRandomSalary()}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </section>
+  </form>
+  `;
+
+  const jobDiv = document.querySelector('.job');
+  jobDiv.innerHTML = tableHTML;
 
 
 
@@ -442,7 +544,7 @@ $(document).ready(function () {
     const preloader1 = document.getElementById('preloader1');
     preloader1.style.transition = 'opacity 2s';
     preloader1.style.opacity = 0;
-    
+
 
     // Add styles and fonts for preloader2
     const styleSheet = document.createElement("style");
@@ -562,4 +664,15 @@ $(document).ready(function () {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+    const expireTime = 5 * 1000; // milliseconds (5 seconds)
+    const lastRefresh = localStorage.getItem('lastRefresh');
+    const now = new Date().getTime();
 
+    if (!lastRefresh || (now - lastRefresh > expireTime)) {
+      localStorage.setItem('lastRefresh', now.toString());
+      location.reload();
+    }
+  }, 1300);
+});
