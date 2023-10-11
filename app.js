@@ -1,50 +1,6 @@
 "use strict";
 
 
-(function () {
-  let touchStartPosition = null;
-  let touchEndPosition = null;
-  let startTime = null;
-  let isLocked = false;
-
-  function onTouchStart(e) {
-    touchStartPosition = e.touches[0].clientY;
-    startTime = new Date().getTime();
-  }
-
-  function onTouchMove(e) {
-    if (touchStartPosition !== null) {
-      touchEndPosition = e.touches[0].clientY;
-      let elapsedTime = new Date().getTime() - startTime;
-      let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
-      let speed = traveledDistance / elapsedTime;
-
-      if (speed > 0.5 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
-        document.body.style.overflow = 'hidden';
-        isLocked = true;
-        showPreloader()
-        setTimeout(function () {
-          document.body.style.overflow = 'auto';
-          isLocked = false;
-        }, 4000); // Re-enable scrolling after 4 seconds
-      }
-    }
-  }
-
-  function onTouchEnd() {
-    touchStartPosition = null;
-    touchEndPosition = null;
-    startTime = null;
-  }
-
-  setTimeout(function () {
-    window.addEventListener('touchstart', onTouchStart, false);
-    window.addEventListener('touchmove', onTouchMove, false);
-    window.addEventListener('touchend', onTouchEnd, false);
-  }, 4000);
-})();
-
-
 
 
 
@@ -878,6 +834,50 @@ $(document).ready(function () {
 
 
 
+
+
+  (function () {
+    let touchStartPosition = null;
+    let touchEndPosition = null;
+    let startTime = null;
+    let isLocked = false;
+
+    function onTouchStart(e) {
+      touchStartPosition = e.touches[0].clientY;
+      startTime = new Date().getTime();
+    }
+
+    function onTouchMove(e) {
+      if (touchStartPosition !== null) {
+        touchEndPosition = e.touches[0].clientY;
+        let elapsedTime = new Date().getTime() - startTime;
+        let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
+        let speed = traveledDistance / elapsedTime;
+
+        if (speed > 2 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
+          document.body.style.overflow = 'hidden';
+          isLocked = true;
+          showPreloader()
+          setTimeout(function () {
+            document.body.style.overflow = 'auto';
+            isLocked = false;
+          }, 1000); // Re-enable scrolling after 4 seconds
+        }
+      }
+    }
+
+    function onTouchEnd() {
+      touchStartPosition = null;
+      touchEndPosition = null;
+      startTime = null;
+    }
+
+    setTimeout(function () {
+      window.addEventListener('touchstart', onTouchStart, false);
+      window.addEventListener('touchmove', onTouchMove, false);
+      window.addEventListener('touchend', onTouchEnd, false);
+    }, 4000);
+  })();
 
 
 
