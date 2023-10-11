@@ -275,6 +275,11 @@ function showPreloader() {
 
 }
 
+
+////
+
+
+
 (function () {
   var touchStartPosition = null;
   var touchEndPosition = null;
@@ -340,6 +345,8 @@ function showPreloader() {
 })();
 
 
+
+////
 
 
 
