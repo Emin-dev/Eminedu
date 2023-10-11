@@ -4,26 +4,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.body.style.overflow = 'hidden'; 
 
 
 $(document).ready(function () {
@@ -180,6 +161,8 @@ $(document).ready(function () {
       // After the fade-out animation completes, hide preloader2 and enable scrolling
       setTimeout(() => {
         preloader2.style.display = 'none';
+        
+        document.body.style.overflow = 'auto'; 
       }, 1000); // 4 seconds for fade-out
 
     }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
@@ -623,6 +606,8 @@ $(document).ready(function () {
   }
 
   setTimeout(function () {
+    
+    document.body.style.overflow = 'auto'; 
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
   }, 17000);
