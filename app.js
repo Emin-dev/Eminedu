@@ -353,7 +353,7 @@ $(document).ready(function () {
       window.addEventListener('touchstart', onTouchStart, false);
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
-    }, 14000);
+    }, 4000);
 
   })();////
 
