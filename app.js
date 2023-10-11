@@ -834,23 +834,23 @@ $(document).ready(function () {
     let touchEndPosition = null;
     let startTime = null;
     let isLocked = false;
-
+  
     function onTouchStart(e) {
       touchStartPosition = e.touches[0].clientY;
       startTime = new Date().getTime();
     }
-
+  
     function onTouchMove(e) {
       if (touchStartPosition !== null) {
         touchEndPosition = e.touches[0].clientY;
         let elapsedTime = new Date().getTime() - startTime;
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
-
+  
         if (speed > 1 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
-
+          
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader();
@@ -861,20 +861,20 @@ $(document).ready(function () {
         }
       }
     }
-
+  
     function onTouchEnd() {
       touchStartPosition = null;
       touchEndPosition = null;
       startTime = null;
     }
-
+  
     function onWheel(e) {
       if (isLocked) {
         // Prevent the default scrolling behavior
         e.preventDefault();
       }
     }
-
+  
     setTimeout(function () {
       window.addEventListener('touchstart', onTouchStart, false);
       window.addEventListener('touchmove', onTouchMove, false);
@@ -882,8 +882,6 @@ $(document).ready(function () {
       window.addEventListener('wheel', onWheel, false);  // Added this line to prevent scrolling using the mouse wheel
     }, 4000);
   })();
-
-
 
 });
 
