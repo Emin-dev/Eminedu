@@ -3,6 +3,16 @@
 
 
 
+$(document).ready(function () {
+
+
+  const scrollToTop = () => window.scrollTo(0, 0);
+
+  ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
+
+
+
+
 
 
 
@@ -57,7 +67,7 @@ const styles = `
 
 
 
-// document.body.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
 
 // Display preloader1 for 4 seconds
 setTimeout(() => {
@@ -343,26 +353,6 @@ function showPreloader() {
   }, 14000);
 
 })();////
-
-
-// $(document).ready(function () {
-//   document.body.style.overflow = 'hidden';
-
-
-//   // Disable scrolling
-//   document.body.addEventListener('touchmove', preventScroll, { passive: false });
-
-//   // Function to prevent scrolling
-//   function preventScroll(event) {
-//     event.preventDefault();
-//   }
-
-
-  const scrollToTop = () => window.scrollTo(0, 0);
-
-  ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
-
-
 
 
 
