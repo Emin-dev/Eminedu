@@ -309,7 +309,7 @@ function showPreloader() {
       return;
     }
 
-    if (speed > 2) {
+    if (speed > 1.2) {
       showPreloader();
       isLocked = true;
       lockedPosition = window.pageYOffset;
