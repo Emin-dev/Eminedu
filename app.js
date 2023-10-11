@@ -67,10 +67,11 @@ $(document).ready(function () {
 
 
 
-  document.body.style.overflow = 'hidden';
 
   // Display preloader1 for 4 seconds
   setTimeout(() => {
+
+    document.body.style.overflow = 'hidden';
     document.getElementById('preloader2').style.display = 'flex';
     document.getElementById('preloader2').style.zIndex = '99999999';
     document.getElementById('preloader3').style.display = 'none';
@@ -270,6 +271,8 @@ $(document).ready(function () {
         // After the fade-out animation completes, hide preloader2 and enable scrolling
         setTimeout(() => {
           preloader3.style.display = 'none';
+
+          document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
 
       }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
@@ -976,10 +979,10 @@ function clearAllSiteData() {
   // Leaving this out for now.
 }
 
-setTimeout(function() {
+setTimeout(function () {
   // Check if the URL has the 'reloaded' parameter
   const urlParams = new URLSearchParams(window.location.search);
-  
+
   // If the URL doesn't have the 'reloaded' parameter, reload the page and add the parameter
   if (!urlParams.has('reloaded')) {
     window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
