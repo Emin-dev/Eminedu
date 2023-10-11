@@ -849,14 +849,14 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > .4 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
+        if (speed > .8 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader()
           setTimeout(function () {
             document.body.style.overflow = 'auto';
             isLocked = false;
-          }, 6000); // Re-enable scrolling after 4 seconds
+          }, 4000); // Re-enable scrolling after 4 seconds
         }
       }
     }
