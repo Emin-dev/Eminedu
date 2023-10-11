@@ -985,17 +985,21 @@ function clearAllSiteData() {
   // Leaving this out for now.
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  clearAllSiteData(); 
-  setTimeout(function () {
+  setTimeout(function() {
     const expireTime = 100000; // milliseconds (100 seconds)
     const lastRefresh = localStorage.getItem('lastRefresh');
     const now = new Date().getTime();
 
-    if (!lastRefresh || (now - parseInt(lastRefresh) > expireTime)) {
+    if (!lastRefresh) {
+      // If no timestamp exists, set the current time and clear site data
       localStorage.setItem('lastRefresh', now.toString());
-      location.reload();
+      clearAllSiteData();
+    } else if (now - parseInt(lastRefresh) > expireTime) {
+      // If the timestamp is older than expireTime, clear site data and update the timestamp
+      clearAllSiteData();
+      localStorage.setItem('lastRefresh', now.toString());
     }
-  }, 1200);
+    // No need to reload the page
+  }, 2000);  // Wait 2 seconds after content loaded
 });
