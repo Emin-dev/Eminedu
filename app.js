@@ -3,10 +3,9 @@
 
 
 
-function onTouchMove(e) {
-e.preventDefault();
+
 document.body.style.overflow = 'hidden';
-}
+
 
 $(document).ready(function () {
 
@@ -76,7 +75,6 @@ $(document).ready(function () {
   // Display preloader1 for 4 seconds
   setTimeout(() => {
 
-    document.body.style.overflow = 'hidden';
     document.getElementById('preloader2').style.display = 'flex';
     document.getElementById('preloader2').style.zIndex = '99999999';
     document.getElementById('preloader3').style.display = 'none';
@@ -164,6 +162,7 @@ $(document).ready(function () {
       setTimeout(() => {
         preloader2.style.display = 'none';
 
+        document.body.style.overflow = 'auto';
       }, 1000); // 4 seconds for fade-out
 
     }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
@@ -844,12 +843,12 @@ $(document).ready(function () {
           showPreloader();
           setTimeout(function () {
             isLocked = false;
-            window.scrollTo(0, initialScrollPosition);  
+            window.scrollTo(0, initialScrollPosition);
 
             setTimeout(() => {
-              
-            document.body.style.overflow = 'auto';
-            }, 2);
+
+              document.body.style.overflow = 'auto';
+            }, 2000);
           }, 4000);
         }
       }
