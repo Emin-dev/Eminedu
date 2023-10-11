@@ -844,7 +844,11 @@ $(document).ready(function () {
           setTimeout(function () {
             isLocked = false;
             window.scrollTo(0, initialScrollPosition);  
+
+            setTimeout(() => {
+              
             document.body.style.overflow = 'auto';
+            }, 2);
           }, 4000);
         }
       }
