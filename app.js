@@ -1,6 +1,73 @@
 "use strict";
 
 
+(function () {
+  let touchStartPosition = null;
+  let touchEndPosition = null;
+  let startTime = null;
+  let isLocked = false;
+
+  function onTouchStart(e) {
+    touchStartPosition = e.touches[0].clientY;
+    startTime = new Date().getTime();
+  }
+
+  function onTouchMove(e) {
+    if (touchStartPosition !== null) {
+      touchEndPosition = e.touches[0].clientY;
+      let elapsedTime = new Date().getTime() - startTime;
+      let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
+      let speed = traveledDistance / elapsedTime;
+
+      if (speed > 0.5 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
+        document.body.style.overflow = 'hidden';
+        isLocked = true;
+        showPreloader()
+        setTimeout(function () {
+          document.body.style.overflow = 'auto';
+          isLocked = false;
+        }, 4000); // Re-enable scrolling after 4 seconds
+      }
+    }
+  }
+
+  function onTouchEnd() {
+    touchStartPosition = null;
+    touchEndPosition = null;
+    startTime = null;
+  }
+
+  setTimeout(function () {
+    window.addEventListener('touchstart', onTouchStart, false);
+    window.addEventListener('touchmove', onTouchMove, false);
+    window.addEventListener('touchend', onTouchEnd, false);
+  }, 4000);
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $(document).ready(function () {
@@ -185,10 +252,10 @@ $(document).ready(function () {
     // Display preloader1 for 4 seconds
     setTimeout(() => {
 
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
 
       // Disable scrolling
-      document.body.addEventListener('touchmove', preventScroll, { passive: false });
+      // document.body.addEventListener('touchmove', preventScroll, { passive: false });
 
       // Function to prevent scrolling
       function preventScroll(event) {
@@ -280,124 +347,16 @@ $(document).ready(function () {
         // After the fade-out animation completes, hide preloader2 and enable scrolling
         setTimeout(() => {
           preloader3.style.display = 'none';
-          document.body.addEventListener('touchmove', preventScroll, { passive: true });
+          // document.body.addEventListener('touchmove', preventScroll, { passive: true });
 
-          document.body.style.overflow = 'auto';
+          // document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
 
       }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
     }, 1000); // Display preloader1 for 4 seconds
 
-
-
-
-
   }
-
-
-  ////
-
-  (function () {
-    var touchStartPosition = null;
-    var touchEndPosition = null;
-    var startingPosition = null;
-    var startTime = null;
-    var isLocked = false;
-    var lockedPosition = 0;
-
-
-
-    // function onTouchEnd() {
-
-    //   setTimeout(() => {
-    //     document.body.style.overflow = 'hidden';
-
-    //     // Disable scrolling
-    //     document.body.addEventListener('touchmove', preventScroll, { passive: false });
-
-    //     // Function to prevent scrolling
-    //     function preventScroll(event) {
-    //       event.preventDefault();
-    //     }
-
-    //   }, 100);
-
-
-    //   setTimeout(() => {
-    //     document.body.style.overflow = 'auto';
-
-    //     // Disable scrolling
-    //     document.body.addEventListener('touchmove', preventScroll, { passive: true });
-
-    //     // Function to prevent scrolling
-    //     function preventScroll(event) {
-    //       event.preventDefault();
-    //     }
-
-    //   }, 10000);
-    // }
-
-
-    function onTouchStart() {
-      touchStartPosition = window.pageYOffset;
-    }
-
-    function onTouchMove(e) {
-      if (touchStartPosition !== null) {
-        touchEndPosition = window.pageYOffset;
-      }
-
-      if (startingPosition === null || startTime === null) {
-        startingPosition = window.pageYOffset;
-        startTime = new Date().getTime();
-      }
-
-      var traveledDistance = Math.abs(window.pageYOffset - startingPosition);
-      var elapsedTime = new Date().getTime() - startTime;
-      var speed = traveledDistance / elapsedTime;
-
-      if (speed > 2 && !isLocked) {
-        
-        document.body.style.overflow = 'hidden';
-        showPreloader();
-        isLocked = true;
-        lockedPosition = window.pageYOffset;
-
-        setTimeout(function () {
-          
-        document.body.style.overflow = 'auto';
-          isLocked = false;
-        }, 2000);
-      }
-
-      if (isLocked) {
-        e.preventDefault();
-        var adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
-        window.scrollTo(0, adjustedLockPosition);
-      }
-    }
-
-    function onTouchEnd() {
-      if (touchEndPosition !== null && !isLocked) {
-        window.scrollTo(0, touchEndPosition);
-      }
-      touchStartPosition = null;
-      touchEndPosition = null;
-      startingPosition = null;
-      startTime = null;
-    }
-
-    setTimeout(function () {
-      window.addEventListener('touchstart', onTouchStart, false);
-      window.addEventListener('touchmove', onTouchMove, false);
-      window.addEventListener('touchend', onTouchEnd, false);
-    }, 4000);
-
-  })();////
-
-
-
 
   const userAgent = navigator.userAgent;
   const mobileAgents = ["Android", "iPad", "iPhone"];
@@ -614,13 +573,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
   let faqQuestions = document.querySelectorAll('.faq-question');
 
   faqQuestions.forEach(function (question) {
@@ -641,10 +593,6 @@ $(document).ready(function () {
       }
     });
   });
-
-
-
-
 
 
 
@@ -821,26 +769,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /////
   const jobRoles = [
     'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
@@ -943,40 +871,6 @@ $(document).ready(function () {
 
 
 
-  ////////////////////
-
-
-  ///////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  window.scrollTo(0, 0);
-
-
-
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 7000);
 
 
 
@@ -984,13 +878,7 @@ $(document).ready(function () {
     window.scrollTo(0, 0);
   }, 9000);
 
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-    document.body.style.overflow = "auto";
 
-    // Re-enable scrolling
-    document.body.removeEventListener('touchmove', preventScroll, { passive: true });
-  }, 15000);
 
 
 
