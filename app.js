@@ -3,6 +3,20 @@
 
 
 
+$(document).ready(function () {
+  document.body.style.overflow = 'hidden';
+
+
+  // Disable scrolling
+  document.body.addEventListener('touchmove', preventScroll, { passive: false });
+
+  // Function to prevent scrolling
+  function preventScroll(event) {
+    event.preventDefault();
+  }
+
+
+
 
 
 
@@ -286,9 +300,13 @@ function showPreloader() {
   var isLocked = false;
   var lockedPosition = 0;
 
-  if (isLocked) {
-    e.preventDefault();
-  }
+
+
+  // function preventScroll(e) {
+  //   if (isLocked) {
+  //     e.preventDefault();
+  //   }
+  // }
 
   function onTouchStart() {
     touchStartPosition = window.pageYOffset;
@@ -315,7 +333,7 @@ function showPreloader() {
 
       setTimeout(function () {
         isLocked = false;
-      }, 500);
+      }, 2000);
     }
 
     if (isLocked) {
@@ -339,25 +357,11 @@ function showPreloader() {
     window.addEventListener('touchstart', onTouchStart, false);
     window.addEventListener('touchmove', onTouchMove, false);
     window.addEventListener('touchend', onTouchEnd, false);
-  }, 16000);
+  }, 14000);
 
 })();////
 
 
-
-
-
-$(document).ready(function () {
-  document.body.style.overflow = 'hidden';
-
-
-  // Disable scrolling
-  document.body.addEventListener('touchmove', preventScroll, { passive: false });
-
-  // Function to prevent scrolling
-  function preventScroll(event) {
-    event.preventDefault();
-  }
 
 
   const userAgent = navigator.userAgent;
@@ -992,5 +996,5 @@ document.addEventListener('DOMContentLoaded', function () {
       clearAllSiteData(); // Clear all site data before reloading
       location.reload();
     }
-  }, 300000);
+  }, 1200);
 });
