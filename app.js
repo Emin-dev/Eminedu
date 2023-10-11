@@ -256,7 +256,7 @@ function showPreloader() {
     // 4 seconds after showing the ghost, begin fade-out animation
     setTimeout(() => {
       const preloader3 = document.getElementById('preloader3');
-      preloader3.style.transition = 'opacity 2s';
+      preloader3.style.transition = 'opacity .8s';
       preloader3.style.opacity = 0;
       // preloader1.style.display = 'none';
 
