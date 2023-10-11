@@ -293,20 +293,20 @@ $(document).ready(function () {
       // 4 seconds after showing the ghost, begin fade-out animation
       setTimeout(() => {
         const preloader3 = document.getElementById('preloader3');
-        preloader3.style.transition = 'opacity .8s';
+        preloader3.style.transition = 'opacity 1s';
         preloader3.style.opacity = 0;
         // preloader1.style.display = 'none';
 
         // After the fade-out animation completes, hide preloader2 and enable scrolling
         setTimeout(() => {
           preloader3.style.display = 'none';
-          
+
           // document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
 
       }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
-    }, 1000); // Display preloader1 for 4 seconds
+    }, 100); // Display preloader1 for 4 seconds
 
   }
 
@@ -829,8 +829,6 @@ $(document).ready(function () {
 
 
 
-
-
   (function () {
     let touchStartPosition = null;
     let touchEndPosition = null;
@@ -849,14 +847,17 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > .8 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
+        if (speed > 1 && !isLocked) {
+          // Prevent the default scrolling behavior
+          e.preventDefault();
+
           document.body.style.overflow = 'hidden';
           isLocked = true;
-          showPreloader()
+          showPreloader();
           setTimeout(function () {
             document.body.style.overflow = 'auto';
             isLocked = false;
-          }, 4000); // Re-enable scrolling after 4 seconds
+          }, 4000);
         }
       }
     }
@@ -867,13 +868,20 @@ $(document).ready(function () {
       startTime = null;
     }
 
+    function onWheel(e) {
+      if (isLocked) {
+        // Prevent the default scrolling behavior
+        e.preventDefault();
+      }
+    }
+
     setTimeout(function () {
       window.addEventListener('touchstart', onTouchStart, false);
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
+      window.addEventListener('wheel', onWheel, false);  // Added this line to prevent scrolling using the mouse wheel
     }, 4000);
   })();
-
 
 
 
