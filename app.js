@@ -16,8 +16,8 @@ $(document).ready(function () {
 
 
 
-// CSS styles
-const styles = `
+  // CSS styles
+  const styles = `
 
     .loading {
       color: white;
@@ -67,32 +67,32 @@ const styles = `
 
 
 
-document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
 
-// Display preloader1 for 4 seconds
-setTimeout(() => {
-  document.getElementById('preloader2').style.display = 'flex';
-  document.getElementById('preloader2').style.zIndex = '99999999';
-  document.getElementById('preloader3').style.display = 'none';
+  // Display preloader1 for 4 seconds
+  setTimeout(() => {
+    document.getElementById('preloader2').style.display = 'flex';
+    document.getElementById('preloader2').style.zIndex = '99999999';
+    document.getElementById('preloader3').style.display = 'none';
 
-  const preloader1 = document.getElementById('preloader1');
-  preloader1.style.transition = 'opacity 2s';
-  preloader1.style.opacity = 0;
+    const preloader1 = document.getElementById('preloader1');
+    preloader1.style.transition = 'opacity 2s';
+    preloader1.style.opacity = 0;
 
 
-  // Add styles and fonts for preloader2
-  const styleSheet = document.createElement("style");
-  styleSheet.type = "text/css";
-  styleSheet.innerText = styles;
-  document.head.appendChild(styleSheet);
+    // Add styles and fonts for preloader2
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
 
-  const fontLink = document.createElement('link');
-  fontLink.href = 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap';
-  fontLink.rel = 'stylesheet';
-  document.head.appendChild(fontLink);
+    const fontLink = document.createElement('link');
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap';
+    fontLink.rel = 'stylesheet';
+    document.head.appendChild(fontLink);
 
-  // Add the modified HTML for preloader2
-  document.getElementById('preloader2').innerHTML = `
+    // Add the modified HTML for preloader2
+    document.getElementById('preloader2').innerHTML = `
         <div class="container">
           <div class="loading">Yazılır...</div>
         
@@ -135,77 +135,77 @@ setTimeout(() => {
 
         `;
 
-  // Animation for Loading text
-  let loading = document.querySelector(".loading");
-  let letters = loading.textContent.split("");
-  loading.textContent = "";
-  letters.forEach((letter, i) => {
-    let span = document.createElement("span");
-    span.textContent = letter;
-    span.style.setProperty('--i', i + 1); // Set custom property for delay
-    loading.append(span);
-  });
+    // Animation for Loading text
+    let loading = document.querySelector(".loading");
+    let letters = loading.textContent.split("");
+    loading.textContent = "";
+    letters.forEach((letter, i) => {
+      let span = document.createElement("span");
+      span.textContent = letter;
+      span.style.setProperty('--i', i + 1); // Set custom property for delay
+      loading.append(span);
+    });
 
 
-  // 4 seconds after showing the ghost, begin fade-out animation
-  setTimeout(() => {
-    const preloader2 = document.getElementById('preloader2');
-    preloader2.style.transition = 'opacity .5s';
-    preloader2.style.opacity = 0;
-    preloader1.style.display = 'none';
-
-    // After the fade-out animation completes, hide preloader2 and enable scrolling
+    // 4 seconds after showing the ghost, begin fade-out animation
     setTimeout(() => {
-      preloader2.style.display = 'none';
-    }, 1000); // 4 seconds for fade-out
+      const preloader2 = document.getElementById('preloader2');
+      preloader2.style.transition = 'opacity .5s';
+      preloader2.style.opacity = 0;
+      preloader1.style.display = 'none';
 
-  }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+      // After the fade-out animation completes, hide preloader2 and enable scrolling
+      setTimeout(() => {
+        preloader2.style.display = 'none';
+      }, 1000); // 4 seconds for fade-out
 
-}, 4000); // Display preloader1 for 4 seconds
+    }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
-
-
-
-
-
-
-
-
-
-
-function showPreloader() {
+  }, 4000); // Display preloader1 for 4 seconds
 
 
 
 
-  // CSS styles
 
 
-  // Display preloader1 for 4 seconds
-  setTimeout(() => {
-
-    document.body.style.overflow = 'hidden';
-    document.getElementById('preloader3').style.display = 'flex';
-    document.getElementById('preloader2').style.display = 'none';
-    document.getElementById('preloader3').style.opacity = '100%';
-    // const preloader1 = document.getElementById('preloader1');
-    // preloader1.style.transition = 'opacity 2s';
-    // preloader1.style.opacity = 0;
 
 
-    // Add styles and fonts for preloader2
-    const styleSheet = document.createElement("style");
-    styleSheet.type = "text/css";
-    styleSheet.innerText = styles;
-    document.head.appendChild(styleSheet);
 
-    const fontLink = document.createElement('link');
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap';
-    fontLink.rel = 'stylesheet';
-    document.head.appendChild(fontLink);
 
-    // Add the modified HTML for preloader2
-    document.getElementById('preloader3').innerHTML = `
+
+  function showPreloader() {
+
+
+
+
+    // CSS styles
+
+
+    // Display preloader1 for 4 seconds
+    setTimeout(() => {
+
+      document.body.style.overflow = 'hidden';
+      document.getElementById('preloader3').style.display = 'flex';
+      document.getElementById('preloader2').style.display = 'none';
+      document.getElementById('preloader3').style.opacity = '100%';
+      // const preloader1 = document.getElementById('preloader1');
+      // preloader1.style.transition = 'opacity 2s';
+      // preloader1.style.opacity = 0;
+
+
+      // Add styles and fonts for preloader2
+      const styleSheet = document.createElement("style");
+      styleSheet.type = "text/css";
+      styleSheet.innerText = styles;
+      document.head.appendChild(styleSheet);
+
+      const fontLink = document.createElement('link');
+      fontLink.href = 'https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap';
+      fontLink.rel = 'stylesheet';
+      document.head.appendChild(fontLink);
+
+      // Add the modified HTML for preloader2
+      document.getElementById('preloader3').innerHTML = `
           <div class="container">
             <div class="loading">Oxumağı <br> unutma.</div>
           
@@ -248,111 +248,111 @@ function showPreloader() {
   
           `;
 
-    // Animation for Loading text
-    let loading = document.querySelector(".loading");
-    let letters = loading.textContent.split("");
-    loading.textContent = "";
-    letters.forEach((letter, i) => {
-      let span = document.createElement("span");
-      span.textContent = letter;
-      span.style.setProperty('--i', i + 1); // Set custom property for delay
-      loading.append(span);
-    });
+      // Animation for Loading text
+      let loading = document.querySelector(".loading");
+      let letters = loading.textContent.split("");
+      loading.textContent = "";
+      letters.forEach((letter, i) => {
+        let span = document.createElement("span");
+        span.textContent = letter;
+        span.style.setProperty('--i', i + 1); // Set custom property for delay
+        loading.append(span);
+      });
 
 
-    // 4 seconds after showing the ghost, begin fade-out animation
-    setTimeout(() => {
-      const preloader3 = document.getElementById('preloader3');
-      preloader3.style.transition = 'opacity .8s';
-      preloader3.style.opacity = 0;
-      // preloader1.style.display = 'none';
-
-      // After the fade-out animation completes, hide preloader2 and enable scrolling
+      // 4 seconds after showing the ghost, begin fade-out animation
       setTimeout(() => {
-        preloader3.style.display = 'none';
-      }, 1000); // 4 seconds for fade-out
+        const preloader3 = document.getElementById('preloader3');
+        preloader3.style.transition = 'opacity .8s';
+        preloader3.style.opacity = 0;
+        // preloader1.style.display = 'none';
 
-    }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+        // After the fade-out animation completes, hide preloader2 and enable scrolling
+        setTimeout(() => {
+          preloader3.style.display = 'none';
+        }, 1000); // 4 seconds for fade-out
 
-  }, 200); // Display preloader1 for 4 seconds
+      }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
-
-
-
-
-}
-
-
-////
-
-(function () {
-  var touchStartPosition = null;
-  var touchEndPosition = null;
-  var startingPosition = null;
-  var startTime = null;
-  var isLocked = false;
-  var lockedPosition = 0;
+    }, 200); // Display preloader1 for 4 seconds
 
 
 
-  // function preventScroll(e) {
-  //   if (isLocked) {
-  //     e.preventDefault();
-  //   }
-  // }
 
-  function onTouchStart() {
-    touchStartPosition = window.pageYOffset;
+
   }
 
-  function onTouchMove(e) {
-    if (touchStartPosition !== null) {
-      touchEndPosition = window.pageYOffset;
+
+  ////
+
+  (function () {
+    var touchStartPosition = null;
+    var touchEndPosition = null;
+    var startingPosition = null;
+    var startTime = null;
+    var isLocked = false;
+    var lockedPosition = 0;
+
+
+
+    // function preventScroll(e) {
+    //   if (isLocked) {
+    //     e.preventDefault();
+    //   }
+    // }
+
+    function onTouchStart() {
+      touchStartPosition = window.pageYOffset;
     }
 
-    if (startingPosition === null || startTime === null) {
-      startingPosition = window.pageYOffset;
-      startTime = new Date().getTime();
+    function onTouchMove(e) {
+      if (touchStartPosition !== null) {
+        touchEndPosition = window.pageYOffset;
+      }
+
+      if (startingPosition === null || startTime === null) {
+        startingPosition = window.pageYOffset;
+        startTime = new Date().getTime();
+      }
+
+      var traveledDistance = Math.abs(window.pageYOffset - startingPosition);
+      var elapsedTime = new Date().getTime() - startTime;
+      var speed = traveledDistance / elapsedTime;
+
+      if (speed > 2 && !isLocked) {
+        showPreloader();
+        isLocked = true;
+        lockedPosition = window.pageYOffset;
+
+        setTimeout(function () {
+          isLocked = false;
+        }, 2000);
+      }
+
+      if (isLocked) {
+        e.preventDefault();
+        var adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
+        window.scrollTo(0, adjustedLockPosition);
+      }
     }
 
-    var traveledDistance = Math.abs(window.pageYOffset - startingPosition);
-    var elapsedTime = new Date().getTime() - startTime;
-    var speed = traveledDistance / elapsedTime;
-
-    if (speed > 2 && !isLocked) {
-      showPreloader();
-      isLocked = true;
-      lockedPosition = window.pageYOffset;
-
-      setTimeout(function () {
-        isLocked = false;
-      }, 2000);
+    function onTouchEnd() {
+      if (touchEndPosition !== null && !isLocked) {
+        window.scrollTo(0, touchEndPosition);
+      }
+      touchStartPosition = null;
+      touchEndPosition = null;
+      startingPosition = null;
+      startTime = null;
     }
 
-    if (isLocked) {
-      e.preventDefault();
-      var adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
-      window.scrollTo(0, adjustedLockPosition);
-    }
-  }
+    setTimeout(function () {
+      window.addEventListener('touchstart', onTouchStart, false);
+      window.addEventListener('touchmove', onTouchMove, false);
+      window.addEventListener('touchend', onTouchEnd, false);
+    }, 14000);
 
-  function onTouchEnd() {
-    if (touchEndPosition !== null && !isLocked) {
-      window.scrollTo(0, touchEndPosition);
-    }
-    touchStartPosition = null;
-    touchEndPosition = null;
-    startingPosition = null;
-    startTime = null;
-  }
-
-  setTimeout(function () {
-    window.addEventListener('touchstart', onTouchStart, false);
-    window.addEventListener('touchmove', onTouchMove, false);
-    window.addEventListener('touchend', onTouchEnd, false);
-  }, 14000);
-
-})();////
+  })();////
 
 
 
@@ -800,22 +800,22 @@ function showPreloader() {
 
 
   /////
-  const jobRoles = [ 
+  const jobRoles = [
     'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
     'Front End Developer'
   ];
-const companyNames = [ 
-  'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
- ];
-const salaryValues = [ 1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
+  const companyNames = [
+    'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
+  ];
+  const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
 
-function getCompanyData(index) {
+  function getCompanyData(index) {
     return {
-        companyName: companyNames[index],
-        jobRole: jobRoles[index],
-        salary: salaryValues[index] + ' AZN'
+      companyName: companyNames[index],
+      jobRole: jobRoles[index],
+      salary: salaryValues[index] + ' AZN'
     };
-}
+  }
 
 
   const style = `
@@ -876,21 +876,21 @@ function getCompanyData(index) {
         </thead>
         <tbody>
           ${companyNames.map((_, index) => {
-            const data = getCompanyData(index);
-            return `
+    const data = getCompanyData(index);
+    return `
               <tr>
                 <td>${data.companyName}</td>
                 <td>${data.jobRole}</td>
                 <td>${data.salary}</td>
               </tr>
             `;
-          }).join('')}
+  }).join('')}
         </tbody>
       </table>
     </section>
   </form>
   `;
-  
+
   const jobDiv = document.querySelector('.job');
   jobDiv.innerHTML = tableHTML;
 
@@ -976,21 +976,12 @@ function clearAllSiteData() {
   // Leaving this out for now.
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  setTimeout(function() {
-    const expireTime = 100000; // milliseconds (100 seconds)
-    const lastRefresh = localStorage.getItem('lastRefresh');
-    const now = new Date().getTime();
-
-    if (!lastRefresh) {
-      // If no timestamp exists, set the current time and clear site data
-      localStorage.setItem('lastRefresh', now.toString());
-      clearAllSiteData();
-    } else if (now - parseInt(lastRefresh) > expireTime) {
-      // If the timestamp is older than expireTime, clear site data and update the timestamp
-      clearAllSiteData();
-      localStorage.setItem('lastRefresh', now.toString());
-    }
-    // No need to reload the page
-  }, 2000);  // Wait 2 seconds after content loaded
-});
+setTimeout(function() {
+  // Check if the URL has the 'reloaded' parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // If the URL doesn't have the 'reloaded' parameter, reload the page and add the parameter
+  if (!urlParams.has('reloaded')) {
+    window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
+  }
+}, 1300);  // Wait 2 seconds after content loaded
