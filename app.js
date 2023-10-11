@@ -280,6 +280,7 @@ $(document).ready(function () {
         // After the fade-out animation completes, hide preloader2 and enable scrolling
         setTimeout(() => {
           preloader3.style.display = 'none';
+          document.body.addEventListener('touchmove', preventScroll, { passive: true });
 
           document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
