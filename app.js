@@ -286,10 +286,8 @@ function showPreloader() {
   var isLocked = false;
   var lockedPosition = 0;
 
-  function preventScroll(e) {
-    if (isLocked) {
-      e.preventDefault();
-    }
+  if (isLocked) {
+    e.preventDefault();
   }
 
   function onTouchStart() {
@@ -341,10 +339,9 @@ function showPreloader() {
     window.addEventListener('touchstart', onTouchStart, false);
     window.addEventListener('touchmove', onTouchMove, false);
     window.addEventListener('touchend', onTouchEnd, false);
-  }, 1600);
+  }, 16000);
 
-})();
-////
+})();////
 
 
 
