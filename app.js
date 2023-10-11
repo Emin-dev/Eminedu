@@ -16,6 +16,9 @@ $(document).ready(function () {
   }
 
 
+  const scrollToTop = () => window.scrollTo(0, 0);
+
+  ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
 
 
 
@@ -385,9 +388,6 @@ function showPreloader() {
 
 
 
-  const scrollToTop = () => window.scrollTo(0, 0);
-
-  ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
 
   const animate = star => {
     const setProperty = (property, min, max) => star.style.setProperty(property, `${Math.floor(Math.random() * (max - min + 1)) + min}%`);
