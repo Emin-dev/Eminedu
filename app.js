@@ -807,25 +807,33 @@ function showPreloader() {
 
 
 
-  ///////
 
-  const jobRoles = [
+
+  /////
+  const jobRoles = [ 
     'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
     'Front End Developer'
   ];
+const companyNames = [ 
+  'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
+ ];
+const salaryValues = [ 1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
 
-  const companyNames = [
-    'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
-  ];
+function getCompanyData(index) {
+    return {
+        companyName: companyNames[index],
+        jobRole: jobRoles[index],
+        salary: salaryValues[index] + ' AZN'
+    };
+}
 
-  const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
-  function getRandomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+// Usage:
+const firstCompanyData = getCompanyData(0);
+console.log(firstCompanyData);
 
-  function getRandomSalary() {
-    return getRandomItem(salaryValues) + ' AZN';
-  }
+const secondCompanyData = getCompanyData(1);
+console.log(secondCompanyData);
+// ... and so on
 
   const style = `
   <style>
