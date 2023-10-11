@@ -3,9 +3,10 @@
 
 
 
-
+function onTouchMove(e) {
+e.preventDefault();
 document.body.style.overflow = 'hidden';
-
+}
 
 $(document).ready(function () {
 
@@ -75,7 +76,11 @@ $(document).ready(function () {
   // Display preloader1 for 4 seconds
   setTimeout(() => {
 
-    document.body.style.overflow = 'hidden';
+    function onTouchMove(e) {
+      e.preventDefault();
+      document.body.style.overflow = 'hidden';
+      }
+      onTouchMove()
     document.getElementById('preloader2').style.display = 'flex';
     document.getElementById('preloader2').style.zIndex = '99999999';
     document.getElementById('preloader3').style.display = 'none';
@@ -874,6 +879,8 @@ $(document).ready(function () {
       window.addEventListener('wheel', onWheel, false);
     }, 4000);
   })();
+
+  
 });
 
 function clearAllSiteData() {
