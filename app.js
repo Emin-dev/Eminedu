@@ -985,15 +985,16 @@ function clearAllSiteData() {
   // Leaving this out for now.
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
+  clearAllSiteData(); 
   setTimeout(function () {
-    const expireTime = 5 * 1000; // milliseconds (5 seconds)
+    const expireTime = 100000; // milliseconds (100 seconds)
     const lastRefresh = localStorage.getItem('lastRefresh');
     const now = new Date().getTime();
 
-    if (!lastRefresh || (now - lastRefresh > expireTime)) {
+    if (!lastRefresh || (now - parseInt(lastRefresh) > expireTime)) {
       localStorage.setItem('lastRefresh', now.toString());
-      clearAllSiteData(); // Clear all site data before reloading
       location.reload();
     }
   }, 1200);
