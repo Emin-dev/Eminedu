@@ -186,6 +186,15 @@ $(document).ready(function () {
     setTimeout(() => {
 
       document.body.style.overflow = 'hidden';
+
+      // Disable scrolling
+      document.body.addEventListener('touchmove', preventScroll, { passive: false });
+
+      // Function to prevent scrolling
+      function preventScroll(event) {
+        event.preventDefault();
+      }
+
       document.getElementById('preloader3').style.display = 'flex';
       document.getElementById('preloader2').style.display = 'none';
       document.getElementById('preloader3').style.opacity = '100%';
@@ -277,7 +286,7 @@ $(document).ready(function () {
 
       }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
-    }, 200); // Display preloader1 for 4 seconds
+    }, 1000); // Display preloader1 for 4 seconds
 
 
 
