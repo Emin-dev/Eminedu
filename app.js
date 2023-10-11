@@ -307,12 +307,35 @@ $(document).ready(function () {
 
 
 
-    // function preventScroll(e) {
-    //   if (isLocked) {
-    //     e.preventDefault();
-    //   }
-    // }
+    function onTouchEnd() {
 
+      setTimeout(() => {
+        document.body.style.overflow = 'hidden';
+
+        // Disable scrolling
+        document.body.addEventListener('touchmove', preventScroll, { passive: false });
+
+        // Function to prevent scrolling
+        function preventScroll(event) {
+          event.preventDefault();
+        }
+
+      }, 100);
+
+
+      setTimeout(() => {
+        document.body.style.overflow = 'auto';
+
+        // Disable scrolling
+        document.body.addEventListener('touchmove', preventScroll, { passive: true });
+
+        // Function to prevent scrolling
+        function preventScroll(event) {
+          event.preventDefault();
+        }
+
+      }, 1000);
+    }
     function onTouchStart() {
       touchStartPosition = window.pageYOffset;
     }
