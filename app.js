@@ -364,6 +364,8 @@ $(document).ready(function () {
         lockedPosition = window.pageYOffset;
 
         setTimeout(function () {
+          
+        document.body.style.overflow = 'auto';
           isLocked = false;
         }, 2000);
       }
