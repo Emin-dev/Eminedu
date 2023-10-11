@@ -201,6 +201,7 @@ $(document).ready(function () {
       document.getElementById('preloader3').style.display = 'flex';
       document.getElementById('preloader2').style.display = 'none';
       document.getElementById('preloader3').style.opacity = '100%';
+      document.getElementById('preloader3').style.zIndex = '99999999';
       // const preloader1 = document.getElementById('preloader1');
       // preloader1.style.transition = 'opacity 2s';
       // preloader1.style.opacity = 0;
@@ -841,14 +842,9 @@ $(document).ready(function () {
           isLocked = true;
           showPreloader();
           setTimeout(function () {
-            document.body.style.overflow = 'auto';
             isLocked = false;
-
-            while (window.scrollY ==  initialScrollPosition) {
-              
             window.scrollTo(0, initialScrollPosition);  
-            }
-            
+            document.body.style.overflow = 'auto';
           }, 4000);
         }
       }
