@@ -828,61 +828,62 @@ $(document).ready(function () {
 
 
 
-
   (function () {
     let touchStartPosition = null;
     let touchEndPosition = null;
     let startTime = null;
     let isLocked = false;
-  
+    let initialScrollPosition = null;  // Store the initial scroll position
+
     function onTouchStart(e) {
       touchStartPosition = e.touches[0].clientY;
       startTime = new Date().getTime();
+      initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
     }
-  
+
     function onTouchMove(e) {
       if (touchStartPosition !== null) {
         touchEndPosition = e.touches[0].clientY;
         let elapsedTime = new Date().getTime() - startTime;
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
-  
+
         if (speed > 1 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
-          
+
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader();
           setTimeout(function () {
             document.body.style.overflow = 'auto';
+            window.scrollTo(0, initialScrollPosition);  // Scroll back to the initial position
             isLocked = false;
           }, 4000);
         }
       }
     }
-  
+
     function onTouchEnd() {
       touchStartPosition = null;
       touchEndPosition = null;
       startTime = null;
     }
-  
+
     function onWheel(e) {
       if (isLocked) {
         // Prevent the default scrolling behavior
         e.preventDefault();
       }
     }
-  
+
     setTimeout(function () {
       window.addEventListener('touchstart', onTouchStart, false);
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
-      window.addEventListener('wheel', onWheel, false);  // Added this line to prevent scrolling using the mouse wheel
+      window.addEventListener('wheel', onWheel, false);
     }, 4000);
   })();
-
 });
 
 function clearAllSiteData() {
