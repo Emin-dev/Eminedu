@@ -316,7 +316,7 @@ function showPreloader() {
 
       setTimeout(function () {
         isLocked = false;
-      }, 500);
+      }, 3000);
     }
   }
 
