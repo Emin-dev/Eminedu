@@ -855,9 +855,10 @@ $(document).ready(function () {
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader();
+          
+          window.scrollTo(0, initialScrollPosition); 
           setTimeout(function () {
-            document.body.style.overflow = 'auto';
-            window.scrollTo(0, initialScrollPosition);  // Scroll back to the initial position
+            document.body.style.overflow = 'auto'; // Scroll back to the initial position
             isLocked = false;
           }, 4000);
         }
