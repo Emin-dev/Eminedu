@@ -300,8 +300,7 @@ $(document).ready(function () {
         // After the fade-out animation completes, hide preloader2 and enable scrolling
         setTimeout(() => {
           preloader3.style.display = 'none';
-          // document.body.addEventListener('touchmove', preventScroll, { passive: true });
-
+          
           // document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
 
@@ -698,13 +697,9 @@ $(document).ready(function () {
     if (personSection) {
       if (personSection.classList.contains("show")) {
         personSection.classList.remove("show");
-        console.log("Hiding section");  // Log when hiding the section
       } else {
         personSection.classList.add("show");
-        console.log("Showing section");  // Log when showing the section
       }
-    } else {
-      console.log("Section not found");  // Log if the personSection is not found
     }
   }
 
@@ -854,14 +849,14 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > 2 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
+        if (speed > .4 && !isLocked) { // Adjust the 0.5 value to fine-tune the detection of fast scrolling
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader()
           setTimeout(function () {
             document.body.style.overflow = 'auto';
             isLocked = false;
-          }, 1000); // Re-enable scrolling after 4 seconds
+          }, 6000); // Re-enable scrolling after 4 seconds
         }
       }
     }
