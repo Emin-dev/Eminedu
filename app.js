@@ -970,7 +970,7 @@ $(document).ready(function () {
 
     // Re-enable scrolling
     document.body.removeEventListener('touchmove', preventScroll, { passive: true });
-  }, 15000);
+  }, 17000);
 
 
 
