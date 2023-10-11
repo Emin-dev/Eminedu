@@ -307,35 +307,37 @@ $(document).ready(function () {
 
 
 
-    function onTouchEnd() {
+    // function onTouchEnd() {
 
-      setTimeout(() => {
-        document.body.style.overflow = 'hidden';
+    //   setTimeout(() => {
+    //     document.body.style.overflow = 'hidden';
 
-        // Disable scrolling
-        document.body.addEventListener('touchmove', preventScroll, { passive: false });
+    //     // Disable scrolling
+    //     document.body.addEventListener('touchmove', preventScroll, { passive: false });
 
-        // Function to prevent scrolling
-        function preventScroll(event) {
-          event.preventDefault();
-        }
+    //     // Function to prevent scrolling
+    //     function preventScroll(event) {
+    //       event.preventDefault();
+    //     }
 
-      }, 100);
+    //   }, 100);
 
 
-      setTimeout(() => {
-        document.body.style.overflow = 'auto';
+    //   setTimeout(() => {
+    //     document.body.style.overflow = 'auto';
 
-        // Disable scrolling
-        document.body.addEventListener('touchmove', preventScroll, { passive: true });
+    //     // Disable scrolling
+    //     document.body.addEventListener('touchmove', preventScroll, { passive: true });
 
-        // Function to prevent scrolling
-        function preventScroll(event) {
-          event.preventDefault();
-        }
+    //     // Function to prevent scrolling
+    //     function preventScroll(event) {
+    //       event.preventDefault();
+    //     }
 
-      }, 1000);
-    }
+    //   }, 10000);
+    // }
+
+
     function onTouchStart() {
       touchStartPosition = window.pageYOffset;
     }
@@ -355,6 +357,8 @@ $(document).ready(function () {
       var speed = traveledDistance / elapsedTime;
 
       if (speed > 2 && !isLocked) {
+        
+        document.body.style.overflow = 'hidden';
         showPreloader();
         isLocked = true;
         lockedPosition = window.pageYOffset;
