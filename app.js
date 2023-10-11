@@ -344,7 +344,7 @@ setTimeout(() => {
 
 
 
-}, 2000);
+}, 1600);
 
 
 
@@ -710,7 +710,7 @@ $(document).ready(function () {
 
   // Create and style the button
   const button = document.createElement("button");
-  button.innerText = "Hədiyyə var?  Ödənişsiz...";
+  button.innerText = "Ödənişsiz...";
   button.id = "neuButton";
   button.addEventListener("click", toggleSection);
   button.addEventListener("mousedown", function () {
@@ -720,10 +720,12 @@ $(document).ready(function () {
     button.classList.remove("pressed");
   });
 
+  const rt = document.getElementById("job");
+  rt.parentNode.insertBefore(button, rt);
   // Add the button just above the 'person' section
   const personSection = document.getElementById("person");
+
   if (personSection) {
-    personSection.parentNode.insertBefore(button, personSection);
     personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
   }
   const style1 = document.createElement("style");
@@ -731,7 +733,8 @@ $(document).ready(function () {
       #neuButton {
           display: block;
           margin: 20px auto;
-          background-color: #e0e0e0;
+          background-color: #f1f3f7;
+          color: #333;
           border: none;
           padding: 15px 30px;
           border-radius: 15px;
@@ -846,7 +849,7 @@ $(document).ready(function () {
   <style>
   .job {
     background-color: #f1f3f7;
-    padding:60px  30px;
+    padding:  30px;
     display: flex;
     align-items: center;
     justify-content: center;
