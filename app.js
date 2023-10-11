@@ -267,7 +267,7 @@ function showPreloader() {
 
     }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
-  }, 1000); // Display preloader1 for 4 seconds
+  }, 200); // Display preloader1 for 4 seconds
 
 
 
@@ -275,80 +275,69 @@ function showPreloader() {
 
 }
 
+(function () {
+  var touchStartPosition = null;
+  var touchEndPosition = null;
+  var startingPosition = null;
+  var startTime = null;
+  var isLocked = false;
+  var lockedPosition = 0;
+  var isTouching = false;
 
-
-setTimeout(() => {
-
-
-
-  let touchStartPosition = null;
-  let touchEndPosition = null;
-  let startingPosition = null;
-  let startTime = null;
-  let isLocked = false;
-  let lockedPosition = 0;
-  let isTouching = false;
-
-  // Track when a user starts and ends touching the screen
-  window.addEventListener('touchstart', function () {
+  function onTouchStart() {
     isTouching = true;
     touchStartPosition = window.pageYOffset;
-  }, { passive: true });
+  }
 
-  window.addEventListener('touchmove', function () {
+  function onTouchMove() {
     if (touchStartPosition !== null) {
       touchEndPosition = window.pageYOffset;
     }
+
     if (startingPosition === null || startTime === null) {
       startingPosition = window.pageYOffset;
-      startTime = Date.now();
+      startTime = new Date().getTime();
     }
-    const traveledDistance = Math.abs(window.pageYOffset - startingPosition);
-    const elapsedTime = Date.now() - startTime;
-    const speed = traveledDistance / elapsedTime;  // pixels per millisecond
+
+    var traveledDistance = Math.abs(window.pageYOffset - startingPosition);
+    var elapsedTime = new Date().getTime() - startTime;
+    var speed = traveledDistance / elapsedTime;
 
     if (isLocked) {
-      let adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
+      var adjustedLockPosition = lockedPosition - (lockedPosition * 0.1);
       window.scrollTo(0, adjustedLockPosition);
       return;
     }
 
-    // If the speed exceeds a threshold (e.g., 0.3 pixels per millisecond), lock scrolling
     if (speed > 2) {
       showPreloader();
-      // document.body.addEventListener('touchmove', preventScroll, { passive: false });
       isLocked = true;
       lockedPosition = window.pageYOffset;
 
-      setTimeout(() => {
-        // document.body.addEventListener('touchmove', preventScroll, { passive: true });
+      setTimeout(function () {
         isLocked = false;
-
-      }, 2000);  // Lock scrolling for 1 second
+      }, 500);
     }
-  }, { passive: false });
+  }
 
-  window.addEventListener('touchend', function () {
+  function onTouchEnd() {
     isTouching = false;
     if (touchEndPosition !== null) {
-      window.scrollTo(0, touchEndPosition); // This sets the scroll position to where it was when the touch ended
+      window.scrollTo(0, touchEndPosition);
     }
     touchStartPosition = null;
     touchEndPosition = null;
     startingPosition = null;
     startTime = null;
-  }, { passive: true });
+  }
 
+  setTimeout(function () {
+    window.addEventListener('touchstart', onTouchStart, false);
+    window.addEventListener('touchmove', onTouchMove, false);
+    window.addEventListener('touchend', onTouchEnd, false);
+  }, 1600);
 
-
-
-
-
-}, 1600);
-
-
-
-
+})();
 
 
 
@@ -961,13 +950,13 @@ $(document).ready(function () {
 
   setTimeout(function () {
     window.scrollTo(0, 0);
-  }, 8000);
+  }, 7000);
 
 
 
   setTimeout(function () {
     window.scrollTo(0, 0);
-  }, 11000);
+  }, 9000);
 
   setTimeout(function () {
     window.scrollTo(0, 0);
@@ -984,7 +973,24 @@ $(document).ready(function () {
 
 });
 
+function clearAllSiteData() {
+  // Clear cookies
+  const cookies = document.cookie.split(";");
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i];
+    const eqPos = cookie.indexOf("=");
+    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+  }
 
+  // Clear localStorage and sessionStorage
+  localStorage.clear();
+  sessionStorage.clear();
+
+  // If you want to clear cache using Service Workers, you need to implement it separately.
+  // This is more complicated and requires setting up a Service Worker.
+  // Leaving this out for now.
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
@@ -994,7 +1000,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!lastRefresh || (now - lastRefresh > expireTime)) {
       localStorage.setItem('lastRefresh', now.toString());
+      clearAllSiteData(); // Clear all site data before reloading
       location.reload();
     }
-  }, 1800);
+  }, 300000);
 });
