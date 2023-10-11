@@ -10,6 +10,7 @@ document.body.style.overflow = 'hidden';
 $(document).ready(function () {
 
 
+  document.body.style.overflow = 'hidden';
   const scrollToTop = () => window.scrollTo(0, 0);
 
   ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
@@ -161,8 +162,7 @@ $(document).ready(function () {
       // After the fade-out animation completes, hide preloader2 and enable scrolling
       setTimeout(() => {
         preloader2.style.display = 'none';
-
-        document.body.style.overflow = 'auto';
+        window.scrollTo(0, 0);
       }, 1000); // 4 seconds for fade-out
 
     }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
@@ -182,6 +182,7 @@ $(document).ready(function () {
   function showPreloader() {
 
 
+    document.body.style.overflow = 'hidden';
 
 
     // CSS styles
@@ -194,9 +195,9 @@ $(document).ready(function () {
       // Disable scrolling
 
       // Function to prevent scrolling
-      function preventScroll(event) {
-        event.preventDefault();
-      }
+      // function preventScroll(event) {
+      //   event.preventDefault();
+      // }
 
       document.getElementById('preloader3').style.display = 'flex';
       document.getElementById('preloader2').style.display = 'none';
@@ -872,8 +873,15 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 5000);
+      
+      document.body.style.overflow = 'auto';
+    }, 6000);
   })();
+
+
+  document.body.style.overflow = 'hidden';
+  window.scrollTo(0, 0);
+
 });
 
 function clearAllSiteData() {
@@ -904,3 +912,6 @@ setTimeout(function () {
     window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
   }
 }, 1300);  // Wait 2 seconds after content loaded
+
+document.body.style.overflow = 'hidden';
+const scrollToTop = () => window.scrollTo(0, 0);
