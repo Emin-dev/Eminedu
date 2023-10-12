@@ -848,7 +848,7 @@ $(document).ready(function () {
             setTimeout(() => {
               
             document.body.style.overflow = 'auto';
-            }, 2);
+            }, 3000);
           }, 4000);
         }
       }
@@ -872,7 +872,7 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 4000);
+    }, 5000);
   })();
 });
 
