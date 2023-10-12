@@ -6,8 +6,7 @@
 
 
 $(document).ready(function () {
-
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('no-scroll');
 
 
   const scrollToTop = () => window.scrollTo(0, 0);
@@ -611,6 +610,7 @@ $(document).ready(function () {
     document.body.style.overflow = 'auto';
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
+    document.body.classList.remove('no-scroll');
   }, 17000);
   //   ////////
 
@@ -717,7 +717,7 @@ $(document).ready(function () {
     return {
       companyName: companyNames[index],
       jobRole: jobRoles[index],
-      salary: salaryValues[index] + ' AZN'
+      salary: salaryValues[index] + 'AZN'
     };
   }
 
