@@ -611,7 +611,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 13000);
+  }, 10000);
   //   ////////
 
 
