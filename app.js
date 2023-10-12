@@ -834,7 +834,7 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > .8 && !isLocked) {
+        if (speed > 1 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
 
