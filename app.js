@@ -834,7 +834,7 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > 1.2 && !isLocked) {
+        if (speed > 2 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
 
@@ -852,8 +852,8 @@ $(document).ready(function () {
               isLocked = false;
               
             document.body.style.overflow = 'auto';
-            }, 3000);
-          }, 4000);
+            }, 2000);
+          }, 3000);
         }
       }
     } 
@@ -876,7 +876,7 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 15000);
+    }, 14000);
   })();
 });
 
