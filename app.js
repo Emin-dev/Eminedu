@@ -4,13 +4,12 @@
 
 
 
-document.body.style.overflow = 'hidden';
-
 
 $(document).ready(function () {
 
-
   document.body.style.overflow = 'hidden';
+
+
   const scrollToTop = () => window.scrollTo(0, 0);
 
   ["DOMContentLoaded", "load", "beforeunload"].forEach(event => window.addEventListener(event, scrollToTop));
@@ -76,8 +75,6 @@ $(document).ready(function () {
   // Display preloader1 for 4 seconds
   setTimeout(() => {
 
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
     document.getElementById('preloader2').style.display = 'flex';
     document.getElementById('preloader2').style.zIndex = '99999999';
     document.getElementById('preloader3').style.display = 'none';
@@ -164,8 +161,8 @@ $(document).ready(function () {
       // After the fade-out animation completes, hide preloader2 and enable scrolling
       setTimeout(() => {
         preloader2.style.display = 'none';
-        window.scrollTo(0, 0);
-        document.body.style.overflow = 'hidden';
+
+        // document.body.style.overflow = 'auto';
       }, 1000); // 4 seconds for fade-out
 
     }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
@@ -185,7 +182,6 @@ $(document).ready(function () {
   function showPreloader() {
 
 
-    document.body.style.overflow = 'hidden';
 
 
     // CSS styles
@@ -198,9 +194,9 @@ $(document).ready(function () {
       // Disable scrolling
 
       // Function to prevent scrolling
-      // function preventScroll(event) {
-      //   event.preventDefault();
-      // }
+      function preventScroll(event) {
+        event.preventDefault();
+      }
 
       document.getElementById('preloader3').style.display = 'flex';
       document.getElementById('preloader2').style.display = 'none';
@@ -847,12 +843,12 @@ $(document).ready(function () {
           showPreloader();
           setTimeout(function () {
             isLocked = false;
-            window.scrollTo(0, initialScrollPosition);
+            window.scrollTo(0, initialScrollPosition);  
 
             setTimeout(() => {
-
-              document.body.style.overflow = 'auto';
-            }, 2000);
+              
+            document.body.style.overflow = 'auto';
+            }, 2);
           }, 4000);
         }
       }
@@ -876,15 +872,8 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-      
-      document.body.style.overflow = 'auto';
-    }, 6000);
+    }, 4000);
   })();
-
-
-  document.body.style.overflow = 'hidden';
-  window.scrollTo(0, 0);
-
 });
 
 function clearAllSiteData() {
@@ -915,6 +904,3 @@ setTimeout(function () {
     window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
   }
 }, 1300);  // Wait 2 seconds after content loaded
-
-document.body.style.overflow = 'hidden';
-const scrollToTop = () => window.scrollTo(0, 0);
