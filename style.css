@@ -5,7 +5,7 @@ body {
   text-align: center;
   letter-spacing: 0.1em;
   word-spacing: 0.2em;
-  background-color: #6a94ff;
+  background-color: #1e293b;
 }
 
 h1 {
@@ -86,24 +86,21 @@ h2 {
     border-color: transparent;
   }
 }
-header {
-  padding-bottom: 50px;
-}
 header #card {
   position: absolute;
-  top: 0.8em;
-  width: 5em;
+  top: 1em;
+  width: 4em;
   height: 7em;
   transform: translate(-50%, -50%);
   z-index: 2;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  animation: move 5s ease-in-out infinite;
+  animation: move 8s ease-in-out infinite;
   background-clip: padding-box;
 }
 @keyframes move {
@@ -111,16 +108,13 @@ header #card {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(67vw);
+    transform: translateX(73vw);
   }
   100% {
     transform: translateX(0);
   }
 }
 
-#start {
-  padding: 50px 0;
-}
 #start .bg-animation {
   width: 100%;
 }
@@ -216,7 +210,7 @@ header #card {
   width: 100vw;
   height: 10vh;
   user-select: none;
-  background-image: conic-gradient(from 90deg at 70% 50%, rgba(255, 255, 255, 0.7725490196), #2753F5), conic-gradient(from 270deg at 30% 50%, #2753F5, rgba(255, 255, 255, 0.7725490196));
+  background-image: conic-gradient(from 90deg at 70% 50%, #36507a, #1e293b), conic-gradient(from 270deg at 30% 50%, #1e293b, #36507a);
   -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
   background-position-x: 0%, 100%;
   background-position-y: 0%, 0%;
@@ -226,14 +220,8 @@ header #card {
   background-repeat: no-repeat;
 }
 
-#yes {
-  padding: 50px 0;
-  background-color: #4462bd;
-}
-
 #top {
   background-color: #1e293b;
-  padding: 50px 0;
   position: relative;
   overflow: hidden;
 }
@@ -634,70 +622,70 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 38px;
+  left: 26px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 62px;
+  left: 89px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 51px;
+  left: 13px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 84px;
+  left: 61px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 98px;
+  left: 35px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 85px;
+  left: 59px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 21px;
+  left: 43px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 37px;
+  left: 65px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 12px;
+  left: 17px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 40px;
+  left: 92px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
@@ -708,7 +696,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -97px);
+    transform: translate(0, -96px);
   }
   100% {
     transform: translate(0, 0);
@@ -720,7 +708,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -108px);
+    transform: translate(0, -51px);
   }
   100% {
     transform: translate(0, 0);
@@ -732,7 +720,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -51px);
+    transform: translate(0, -89px);
   }
   100% {
     transform: translate(0, 0);
@@ -744,7 +732,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -122px);
+    transform: translate(0, -73px);
   }
   100% {
     transform: translate(0, 0);
@@ -756,7 +744,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -127px);
+    transform: translate(0, -72px);
   }
   100% {
     transform: translate(0, 0);
@@ -768,7 +756,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -129px);
+    transform: translate(0, -96px);
   }
   100% {
     transform: translate(0, 0);
@@ -780,7 +768,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -68px);
+    transform: translate(0, -126px);
   }
   100% {
     transform: translate(0, 0);
@@ -792,7 +780,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -116px);
+    transform: translate(0, -88px);
   }
   100% {
     transform: translate(0, 0);
@@ -804,7 +792,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -63px);
+    transform: translate(0, -93px);
   }
   100% {
     transform: translate(0, 0);
@@ -816,7 +804,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -102px);
+    transform: translate(0, -60px);
   }
   100% {
     transform: translate(0, 0);
@@ -860,6 +848,7 @@ header #card {
   position: relative;
   height: 26vh;
   min-height: 266px;
+  margin: 50px 0;
 }
 #game h3 {
   position: absolute;
@@ -933,6 +922,7 @@ header #card {
   height: 700px;
   min-height: 600px;
   margin: 0;
+  background-color: #243249;
 }
 #qeyd #canvas {
   width: 100%;
@@ -950,6 +940,7 @@ header #card {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  background-color: #243249;
 }
 #mum .sc {
   position: sticky;

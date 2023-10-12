@@ -810,7 +810,7 @@ $(document).ready(function () {
 
   setTimeout(function () {
     window.scrollTo(0, 0);
-  }, 9000);
+  }, 5000);
 
 
 

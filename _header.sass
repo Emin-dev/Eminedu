@@ -1,22 +1,21 @@
-header
-    padding-bottom: 50px
+header 
 
     #card
         position: absolute
-        top: 0.8em
-        width: 5em
+        top: 1em
+        width: 4em
         height: 7em
         transform: translate( -50%,-50%)
         z-index: 2
-        background: rgba(255, 255, 255, 0.05)
+        background: rgba(255, 255, 255, 0)
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)
         box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4),1px 1px 3px rgba(0, 0, 0, 0.1)
-        backdrop-filter: blur(3px)
-        -webkit-backdrop-filter: blur(3px)
+        backdrop-filter: blur(1px)
+        -webkit-backdrop-filter: blur(1px)
         border-radius: 5px
         border: 1px solid rgba(255, 255, 255, 0.18)
 
-        animation: move 5s ease-in-out infinite
+        animation: move 8s ease-in-out infinite
         background-clip: padding-box
 
         @keyframes move
@@ -24,7 +23,7 @@ header
                 transform: translateX(0)
 
             50%
-                transform: translateX(67vw)
+                transform: translateX(73vw)
 
             100%
                 transform: translateX(0)
