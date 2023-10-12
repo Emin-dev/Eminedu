@@ -841,11 +841,15 @@ $(document).ready(function () {
           document.body.style.overflow = 'hidden';
           isLocked = true;
           showPreloader();
+          setTimeout(() => {
+            
+            window.scrollTo(0, initialScrollPosition); 
+          }, 1000);
           setTimeout(function () {
-            isLocked = false;
             window.scrollTo(0, initialScrollPosition);  
 
             setTimeout(() => {
+              isLocked = false;
               
             document.body.style.overflow = 'auto';
             }, 3000);
