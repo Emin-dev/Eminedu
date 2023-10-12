@@ -856,7 +856,7 @@ $(document).ready(function () {
           }, 4000);
         }
       }
-    }
+    } 
 
     function onTouchEnd() {
       touchStartPosition = null;
