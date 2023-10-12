@@ -611,7 +611,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 17000);
+  }, 16000);
   //   ////////
 
 
@@ -872,7 +872,7 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 5000);
+    }, 15000);
   })();
 });
 
