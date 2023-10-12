@@ -164,7 +164,7 @@ $(document).ready(function () {
         // document.body.style.overflow = 'auto';
       }, 1000); // 4 seconds for fade-out
 
-    }, 4000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+    }, 2000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
   }, 4000); // Display preloader1 for 4 seconds
 
@@ -287,7 +287,7 @@ $(document).ready(function () {
           // document.body.style.overflow = 'auto';
         }, 1000); // 4 seconds for fade-out
 
-      }, 3000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+      }, 1000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
     }, 100); // Display preloader1 for 4 seconds
 
@@ -611,7 +611,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 16000);
+  }, 13000);
   //   ////////
 
 
@@ -898,13 +898,3 @@ function clearAllSiteData() {
   // This is more complicated and requires setting up a Service Worker.
   // Leaving this out for now.
 }
-
-setTimeout(function () {
-  // Check if the URL has the 'reloaded' parameter
-  const urlParams = new URLSearchParams(window.location.search);
-
-  // If the URL doesn't have the 'reloaded' parameter, reload the page and add the parameter
-  if (!urlParams.has('reloaded')) {
-    window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
-  }
-}, 1300);  // Wait 2 seconds after content loaded
