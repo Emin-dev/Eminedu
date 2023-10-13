@@ -630,15 +630,18 @@ $(document).ready(function () {
 
 
 
-/////
-const jobRoles = [
-  'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
-  'Front End Developer'
-];
-const companyNames = [
-  'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
-];
-const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
+  const jobRoles = [ 
+    'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle Developer', 'FRONT-END PROQRAMÇI', 'Frontend Developer', 'Frontend Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FrontEnd developer', 'FRONT END DEVELOPER', 'Front-end proqramçı', 'Front End Developer', 'Full Stack Web Developer',  'Full Stack Web Developer', 'Full Stack Developer', 'Frontend-Backend Developer', 'Developer full stack', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Developer proqramistler (front, back, full, app)', 'Full stack proqramçi', 'Full stack developer', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Back-end programçi', 'Full stack developer', 'Full-stack software developer', 'Full stack программист', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full-stack veb proqramçi', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full-stack proqramçi', 'Full-Stack Dev', 'Back end proqramçı', 'Back End proqramçı', 'Back-end developer', 'Back-end programçi', 'Back end developer', 'Full Stack Proqramçı', 'Full Stack Proqramçı', 'Full stack web developer', 'Full Stack Proqramçı', 'Full stack developer', 'Full Stack Developer', 'Full Stack Developer'
+  ]; 
+ 
+  const companyNames = [ 
+    'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'Flegrei studio', 'zipmend', 'Iktex', 'KNEXEL', 'TIM Consulting', 'Abyss', 'Webzool', 'GPS Solutions', 'VMF', 'Webzool', 'Media Balans', 'Prosys', 'AİSTGroup', 'ERA Team', 'Prosys', 'HackLab', 'Prosys', 'Veb Koder', 'Prior Leasing OJSC', 'One Studio', 'Qscepter', 'S2J İnc', 'Pizza Mizza', 'Qscepter', 'FİZZA', 'Limak', 'ELVA Group', 'Agile Solutions', 'GTSolutions', 'Zəfəran', 'dreams', 'Edunex', 'Azerimed', 'New Media', 'IT Solutions', 'New Media', 'CrinfoTask', 'Innovative Solution Center', 'Veb Koder', 'eiGroup', 'HajMa Group of Companies', 'Hutovska FOP', 'QəbulOL', 'Prosys', 'Datum', 'ERA', 'RAM Holding', 'MyNextFilm', 'Safaroff Agency'
+  ]; 
+ 
+  const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 1000, 5000, 2500, 1200, 1100, 2000, 3500, 4000, 1500, 2400, 2000, 2000, 1000, 1100, 2000, 1100, 2500, 1500, 1500, 2600, 1500, 1500, 1500, 2500, 1100, 2000, 1500, 1700, 1500, 1500, 1400, 1500, 1000, 1700, 1000, 1500, 1800, 1500, 1000, 2000, 1500, 4000, 1000, 1700, 2200, 1900, 1500, 2000, 1000];
+
+
+
 
 function getCompanyData(index) {
   return {
