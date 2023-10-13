@@ -611,8 +611,119 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 10000);
+  }, 14000);
   //   ////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////
+const jobRoles = [
+  'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
+  'Front End Developer'
+];
+const companyNames = [
+  'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
+];
+const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
+
+function getCompanyData(index) {
+  return {
+    companyName: companyNames[index],
+    jobRole: jobRoles[index],
+    salary: salaryValues[index] + 'AZN'
+  };
+}
+
+const style = `
+  <style>
+  .job {
+    background-color: #f1f3f7;
+    padding:0px  30px 30px;
+    display: block;
+    align-items: start;
+    justify-content: center;
+    color: #333;
+    max-height: 40vh; 
+    overflow-y: auto;
+  }
+    form {
+      width: 98%;
+      max-width: 98vw;
+      border-radius: 20px;
+      background-color: #f1f3f7;
+      box-shadow: 12px 12px 24px #d0d0d0, -12px -12px 24px #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+    thead, tr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    td {
+      padding: 16px 12px;
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      flex: 1;
+    }
+  </style>
+  `;
+
+
+const tableHTML = `
+  ${style}
+  <form>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <td>Company Name</td>
+            <td>Job Role</td>
+            <td>Salary</td>
+          </tr>
+        </thead>
+        <tbody>
+          ${companyNames.map((_, index) => {
+  const data = getCompanyData(index);
+  return `
+              <tr>
+                <td>${data.companyName}</td>
+                <td>${data.jobRole}</td>
+                <td>${data.salary}</td>
+              </tr>
+            `;
+}).join('')}
+        </tbody>
+      </table>
+    </section>
+  </form>
+  `;
+
+const jobDiv = document.querySelector('.job');
+jobDiv.innerHTML = tableHTML;
 
 
 
@@ -623,7 +734,7 @@ $(document).ready(function () {
 
   // Create and style the button
   const button = document.createElement("button");
-  button.innerText = "Ödənişsiz...";
+  button.innerText = "Vakansiyalar";
   button.id = "neuButton";
   button.addEventListener("click", toggleSection);
   button.addEventListener("mousedown", function () {
@@ -633,19 +744,20 @@ $(document).ready(function () {
     button.classList.remove("pressed");
   });
 
-  const rt = document.getElementById("job");
-  rt.parentNode.insertBefore(button, rt);
-  // Add the button just above the 'person' section
-  const personSection = document.getElementById("person");
+  // Add the button to the top of the 'personSection'
+  const personSection = document.getElementById("job");
 
   if (personSection) {
-    personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
+    personSection.prepend(button);  // This will add the button to the top of the 'personSection'
   }
-  const style1 = document.createElement("style");
-  style1.innerHTML = `
+if (personSection) {
+  personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
+}
+const style1 = document.createElement("style");
+style1.innerHTML = `
       #neuButton {
           display: block;
-          margin: 20px auto;
+          margin: 40px auto;
           background-color: #f1f3f7;
           color: #333;
           border: none;
@@ -660,34 +772,35 @@ $(document).ready(function () {
           transform: scale(0.97);
       }
   
-      #person.js-animated-section.show {
+      #job.js-animated-section.show {
           opacity: 1;
-          max-height: 880px;  // Assuming this height is enough for the content; adjust if necessary
+          height: 40vh;  // Assuming this height is enough for the content; adjust if necessary
           overflow: visible;
-          transition: opacity 5s, max-height 1s;
+          transition: opacity 5s,height 1s;
       }
   
-      #person.js-animated-section:not(.show) {
-          opacity: 0;
-          max-height: 0;
+      #job.js-animated-section:not(.show) {
+          // opacity: 0;
+        height: 130px;
           overflow: hidden;
-          transition: opacity 1s, max-height 2s;
+          transition: opacity 1s, height 2s;
       }
   `;
-  document.body.appendChild(style1);
+document.body.appendChild(style1);
 
-  // Toggle functionality for the button
-  function toggleSection() {
-    console.log("Button clicked");  // This should log in the console every time you click the button
+// Toggle functionality for the button
+function toggleSection() {
+  console.log("Button clicked");  // This should log in the console every time you click the button
 
-    if (personSection) {
-      if (personSection.classList.contains("show")) {
-        personSection.classList.remove("show");
-      } else {
-        personSection.classList.add("show");
-      }
+  if (personSection) {
+    if (personSection.classList.contains("show")) {
+      personSection.classList.remove("show");
+    } else {
+      personSection.classList.add("show");
+
     }
   }
+}
 
 
 
@@ -695,189 +808,76 @@ $(document).ready(function () {
 
 
 
+setTimeout(function () {
+  window.scrollTo(0, 0);
+}, 5000);
 
 
 
+(function () {
+  let touchStartPosition = null;
+  let touchEndPosition = null;
+  let startTime = null;
+  let isLocked = false;
+  let initialScrollPosition = null;  // Store the initial scroll position
 
-
-
-
-
-  /////
-  const jobRoles = [
-    'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle React Developer', 'FRONT-END PROQRAMÇI', 'Frontend React Developer', 'Frontend Developer', 'Front-End Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FRONT-END ÜZRƏ MÜƏLLİM', 'FRONT-END PROQRAMÇI', 'FRONT END PROQRAMÇI', 'FrontEnd developer', 'FRONT-END PROQRAMÇI', 'FRONT END DEVELOPER', 'FRONTEND VEB PROQRAMÇI', 'Front-end proqramçı',
-    'Front End Developer'
-  ];
-  const companyNames = [
-    'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'AzəriMed', 'Flegrei studio', 'zipmend', 'OKmedia', 'Qmeter', '3Dost Animation', 'Iktex', 'Virtual Azerbaijan', 'KNEXEL', 'INNOA', 'TIM Consulting', 'Abyss'
-  ];
-  const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 800, 1000, 5000, 900, 900, 800, 2500, 800, 1200, 400, 1100, 2000];
-
-  function getCompanyData(index) {
-    return {
-      companyName: companyNames[index],
-      jobRole: jobRoles[index],
-      salary: salaryValues[index] + 'AZN'
-    };
+  function onTouchStart(e) {
+    touchStartPosition = e.touches[0].clientY;
+    startTime = new Date().getTime();
+    initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
   }
 
+  function onTouchMove(e) {
+    if (touchStartPosition !== null) {
+      touchEndPosition = e.touches[0].clientY;
+      let elapsedTime = new Date().getTime() - startTime;
+      let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
+      let speed = traveledDistance / elapsedTime;
 
-  const style = `
-  <style>
-  .job {
-    background-color: #f1f3f7;
-    padding:  30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-  }
-    form {
-      width: 98%;
-      max-width: 98vw;
-      border-radius: 20px;
-      background-color: #f1f3f7;
-      box-shadow: 12px 12px 24px #d0d0d0, -12px -12px 24px #ffffff;
-      display: flex;
-      flex-direction: column;
-    }
-    table {
-      width: 100%;
-      table-layout: fixed;
-      border-collapse: collapse;
-    }
-    thead, tr {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-    }
-    tbody {
-      overflow-y: auto;
-      max-height: 350px;
-    }
-    td {
-      padding: 16px 12px;
-      font-size: 16px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      flex: 1;
-    }
-  </style>
-  `;
-  const tableHTML = `
-  ${style}
-  <form>
-    <section>
-      <table>
-        <thead>
-          <tr>
-            <td>Company Name</td>
-            <td>Job Role</td>
-            <td>Salary</td>
-          </tr>
-        </thead>
-        <tbody>
-          ${companyNames.map((_, index) => {
-    const data = getCompanyData(index);
-    return `
-              <tr>
-                <td>${data.companyName}</td>
-                <td>${data.jobRole}</td>
-                <td>${data.salary}</td>
-              </tr>
-            `;
-  }).join('')}
-        </tbody>
-      </table>
-    </section>
-  </form>
-  `;
-
-  const jobDiv = document.querySelector('.job');
-  jobDiv.innerHTML = tableHTML;
-
-
-
-
-
-
-
-
-
-
-
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 5000);
-
-
-
-  (function () {
-    let touchStartPosition = null;
-    let touchEndPosition = null;
-    let startTime = null;
-    let isLocked = false;
-    let initialScrollPosition = null;  // Store the initial scroll position
-
-    function onTouchStart(e) {
-      touchStartPosition = e.touches[0].clientY;
-      startTime = new Date().getTime();
-      initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
-    }
-
-    function onTouchMove(e) {
-      if (touchStartPosition !== null) {
-        touchEndPosition = e.touches[0].clientY;
-        let elapsedTime = new Date().getTime() - startTime;
-        let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
-        let speed = traveledDistance / elapsedTime;
-
-        if (speed > 2 && !isLocked) {
-          // Prevent the default scrolling behavior
-          e.preventDefault();
-
-          document.body.style.overflow = 'hidden';
-          isLocked = true;
-          showPreloader();
-          setTimeout(() => {
-            
-            window.scrollTo(0, initialScrollPosition); 
-          }, 1000);
-          setTimeout(function () {
-            window.scrollTo(0, initialScrollPosition);  
-
-            setTimeout(() => {
-              isLocked = false;
-              
-            document.body.style.overflow = 'auto';
-            }, 2000);
-          }, 3000);
-        }
-      }
-    } 
-
-    function onTouchEnd() {
-      touchStartPosition = null;
-      touchEndPosition = null;
-      startTime = null;
-    }
-
-    function onWheel(e) {
-      if (isLocked) {
+      if (speed > 1.6 && !isLocked) {
         // Prevent the default scrolling behavior
         e.preventDefault();
+
+        document.body.style.overflow = 'hidden';
+        isLocked = true;
+        showPreloader();
+        setTimeout(() => {
+
+          window.scrollTo(0, initialScrollPosition);
+        }, 1000);
+        setTimeout(function () {
+          window.scrollTo(0, initialScrollPosition);
+
+          setTimeout(() => {
+            isLocked = false;
+
+            document.body.style.overflow = 'auto';
+          }, 2000);
+        }, 3000);
       }
     }
+  }
 
-    setTimeout(function () {
-      window.addEventListener('touchstart', onTouchStart, false);
-      window.addEventListener('touchmove', onTouchMove, false);
-      window.addEventListener('touchend', onTouchEnd, false);
-      window.addEventListener('wheel', onWheel, false);
-    }, 14000);
-  })();
+  function onTouchEnd() {
+    touchStartPosition = null;
+    touchEndPosition = null;
+    startTime = null;
+  }
+
+  function onWheel(e) {
+    if (isLocked) {
+      // Prevent the default scrolling behavior
+      e.preventDefault();
+    }
+  }
+
+  setTimeout(function () {
+    window.addEventListener('touchstart', onTouchStart, false);
+    window.addEventListener('touchmove', onTouchMove, false);
+    window.addEventListener('touchend', onTouchEnd, false);
+    window.addEventListener('wheel', onWheel, false);
+  }, 14000);
+})();
 });
 
 function clearAllSiteData() {
