@@ -898,7 +898,10 @@ $(document).ready(function () {
         personSection.classList.remove("show");
       } else {
         personSection.classList.add("show");
+        setTimeout(() => {
+          
         window.addEventListener("scroll", handleScroll);
+        }, 1);
 
       }
     }
