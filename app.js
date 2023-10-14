@@ -736,93 +736,6 @@ $(document).ready(function () {
 
 
 
-  // // Create and style the button
-  // const button = document.createElement("button");
-  // button.innerText = "Vakansiyalar";
-  // button.id = "neuButton";
-  // button.addEventListener("click", toggleSection);
-
-  // // Desktop events
-  // button.addEventListener("mousedown", function() {
-  //     button.classList.add("pressed");
-  // });
-  // button.addEventListener("mouseup", function() {
-  //     button.classList.remove("pressed");
-  // });
-
-  // // Mobile touch events
-  // button.addEventListener("touchstart", function(event) {
-  //     button.classList.add("pressed");
-  //     event.preventDefault(); // Prevent mouse events from firing simultaneously
-  // });
-  // button.addEventListener("touchend", function() {
-  //     button.classList.remove("pressed");
-  // });
-
-  // document.body.appendChild(button); // This line appends the button to the body, but you can choose where to append it.
-  //   // Add the button to the top of the 'personSection'
-  //   const personSection = document.getElementById("job");
-
-  //   if (personSection) {
-  //     personSection.prepend(button);  // This will add the button to the top of the 'personSection'
-  //   }
-  //   if (personSection) {
-  //     personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
-  //   }
-  //   const style1 = document.createElement("style");
-  //   style1.innerHTML = `
-  //       #neuButton {
-  //           display: block;
-  //           position: relative;
-  //           z-index: 22;
-  //           margin: 40px auto;
-  //           background-color: #f1f3f7;
-  //           color: #333;
-  //           border: none;
-  //           padding: 15px 30px;
-  //           border-radius: 15px;
-  //           font-size: 16px;
-  //           box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
-  //           transition: transform 0.2s;
-  //       }
-
-
-  //       #job.js-animated-section.show {
-  //           opacity: 1;
-  //           height: 40vh;  // Assuming this height is enough for the content; adjust if necessary
-  //           overflow: visible;
-  //           transition: opacity 5s,height 1s;
-  //       }
-
-  //       #job.js-animated-section:not(.show) {
-  //           // opacity: 0;
-  //         height: 130px;
-  //           overflow: hidden;
-  //           transition: opacity 1s, height 2s;
-  //       }
-  //   `;
-  //   document.body.appendChild(style1);
-
-  //   // Toggle functionality for the button
-  //   function toggleSection() {
-  //     console.log("Button clicked");  // This should log in the console every time you click the button
-
-  //     if (personSection) {
-  //       if (personSection.classList.contains("show")) {
-  //         personSection.classList.remove("show");
-  //       } else {
-  //         personSection.classList.add("show");
-
-  //       }
-  //     }
-  //   }
-
-
-
-
-
-
-
 
   // Create and style the button
   const button = document.createElement("button");
@@ -877,7 +790,7 @@ $(document).ready(function () {
     }
       #job.js-animated-section.show {
           opacity: 1;
-          height: 60vh;  // Assuming this height is enough for the content; adjust if necessary
+          height: 70vh;  // Assuming this height is enough for the content; adjust if necessary
           overflow: visible;
           transition: opacity 5s,height 3s;
       }
