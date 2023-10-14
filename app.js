@@ -899,9 +899,9 @@ $(document).ready(function () {
       } else {
         personSection.classList.add("show");
         setTimeout(() => {
-          scrollIndicator.style.opacity = 0;
+          scrollIndicator.style.opacity = 1;
         window.addEventListener("scroll", handleScroll);
-        }, 1);
+        }, 1000);
 
       }
     }
@@ -980,7 +980,7 @@ $(document).ready(function () {
     const h3Groups = document.querySelectorAll(".h3-group");
 
     if (aaElement.style.height === '150px' || aaElement.style.height === '') {
-      aaElement.style.height = "1500px";
+      aaElement.style.height = "1544px";
       kkElement.style.padding = '0 40px 50px 40px';
 
     } else {
