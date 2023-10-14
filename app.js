@@ -943,7 +943,7 @@ $(document).ready(function () {
       transition: opacity 1s ease;
       opacity: 0;
       margin: 15px 0;
-      padding-bottom: 16px ;
+      padding-bottom: 22px ;
       border-radius: 15px;
   }
 
@@ -951,7 +951,7 @@ $(document).ready(function () {
     padding: 16px;
   }
   h3 {
-    margin-top:16px;
+    margin-top:22px;
   }
   
   .h3-group h3 {
@@ -977,22 +977,22 @@ $(document).ready(function () {
     const h3Groups = document.querySelectorAll(".h3-group");
 
     if (aaElement.style.height === '150px' || aaElement.style.height === '') {
-      aaElement.style.height = "1356px";
-      kkElement.style.padding = '0 20px 50px 20px';
+      aaElement.style.height = "1370px";
+      kkElement.style.padding = '0 40px 50px 40px';
 
     } else {
       aaElement.style.height = '150px'; 
-      kkElement.style.padding = '0 20px 0px 20px';
+      kkElement.style.padding = '0 40px';
     }
     h2Groups.forEach(group => group.style.opacity = "1");
     h3Groups.forEach(group => group.style.opacity = "1");
     setTimeout(() => {
       aaElement.style.height = "150px";
-      kkElement.style.padding = '0 20px 0px 20px';
+      kkElement.style.padding = '0 40px';
       document.querySelector(".cvv").style.opacity = "1";
       h2Groups.forEach(group => group.style.opacity = "0");
       h3Groups.forEach(group => group.style.opacity = "0");
-    }, 15000);
+    }, 22000);
   });
 
 
