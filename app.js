@@ -980,7 +980,7 @@ $(document).ready(function () {
     const h3Groups = document.querySelectorAll(".h3-group");
 
     if (aaElement.style.height === '150px' || aaElement.style.height === '') {
-      aaElement.style.height = "1400px";
+      aaElement.style.height = "1500px";
       kkElement.style.padding = '0 40px 50px 40px';
 
     } else {
@@ -1050,7 +1050,7 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > 1.6 && !isLocked) {
+        if (speed > 1.4 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
 
