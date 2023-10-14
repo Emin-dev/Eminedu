@@ -611,7 +611,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 14000);
+  }, 12000);
   //   ////////
 
 
@@ -630,28 +630,30 @@ $(document).ready(function () {
 
 
 
-  const jobRoles = [ 
-    'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle Developer', 'FRONT-END PROQRAMÇI', 'Frontend Developer', 'Frontend Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FrontEnd developer', 'FRONT END DEVELOPER', 'Front-end proqramçı', 'Front End Developer', 'Full Stack Web Developer',  'Full Stack Web Developer', 'Full Stack Developer', 'Frontend-Backend Developer', 'Developer full stack', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Developer proqramistler (front, back, full, app)', 'Full stack proqramçi', 'Full stack developer', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Back-end programçi', 'Full stack developer', 'Full-stack software developer', 'Full stack программист', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full-stack veb proqramçi', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full-stack proqramçi', 'Full-Stack Dev', 'Back end proqramçı', 'Back End proqramçı', 'Back-end developer', 'Back-end programçi', 'Back end developer', 'Full Stack Proqramçı', 'Full Stack Proqramçı', 'Full stack web developer', 'Full Stack Proqramçı', 'Full stack developer', 'Full Stack Developer', 'Full Stack Developer'
-  ]; 
- 
-  const companyNames = [ 
+  const jobRoles = [
+    'Front-End Web Developer', 'Front-end Developer', 'Middle Front-End Developer', 'Middle Developer', 'FRONT-END PROQRAMÇI', 'Frontend Developer', 'Frontend Developer', 'Frontend developer', 'FRONT-END PROQRAMÇI', 'FrontEnd developer', 'FRONT END DEVELOPER', 'Front-end proqramçı', 'Front End Developer', 'Full Stack Web Developer', 'Full Stack Web Developer', 'Full Stack Developer', 'Frontend-Backend Developer', 'Developer full stack', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Developer proqramistler (front, back, full, app)', 'Full stack proqramçi', 'Full stack developer', 'Full stack proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Back-end programçi', 'Full stack developer', 'Full-stack software developer', 'Full stack программист', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full-stack veb proqramçi', 'Full stack veb proqramçi', 'Full stack proqramçi', 'Full stack proqramçi', 'Full-stack proqramçi', 'Full-Stack Dev', 'Back end proqramçı', 'Back End proqramçı', 'Back-end developer', 'Back-end programçi', 'Back end developer', 'Full Stack Proqramçı', 'Full Stack Proqramçı', 'Full stack web developer', 'Full Stack Proqramçı', 'Full stack developer', 'Full Stack Developer', 'Full Stack Developer'
+  ];
+
+  const companyNames = [
     'Webzool', 'AT-Geotech', 'HRcell', 'CrinfoTask', 'eMotions', 'A2Z', 'NetTech', 'Flegrei studio', 'zipmend', 'Iktex', 'KNEXEL', 'TIM Consulting', 'Abyss', 'Webzool', 'GPS Solutions', 'VMF', 'Webzool', 'Media Balans', 'Prosys', 'AİSTGroup', 'ERA Team', 'Prosys', 'HackLab', 'Prosys', 'Veb Koder', 'Prior Leasing OJSC', 'One Studio', 'Qscepter', 'S2J İnc', 'Pizza Mizza', 'Qscepter', 'FİZZA', 'Limak', 'ELVA Group', 'Agile Solutions', 'GTSolutions', 'Zəfəran', 'dreams', 'Edunex', 'Azerimed', 'New Media', 'IT Solutions', 'New Media', 'CrinfoTask', 'Innovative Solution Center', 'Veb Koder', 'eiGroup', 'HajMa Group of Companies', 'Hutovska FOP', 'QəbulOL', 'Prosys', 'Datum', 'ERA', 'RAM Holding', 'MyNextFilm', 'Safaroff Agency'
-  ]; 
- 
+  ];
+
   const salaryValues = [1700, 2000, 1800, 1200, 1000, 3500, 2000, 1000, 5000, 2500, 1200, 1100, 2000, 3500, 4000, 1500, 2400, 2000, 2000, 1000, 1100, 2000, 1100, 2500, 1500, 1500, 2600, 1500, 1500, 1500, 2500, 1100, 2000, 1500, 1700, 1500, 1500, 1400, 1500, 1000, 1700, 1000, 1500, 1800, 1500, 1000, 2000, 1500, 4000, 1000, 1700, 2200, 1900, 1500, 2000, 1000];
 
 
 
 
-function getCompanyData(index) {
-  return {
-    companyName: companyNames[index],
-    jobRole: jobRoles[index],
-    salary: salaryValues[index] + 'AZN'
-  };
-}
+  function getCompanyData(index) {
+    return {
+      companyName: companyNames[index],
+      jobRole: jobRoles[index],
+      salary: salaryValues[index] + 'AZN'
+    };
+  }
 
-const style = `
+
+
+  const style = `
   <style>
   .job {
     background-color: #f1f3f7;
@@ -696,7 +698,7 @@ const style = `
   `;
 
 
-const tableHTML = `
+  const tableHTML = `
   ${style}
   <form>
     <section>
@@ -710,23 +712,110 @@ const tableHTML = `
         </thead>
         <tbody>
           ${companyNames.map((_, index) => {
-  const data = getCompanyData(index);
-  return `
+    const data = getCompanyData(index);
+    return `
               <tr>
                 <td>${data.companyName}</td>
                 <td>${data.jobRole}</td>
                 <td>${data.salary}</td>
               </tr>
             `;
-}).join('')}
+  }).join('')}
         </tbody>
       </table>
     </section>
   </form>
   `;
 
-const jobDiv = document.querySelector('.job');
-jobDiv.innerHTML = tableHTML;
+  const jobDiv = document.querySelector('.job');
+  jobDiv.innerHTML = tableHTML;
+
+
+
+
+
+
+
+  // // Create and style the button
+  // const button = document.createElement("button");
+  // button.innerText = "Vakansiyalar";
+  // button.id = "neuButton";
+  // button.addEventListener("click", toggleSection);
+
+  // // Desktop events
+  // button.addEventListener("mousedown", function() {
+  //     button.classList.add("pressed");
+  // });
+  // button.addEventListener("mouseup", function() {
+  //     button.classList.remove("pressed");
+  // });
+
+  // // Mobile touch events
+  // button.addEventListener("touchstart", function(event) {
+  //     button.classList.add("pressed");
+  //     event.preventDefault(); // Prevent mouse events from firing simultaneously
+  // });
+  // button.addEventListener("touchend", function() {
+  //     button.classList.remove("pressed");
+  // });
+
+  // document.body.appendChild(button); // This line appends the button to the body, but you can choose where to append it.
+  //   // Add the button to the top of the 'personSection'
+  //   const personSection = document.getElementById("job");
+
+  //   if (personSection) {
+  //     personSection.prepend(button);  // This will add the button to the top of the 'personSection'
+  //   }
+  //   if (personSection) {
+  //     personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
+  //   }
+  //   const style1 = document.createElement("style");
+  //   style1.innerHTML = `
+  //       #neuButton {
+  //           display: block;
+  //           position: relative;
+  //           z-index: 22;
+  //           margin: 40px auto;
+  //           background-color: #f1f3f7;
+  //           color: #333;
+  //           border: none;
+  //           padding: 15px 30px;
+  //           border-radius: 15px;
+  //           font-size: 16px;
+  //           box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
+  //           transition: transform 0.2s;
+  //       }
+
+
+  //       #job.js-animated-section.show {
+  //           opacity: 1;
+  //           height: 40vh;  // Assuming this height is enough for the content; adjust if necessary
+  //           overflow: visible;
+  //           transition: opacity 5s,height 1s;
+  //       }
+
+  //       #job.js-animated-section:not(.show) {
+  //           // opacity: 0;
+  //         height: 130px;
+  //           overflow: hidden;
+  //           transition: opacity 1s, height 2s;
+  //       }
+  //   `;
+  //   document.body.appendChild(style1);
+
+  //   // Toggle functionality for the button
+  //   function toggleSection() {
+  //     console.log("Button clicked");  // This should log in the console every time you click the button
+
+  //     if (personSection) {
+  //       if (personSection.classList.contains("show")) {
+  //         personSection.classList.remove("show");
+  //       } else {
+  //         personSection.classList.add("show");
+
+  //       }
+  //     }
+  //   }
 
 
 
@@ -737,29 +826,37 @@ jobDiv.innerHTML = tableHTML;
 
   // Create and style the button
   const button = document.createElement("button");
-  button.innerText = "Vakansiyalar";
+  const buttonText = document.createElement("span");
+  buttonText.innerText = "Vakansiyalara bax";
+  buttonText.style.pointerEvents = "none";  // Ensure the text doesn't capture the click event
+  button.appendChild(buttonText);
   button.id = "neuButton";
   button.addEventListener("click", toggleSection);
-  button.addEventListener("mousedown", function () {
+
+  // Combined events for both Desktop and Mobile
+  button.addEventListener("pointerdown", function (event) {
     button.classList.add("pressed");
+    event.preventDefault();
   });
-  button.addEventListener("mouseup", function () {
+  button.addEventListener("pointerup", function () {
     button.classList.remove("pressed");
   });
 
+  document.body.appendChild(button);
+
   // Add the button to the top of the 'personSection'
   const personSection = document.getElementById("job");
-
   if (personSection) {
-    personSection.prepend(button);  // This will add the button to the top of the 'personSection'
+    personSection.prepend(button);
+    personSection.classList.add("js-animated-section");
   }
-if (personSection) {
-  personSection.classList.add("js-animated-section"); // Ensure this class is present to hide section by default
-}
-const style1 = document.createElement("style");
-style1.innerHTML = `
+
+  const style1 = document.createElement("style");
+  style1.innerHTML = `
       #neuButton {
           display: block;
+          position: relative;
+          z-index: 22;
           margin: 40px auto;
           background-color: #f1f3f7;
           color: #333;
@@ -771,116 +868,229 @@ style1.innerHTML = `
           transition: transform 0.2s;
       }
       
-      #neuButton.pressed {
-          transform: scale(0.97);
-      }
-  
+      #neuButton {
+        pointer-events: auto; // Ensure the button responds to pointer events
+    }
+    
+    #neuButton * {
+        pointer-events: none; // Ensure child elements (like text) don't capture the event instead of the button
+    }
       #job.js-animated-section.show {
           opacity: 1;
-          height: 40vh;  // Assuming this height is enough for the content; adjust if necessary
+          height: 60vh;  // Assuming this height is enough for the content; adjust if necessary
           overflow: visible;
-          transition: opacity 5s,height 1s;
+          transition: opacity 5s,height 3s;
       }
   
       #job.js-animated-section:not(.show) {
-          // opacity: 0;
-        height: 130px;
+          
+        height: 200px;
           overflow: hidden;
-          transition: opacity 1s, height 2s;
+          transition: opacity 1s, height 1s;
       }
   `;
-document.body.appendChild(style1);
+  document.body.appendChild(style1);
 
-// Toggle functionality for the button
-function toggleSection() {
-  console.log("Button clicked");  // This should log in the console every time you click the button
+  function toggleSection() {
+    console.log("Button clicked");
+    if (personSection) {
+      if (personSection.classList.contains("show")) {
+        personSection.classList.remove("show");
+      } else {
+        personSection.classList.add("show");
+        window.addEventListener("scroll", handleScroll);
 
-  if (personSection) {
-    if (personSection.classList.contains("show")) {
-      personSection.classList.remove("show");
-    } else {
-      personSection.classList.add("show");
-
-    }
-  }
-}
-
-
-
-
-
-
-
-setTimeout(function () {
-  window.scrollTo(0, 0);
-}, 5000);
-
-
-
-(function () {
-  let touchStartPosition = null;
-  let touchEndPosition = null;
-  let startTime = null;
-  let isLocked = false;
-  let initialScrollPosition = null;  // Store the initial scroll position
-
-  function onTouchStart(e) {
-    touchStartPosition = e.touches[0].clientY;
-    startTime = new Date().getTime();
-    initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
-  }
-
-  function onTouchMove(e) {
-    if (touchStartPosition !== null) {
-      touchEndPosition = e.touches[0].clientY;
-      let elapsedTime = new Date().getTime() - startTime;
-      let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
-      let speed = traveledDistance / elapsedTime;
-
-      if (speed > 1.6 && !isLocked) {
-        // Prevent the default scrolling behavior
-        e.preventDefault();
-
-        document.body.style.overflow = 'hidden';
-        isLocked = true;
-        showPreloader();
-        setTimeout(() => {
-
-          window.scrollTo(0, initialScrollPosition);
-        }, 1000);
-        setTimeout(function () {
-          window.scrollTo(0, initialScrollPosition);
-
-          setTimeout(() => {
-            isLocked = false;
-
-            document.body.style.overflow = 'auto';
-          }, 2000);
-        }, 3000);
       }
     }
   }
 
-  function onTouchEnd() {
-    touchStartPosition = null;
-    touchEndPosition = null;
-    startTime = null;
+
+
+  /////////////////
+
+
+
+
+  const styles66 = `
+  .kk {
+      background-color: #f1f3f7;
+      color: #333;
+      display: flex;
+      padding: 0 ;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .cvv {
+      margin-top:50px;
+      text-align: center;
+      max-width: 160px;
+      cursor: pointer;
+      background-color: #f1f3f7;
+      color: #333;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
+      transition: opacity 1s ease;
+  }
+  
+  .h2-group, .h3-group {
+    box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
+      transition: opacity 1s ease;
+      opacity: 0;
+      margin: 15px 0;
+      padding-bottom: 16px ;
+      border-radius: 15px;
   }
 
-  function onWheel(e) {
-    if (isLocked) {
-      // Prevent the default scrolling behavior
-      e.preventDefault();
-    }
+  .h2-group {
+    padding: 16px;
   }
+  h3 {
+    margin-top:16px;
+  }
+  
+  .h3-group h3 {
+      // margin: 10px 0;
+  }
+  
+  .aa {
+      transition: height 1s ease, padding 1s ease, margin 1s ease;
+      overflow: hidden;
+      height:150px;
+  }
+  
+  `;
+
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerText = styles66;
+  document.head.appendChild(styleSheet);
+  document.querySelector(".cvv").addEventListener("click", function () {
+    const aaElement = document.querySelector(".aa");
+    const kkElement = document.querySelector(".kk");
+    const h2Groups = document.querySelectorAll(".h2-group");
+    const h3Groups = document.querySelectorAll(".h3-group");
+
+    if (aaElement.style.height === '150px' || aaElement.style.height === '') {
+      aaElement.style.height = "1356px";
+      kkElement.style.padding = '0 20px 50px 20px';
+
+    } else {
+      aaElement.style.height = '150px'; 
+      kkElement.style.padding = '0 20px 0px 20px';
+    }
+    h2Groups.forEach(group => group.style.opacity = "1");
+    h3Groups.forEach(group => group.style.opacity = "1");
+    setTimeout(() => {
+      aaElement.style.height = "150px";
+      kkElement.style.padding = '0 20px 0px 20px';
+      document.querySelector(".cvv").style.opacity = "1";
+      h2Groups.forEach(group => group.style.opacity = "0");
+      h3Groups.forEach(group => group.style.opacity = "0");
+    }, 15000);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   setTimeout(function () {
-    window.addEventListener('touchstart', onTouchStart, false);
-    window.addEventListener('touchmove', onTouchMove, false);
-    window.addEventListener('touchend', onTouchEnd, false);
-    window.addEventListener('wheel', onWheel, false);
-  }, 14000);
-})();
+    window.scrollTo(0, 0);
+  }, 5000);
+
+
+
+  (function () {
+    let touchStartPosition = null;
+    let touchEndPosition = null;
+    let startTime = null;
+    let isLocked = false;
+    let initialScrollPosition = null;  // Store the initial scroll position
+
+    function onTouchStart(e) {
+      touchStartPosition = e.touches[0].clientY;
+      startTime = new Date().getTime();
+      initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
+    }
+
+    function onTouchMove(e) {
+      if (touchStartPosition !== null) {
+        touchEndPosition = e.touches[0].clientY;
+        let elapsedTime = new Date().getTime() - startTime;
+        let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
+        let speed = traveledDistance / elapsedTime;
+
+        if (speed > 1.6 && !isLocked) {
+          // Prevent the default scrolling behavior
+          e.preventDefault();
+
+          document.body.style.overflow = 'hidden';
+          isLocked = true;
+          showPreloader();
+          setTimeout(() => {
+
+            window.scrollTo(0, initialScrollPosition);
+          }, 1000);
+          setTimeout(function () {
+            window.scrollTo(0, initialScrollPosition);
+
+            setTimeout(() => {
+              isLocked = false;
+
+              document.body.style.overflow = 'auto';
+            }, 2000);
+          }, 3000);
+        }
+      }
+    }
+
+    function onTouchEnd() {
+      touchStartPosition = null;
+      touchEndPosition = null;
+      startTime = null;
+    }
+
+    function onWheel(e) {
+      if (isLocked) {
+        // Prevent the default scrolling behavior
+        e.preventDefault();
+      }
+    }
+
+    setTimeout(function () {
+      window.addEventListener('touchstart', onTouchStart, false);
+      window.addEventListener('touchmove', onTouchMove, false);
+      window.addEventListener('touchend', onTouchEnd, false);
+      window.addEventListener('wheel', onWheel, false);
+    }, 14000);
+  })();
 });
 
 function clearAllSiteData() {
