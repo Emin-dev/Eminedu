@@ -790,7 +790,7 @@ $(document).ready(function () {
     }
       #job.js-animated-section.show {
           opacity: 1;
-          height: 70vh;  // Assuming this height is enough for the content; adjust if necessary
+          height: 500px;  // Assuming this height is enough for the content; adjust if necessary
           overflow: visible;
           transition: opacity 5s,height 3s;
       }
