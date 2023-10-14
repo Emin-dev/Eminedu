@@ -899,7 +899,7 @@ $(document).ready(function () {
       } else {
         personSection.classList.add("show");
         setTimeout(() => {
-          
+          scrollIndicator.style.opacity = 0;
         window.addEventListener("scroll", handleScroll);
         }, 1);
 
