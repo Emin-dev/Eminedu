@@ -980,7 +980,7 @@ $(document).ready(function () {
     const h3Groups = document.querySelectorAll(".h3-group");
 
     if (aaElement.style.height === '150px' || aaElement.style.height === '') {
-      aaElement.style.height = "1550px";
+      aaElement.style.height = "1548px";
       kkElement.style.padding = '0 40px 50px 40px';
 
     } else {
