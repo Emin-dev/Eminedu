@@ -882,7 +882,7 @@ $(document).ready(function () {
   }
   
   .expanded {
-      height: 1250px;
+      height: 1215px;
   }
   
   .kk-padding {
