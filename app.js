@@ -551,6 +551,7 @@ $(document).ready(function () {
   const q = document.createElement("style");
   q.textContent = `
   .scroll-indicator {
+    z-index:999;
     position: fixed;
     bottom: 30vh;
     left: 50%;
@@ -568,6 +569,7 @@ $(document).ready(function () {
   }
 
   .arrow {
+    z-index:999;
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.5);
