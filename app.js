@@ -276,7 +276,7 @@ $(document).ready(function () {
       // 4 seconds after showing the ghost, begin fade-out animation
       setTimeout(() => {
         const preloader3 = document.getElementById('preloader3');
-        preloader3.style.transition = 'opacity 1s';
+        preloader3.style.transition = 'opacity 1.4s';
         preloader3.style.opacity = 0;
         // preloader1.style.display = 'none';
 
@@ -285,9 +285,9 @@ $(document).ready(function () {
           preloader3.style.display = 'none';
 
           // document.body.style.overflow = 'auto';
-        }, 1000); // 4 seconds for fade-out
+        }, 2000); // 4 seconds for fade-out
 
-      }, 1000); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
+      }, 1500); // 4 seconds (Loading) + 4 seconds (ghost) = 8 seconds
 
     }, 100); // Display preloader1 for 4 seconds
 
@@ -813,7 +813,7 @@ $(document).ready(function () {
         personSection.classList.add("show");
         setTimeout(() => {
           scrollIndicator.style.opacity = 1;
-        window.addEventListener("scroll", handleScroll);
+          window.addEventListener("scroll", handleScroll);
         }, 1000);
 
       }
@@ -895,20 +895,24 @@ $(document).ready(function () {
     if (aaElement.style.height === '150px' || aaElement.style.height === '') {
       aaElement.style.height = "1544px";
       kkElement.style.padding = '0 40px 50px 40px';
+      h2Groups.forEach(group => group.style.opacity = "1");
+      h3Groups.forEach(group => group.style.opacity = "1");
+
 
     } else {
-      aaElement.style.height = '150px'; 
+      aaElement.style.height = "150px";
       kkElement.style.padding = '0 40px';
+      document.querySelector(".cvv").style.opacity = "1";
+      h2Groups.forEach(group => group.style.opacity = "0");
+      h3Groups.forEach(group => group.style.opacity = "0");
     }
-    h2Groups.forEach(group => group.style.opacity = "1");
-    h3Groups.forEach(group => group.style.opacity = "1");
     setTimeout(() => {
       aaElement.style.height = "150px";
       kkElement.style.padding = '0 40px';
       document.querySelector(".cvv").style.opacity = "1";
       h2Groups.forEach(group => group.style.opacity = "0");
       h3Groups.forEach(group => group.style.opacity = "0");
-    }, 22000);
+    }, 19000);
   });
 
 
@@ -963,7 +967,7 @@ $(document).ready(function () {
         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
         let speed = traveledDistance / elapsedTime;
 
-        if (speed > 1.4 && !isLocked) {
+        if (speed > 1.8 && !isLocked) {
           // Prevent the default scrolling behavior
           e.preventDefault();
 
@@ -981,8 +985,8 @@ $(document).ready(function () {
               isLocked = false;
 
               document.body.style.overflow = 'auto';
-            }, 2000);
-          }, 3000);
+            }, 1000);
+          }, 2000);
         }
       }
     }

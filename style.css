@@ -622,136 +622,76 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 54px;
+  left: 40px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 89px;
+  left: 92px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 25px;
+  left: 26px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 15px;
+  left: 50px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 97px;
+  left: 39px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 90px;
+  left: 47px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 79px;
+  left: 31px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 36px;
+  left: 82px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 28px;
+  left: 77px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 98px;
+  left: 16px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
   animation-delay: 2s;
 }
 @keyframes move-1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(0, -128px);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-}
-@keyframes move-2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(0, -59px);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-}
-@keyframes move-3 {
-  0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(0, -76px);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-}
-@keyframes move-4 {
-  0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(0, -114px);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-}
-@keyframes move-5 {
-  0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(0, -116px);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-}
-@keyframes move-6 {
   0% {
     transform: translate(0, 0);
   }
@@ -763,12 +703,72 @@ header #card {
     opacity: 0;
   }
 }
+@keyframes move-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  99% {
+    transform: translate(0, -90px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  99% {
+    transform: translate(0, -122px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  99% {
+    transform: translate(0, -90px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move-5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  99% {
+    transform: translate(0, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes move-6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  99% {
+    transform: translate(0, -108px);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
 @keyframes move-7 {
   0% {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -85px);
+    transform: translate(0, -129px);
   }
   100% {
     transform: translate(0, 0);
@@ -780,7 +780,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -126px);
+    transform: translate(0, -115px);
   }
   100% {
     transform: translate(0, 0);
@@ -792,7 +792,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -89px);
+    transform: translate(0, -95px);
   }
   100% {
     transform: translate(0, 0);
@@ -804,7 +804,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -109px);
+    transform: translate(0, -90px);
   }
   100% {
     transform: translate(0, 0);
@@ -852,7 +852,7 @@ header #card {
 }
 #game h3 {
   position: absolute;
-  top: 6%;
+  top: 4%;
   left: 5%;
   transform: translate(-50%, -50%);
   color: #000000;
