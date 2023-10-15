@@ -920,7 +920,7 @@ $(document).ready(function () {
       setTimeout(() => {
 
         kkElement.classList.remove("kk-padding");
-      }, 800);
+      }, 400);
       h2Groups.forEach(group => group.classList.remove("visible"));
       h3Groups.forEach(group => group.classList.remove("visible"));
 
@@ -929,7 +929,7 @@ $(document).ready(function () {
         setTimeout(() => {
 
           kkElement.classList.remove("kk-padding");
-        }, 800);
+        }, 400);
         h2Groups.forEach(group => group.classList.remove("visible"));
         h3Groups.forEach(group => group.classList.remove("visible"));
       }, 19000);
