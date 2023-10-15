@@ -828,13 +828,12 @@ $(document).ready(function () {
 
 
 
-
   const styles66 = `
   .kk {
       background-color: #f1f3f7;
       color: #333;
       display: flex;
-      padding: 0 ;
+      padding: 0;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -861,10 +860,10 @@ $(document).ready(function () {
       transition: opacity 1s ease;
       opacity: 0;
       margin: 15px 0;
-      padding-bottom: 22px ;
+      padding-bottom: 22px;
       border-radius: 15px;
   }
-
+  
   .h2-group {
     padding: 16px;
   }
@@ -873,7 +872,7 @@ $(document).ready(function () {
   }
   
   .h3-group h3 {
-      // margin: 10px 0;
+      margin: 10px 0;
   }
   
   .aa {
@@ -882,47 +881,68 @@ $(document).ready(function () {
       height:150px;
   }
   
+  .expanded {
+      height: 1200px;
+  }
+  
+  .kk-padding {
+      padding: 0 40px 50px 40px;
+  }
+  
+  .visible {
+      opacity: 1;
+  }
+  
   `;
-
   const styleSheet = document.createElement("style");
   styleSheet.type = "text/css";
   styleSheet.innerText = styles66;
   document.head.appendChild(styleSheet);
-  document.querySelector(".cvv").addEventListener("click", function () {
+
+  let touched = false;
+
+  function toggleContent(event) {
+    if (event.type === 'touchstart') {
+      touched = true;
+    }
+
+    if (event.type === 'click' && touched) {
+      return; // if it's a click event following a touch event, don't execute
+    }
+
     const aaElement = document.querySelector(".aa");
     const kkElement = document.querySelector(".kk");
     const h2Groups = document.querySelectorAll(".h2-group");
     const h3Groups = document.querySelectorAll(".h3-group");
 
-    if (aaElement.style.height === '150px' || aaElement.style.height === '') {
-      aaElement.style.height = "1544px";
-      kkElement.style.padding = '0 40px 50px 40px';
-      h2Groups.forEach(group => group.style.opacity = "1");
-      h3Groups.forEach(group => group.style.opacity = "1");
+    if (aaElement.classList.contains("expanded")) {
+      aaElement.classList.remove("expanded");
+      setTimeout(() => {
 
+        kkElement.classList.remove("kk-padding");
+      }, 800);
+      h2Groups.forEach(group => group.classList.remove("visible"));
+      h3Groups.forEach(group => group.classList.remove("visible"));
 
+      setTimeout(() => {
+        aaElement.classList.remove("expanded");
+        setTimeout(() => {
+
+          kkElement.classList.remove("kk-padding");
+        }, 800);
+        h2Groups.forEach(group => group.classList.remove("visible"));
+        h3Groups.forEach(group => group.classList.remove("visible"));
+      }, 19000);
     } else {
-      aaElement.style.height = "150px";
-      kkElement.style.padding = '0 40px';
-      document.querySelector(".cvv").style.opacity = "1";
-      h2Groups.forEach(group => group.style.opacity = "0");
-      h3Groups.forEach(group => group.style.opacity = "0");
+      aaElement.classList.add("expanded");
+      kkElement.classList.add("kk-padding");
+      h2Groups.forEach(group => group.classList.add("visible"));
+      h3Groups.forEach(group => group.classList.add("visible"));
     }
-    setTimeout(() => {
-      aaElement.style.height = "150px";
-      kkElement.style.padding = '0 40px';
-      document.querySelector(".cvv").style.opacity = "1";
-      h2Groups.forEach(group => group.style.opacity = "0");
-      h3Groups.forEach(group => group.style.opacity = "0");
-    }, 19000);
-  });
+  }
 
-
-
-
-
-
-
+  document.querySelector(".cvv").addEventListener("touchstart", toggleContent);
+  document.querySelector(".cvv").addEventListener("click", toggleContent);
 
 
 
