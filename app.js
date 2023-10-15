@@ -662,7 +662,7 @@ $(document).ready(function () {
     align-items: start;
     justify-content: center;
     color: #333;
-    max-height: 40vh; 
+    // max-height: 40vh; 
     overflow-y: auto;
   }
     form {
@@ -769,7 +769,7 @@ $(document).ready(function () {
       #neuButton {
           display: block;
           position: relative;
-          z-index: 22;
+          z-index: 999;
           margin: 40px auto;
           background-color: #f1f3f7;
           color: #333;
@@ -790,7 +790,7 @@ $(document).ready(function () {
     }
       #job.js-animated-section.show {
           opacity: 1;
-          height: 500px;  // Assuming this height is enough for the content; adjust if necessary
+          height: 60vh;  // Assuming this height is enough for the content; adjust if necessary
           overflow: visible;
           transition: opacity 5s,height 3s;
       }
