@@ -856,23 +856,24 @@ $(document).ready(function () {
   }
   
   .h2-group, .h3-group {
-    box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
+      box-shadow: 5px 5px 8px #babecc, -5px -5px 8px #ffffff;
       transition: opacity 1s ease;
       opacity: 0;
       margin: 15px 0;
-      padding-bottom: 22px;
       border-radius: 15px;
   }
   
   .h2-group {
     padding: 16px;
   }
-  h3 {
-    margin-top:22px;
-  }
+  
   
   .h3-group h3 {
-      margin: 10px 0;
+      margin: 16px  0 ;
+  }
+
+  .h3-group {
+    padding: 15px 0 15px;
   }
   
   .aa {
@@ -882,7 +883,7 @@ $(document).ready(function () {
   }
   
   .expanded {
-      height: 1215px;
+      height: 1418px;
   }
   
   .kk-padding {
