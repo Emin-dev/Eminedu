@@ -294,7 +294,7 @@ $(document).ready(function () {
   }
 
   const userAgent = navigator.userAgent;
-  const mobileAgents = ["Android", "iPad", "iPhone"];
+  const mobileAgents = ["Android", "iPhone"];
   const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
 
   if (!isMobile) {
