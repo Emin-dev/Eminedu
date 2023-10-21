@@ -293,24 +293,24 @@ $(document).ready(function () {
 
   }
 
-  const userAgent = navigator.userAgent;
-  const mobileAgents = ["Android", "iPhone"];
-  const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
+  // const userAgent = navigator.userAgent;
+  // const mobileAgents = ["Android", "iPhone"];
+  // const isMobile = mobileAgents.some(agent => userAgent.includes(agent));
 
-  if (!isMobile) {
-    document.body.innerHTML = '';
-    document.body.style.cssText = 'background:#ffff';
+  // if (!isMobile) {
+  //   document.body.innerHTML = '';
+  //   document.body.style.cssText = 'background:#ffff';
 
-    const h1 = document.createElement('h1');
-    h1.innerHTML = 'Zəhmət olmasa smartfondan daxil olun.<br>Digər brauzerdən istifadə edin.';
-    h1.style.cssText = 'font-weight:bold;color:red;font-size:2em;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 2s infinite alternate';
+  //   const h1 = document.createElement('h1');
+  //   h1.innerHTML = 'Zəhmət olmasa smartfondan daxil olun.<br>Digər brauzerdən istifadə edin.';
+  //   h1.style.cssText = 'font-weight:bold;color:red;font-size:2em;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 2s infinite alternate';
 
-    const style = document.createElement('style');
-    style.innerHTML = '@keyframes pulse {0% {transform:translate(-50%,-50%) scale(1);}100% {transform:translate(-50%,-50%) scale(1.1);}}';
+  //   const style = document.createElement('style');
+  //   style.innerHTML = '@keyframes pulse {0% {transform:translate(-50%,-50%) scale(1);}100% {transform:translate(-50%,-50%) scale(1.1);}}';
 
-    document.head.appendChild(style);
-    document.body.appendChild(h1);
-  }
+  //   document.head.appendChild(style);
+  //   document.body.appendChild(h1);
+  // }
 
 
 

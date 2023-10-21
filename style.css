@@ -622,70 +622,70 @@ header #card {
   z-index: -1;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(1) {
-  left: 59px;
+  left: 79px;
   width: 25px;
   height: 25px;
   animation: move-1 3.02s infinite;
   animation-delay: 0.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(2) {
-  left: 20px;
+  left: 31px;
   width: 25px;
   height: 25px;
   animation: move-2 3.04s infinite;
   animation-delay: 0.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(3) {
-  left: 50px;
+  left: 63px;
   width: 25px;
   height: 25px;
   animation: move-3 3.06s infinite;
   animation-delay: 0.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(4) {
-  left: 58px;
+  left: 50px;
   width: 25px;
   height: 25px;
   animation: move-4 3.08s infinite;
   animation-delay: 0.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(5) {
-  left: 76px;
+  left: 67px;
   width: 25px;
   height: 25px;
   animation: move-5 3.1s infinite;
   animation-delay: 1s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(6) {
-  left: 51px;
+  left: 69px;
   width: 25px;
   height: 25px;
   animation: move-6 3.12s infinite;
   animation-delay: 1.2s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(7) {
-  left: 41px;
+  left: 34px;
   width: 25px;
   height: 25px;
   animation: move-7 3.14s infinite;
   animation-delay: 1.4s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(8) {
-  left: 89px;
+  left: 53px;
   width: 25px;
   height: 25px;
   animation: move-8 3.16s infinite;
   animation-delay: 1.6s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(9) {
-  left: 40px;
+  left: 27px;
   width: 25px;
   height: 25px;
   animation: move-9 3.18s infinite;
   animation-delay: 1.8s;
 }
 #btt #gooey-button .bubbles .bubble:nth-child(10) {
-  left: 33px;
+  left: 37px;
   width: 25px;
   height: 25px;
   animation: move-10 3.2s infinite;
@@ -696,7 +696,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -84px);
+    transform: translate(0, -128px);
   }
   100% {
     transform: translate(0, 0);
@@ -708,7 +708,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -76px);
+    transform: translate(0, -64px);
   }
   100% {
     transform: translate(0, 0);
@@ -720,7 +720,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -85px);
+    transform: translate(0, -86px);
   }
   100% {
     transform: translate(0, 0);
@@ -732,7 +732,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -65px);
+    transform: translate(0, -130px);
   }
   100% {
     transform: translate(0, 0);
@@ -744,7 +744,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -77px);
+    transform: translate(0, -86px);
   }
   100% {
     transform: translate(0, 0);
@@ -756,7 +756,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -127px);
+    transform: translate(0, -88px);
   }
   100% {
     transform: translate(0, 0);
@@ -768,7 +768,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -65px);
+    transform: translate(0, -98px);
   }
   100% {
     transform: translate(0, 0);
@@ -780,7 +780,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -74px);
+    transform: translate(0, -62px);
   }
   100% {
     transform: translate(0, 0);
@@ -792,7 +792,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -65px);
+    transform: translate(0, -89px);
   }
   100% {
     transform: translate(0, 0);
@@ -804,7 +804,7 @@ header #card {
     transform: translate(0, 0);
   }
   99% {
-    transform: translate(0, -88px);
+    transform: translate(0, -94px);
   }
   100% {
     transform: translate(0, 0);
@@ -1002,13 +1002,11 @@ header #card {
   background-color: #1e293b;
   padding: 50px 0;
 }
-
-.faq-container {
+#big .faq-container {
   max-width: 90%;
   margin: 0 auto;
 }
-
-.faq-item {
+#big .faq-item {
   position: relative;
   z-index: 9;
   padding: 20px;
@@ -1016,8 +1014,20 @@ header #card {
   border-radius: 20px;
   margin-bottom: 20px;
 }
-
-.faq-question {
+#big .faq-item :after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  transform: rotate(45deg);
+  border-color: white;
+  z-index: 11;
+}
+#big .faq-question {
   border-radius: 20px;
   cursor: pointer;
   letter-spacing: 0.1em;
@@ -1025,8 +1035,7 @@ header #card {
   line-height: 1.6;
   font-size: 22px;
 }
-
-.faq-answer {
+#big .faq-answer {
   padding: 0px;
   opacity: 0;
   max-height: 0;
@@ -1038,8 +1047,7 @@ header #card {
   line-height: 1.6;
   margin-top: 0px;
 }
-
-.faq-answer.show {
+#big .faq-answer.show {
   opacity: 1;
   max-height: 1111px;
   transform: scaleY(1);
