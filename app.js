@@ -515,7 +515,7 @@ $(document).ready(function () {
       let currentAnswer = this.nextElementSibling;
 
       // Close any currently open answers
-      let openAnswer = document.querySelector('.faq-answer.show');
+      let openAnswer = document.querySelector('.faq-answertt.show');
       if (openAnswer && openAnswer !== currentAnswer) {
         openAnswer.classList.remove('show');
       }
