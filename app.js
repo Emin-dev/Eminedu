@@ -1032,7 +1032,7 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 14000);
+    }, 12000);
   })();
 });
 
