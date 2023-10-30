@@ -97,7 +97,8 @@ $(document).ready(function () {
     // Add the modified HTML for preloader2
     document.getElementById('preloader2').innerHTML = `
         <div class="container">
-          <div class="loading">Oxumağı <br>  <br> unutma.</div>
+          <div class="loading">Oxumağı <br> 
+           <br> unutma.</div>
         
     <svg class="ghost" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     width="127.433px" height="132.743px" viewBox="0 0 127.433 132.743" enable-background="new 0 0 127.433 132.743"
