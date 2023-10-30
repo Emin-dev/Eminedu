@@ -621,7 +621,7 @@ $(document).ready(function () {
 setTimeout(() => {
       window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
-}, 1300);
+}, 13000);
 
 
 
