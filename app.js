@@ -613,7 +613,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
     document.body.classList.remove('no-scroll');
-  }, 10000);
+  }, 9000);
   //   ////////
 
 
@@ -1032,7 +1032,7 @@ $(document).ready(function () {
       window.addEventListener('touchmove', onTouchMove, false);
       window.addEventListener('touchend', onTouchEnd, false);
       window.addEventListener('wheel', onWheel, false);
-    }, 12000);
+    }, 9000);
   })();
 });
 
