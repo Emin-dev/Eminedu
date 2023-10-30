@@ -610,8 +610,7 @@ $(document).ready(function () {
   setTimeout(function () {
 
     document.body.style.overflow = 'auto';
-    // window.addEventListener("scroll", handleScroll);
-    // document.head.appendChild(q);
+
     document.body.classList.remove('no-scroll');
   }, 8000);
   //   ////////
@@ -619,7 +618,10 @@ $(document).ready(function () {
 
 
 
-
+setTimeout(() => {
+      window.addEventListener("scroll", handleScroll);
+    document.head.appendChild(q);
+}, 1300);
 
 
 
