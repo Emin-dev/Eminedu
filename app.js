@@ -618,10 +618,10 @@ $(document).ready(function () {
 
 
 
-setTimeout(() => {
-      window.addEventListener("scroll", handleScroll);
+  setTimeout(() => {
+    window.addEventListener("scroll", handleScroll);
     document.head.appendChild(q);
-}, 13000);
+  }, 13000);
 
 
 
@@ -736,7 +736,13 @@ setTimeout(() => {
 
 
 
-
+  document.querySelector('.cvv').addEventListener('click', function () {
+    if (this.textContent === 'Sillabusu aç') {
+      this.textContent = 'Sillabusu bağla';
+    } else {
+      this.textContent = 'Sillabusu aç';
+    }
+  });
 
 
 
