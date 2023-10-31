@@ -747,18 +747,11 @@ $(document).ready(function () {
 
 
 
-  document.querySelector('#neuButton').addEventListener('click', function () {
-    if (this.textContent === 'Vakansiyaları aç') {
-      this.textContent = 'Vakansiyaları bağla';
-    } else {
-      this.textContent = 'Vakansiyaları aç';
-    }
-  });
 
   // Create and style the button
   const button = document.createElement("button");
   const buttonText = document.createElement("span");
-  buttonText.innerText = "Vakansiyaları göstər";
+  buttonText.innerText = "Vakansiyaları aç";
   buttonText.style.pointerEvents = "none";  // Ensure the text doesn't capture the click event
   button.appendChild(buttonText);
   button.id = "neuButton";
@@ -838,6 +831,13 @@ $(document).ready(function () {
     }
   }
 
+  document.querySelector('#neuButton').addEventListener('click', function () {
+    if (this.textContent === 'Vakansiyaları aç') {
+      this.textContent = 'Vakansiyaları bağla';
+    } else {
+      this.textContent = 'Vakansiyaları aç';
+    }
+  });
 
 
   /////////////////
