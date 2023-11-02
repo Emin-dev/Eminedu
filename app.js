@@ -507,14 +507,13 @@ $(document).ready(function () {
 
 
   let faqQuestions = document.querySelectorAll('.faq-question');
-  document.addEventListener('click', function(e) {
-    // Get the click coordinates
-    var clickY = e.clientY + window.scrollY;
+  let initialScrollPosition = null;  // Store the initial scroll position
 
-    // Store the position in sessionStorage to persist it across page loads
-    sessionStorage.setItem('lastClickPosition', clickY);
-});
-
+  function onTouchStart(e) {
+    touchStartPosition = e.touches[0].clientY;
+    startTime = new Date().getTime();
+    initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
+  }
 
   faqQuestions.forEach(function (question) {
     question.addEventListener('click', function () {
@@ -536,22 +535,10 @@ $(document).ready(function () {
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
         
-      // When the page loads, check if there was a last clicked position stored and scroll to it
-      window.addEventListener('load', function() {
-          var lastClickPosition = sessionStorage.getItem('lastClickPosition');
-          if (lastClickPosition) {
-              window.scrollTo({
-                  top: parseInt(lastClickPosition),
-                  behavior: 'smooth'
-              });
-      
-              // Clear the stored position after scrolling
-              sessionStorage.removeItem('lastClickPosition');
-          }
-      }); 
-       
+    
+    window.scrollTo(0, initialScrollPosition);
         window.scrollBy(0, -200);
-      }, 1600); // Adjust the timeout to the duration of your CSS transitions if needed
+      }, 900); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
