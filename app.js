@@ -507,13 +507,6 @@ $(document).ready(function () {
 
 
   let faqQuestions = document.querySelectorAll('.faq-question');
-  let initialScrollPosition = null;  // Store the initial scroll position
-
-  function onTouchStart(e) {
-    touchStartPosition = e.touches[0].clientY;
-    startTime = new Date().getTime();
-    initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
-  }
 
   faqQuestions.forEach(function (question) {
     question.addEventListener('click', function () {
@@ -534,16 +527,20 @@ $(document).ready(function () {
 
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
-        
-    
-    window.scrollTo(0, initialScrollPosition);
-        window.scrollBy(0, -200);
+        // Calculate the position to scroll back to
+        let elementRect = question.getBoundingClientRect();
+        let absoluteElementTop = elementRect.top + window.pageYOffset;
+        let middleOfElement = absoluteElementTop - (window.innerHeight / 2);
+
+        // Scroll to the element
+        window.scrollTo({
+          top: middleOfElement,
+          behavior: 'smooth'
+        });
+
       }, 900); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
-
-
-
 
 
 
