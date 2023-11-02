@@ -530,7 +530,7 @@ $(document).ready(function () {
         // Calculate the position to scroll back to
         let elementRect = question.getBoundingClientRect();
         let absoluteElementTop = elementRect.top + window.pageYOffset;
-        let middleOfElement = absoluteElementTop - (window.innerHeight / 2);
+        let middleOfElement = absoluteElementTop - (window.innerHeight / 4);
 
         // Scroll to the element
         window.scrollTo({
