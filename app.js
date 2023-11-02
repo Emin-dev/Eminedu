@@ -528,23 +528,29 @@ $(document).ready(function () {
 
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
-        if ('scrollBehavior' in document.documentElement.style) {
-          question.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          // Fallback for browsers that do not support `scrollBehavior`
-          question.scrollIntoView();
-        }
-
-        // Function to smoothly scroll an element to the top of the viewport
-        function smoothScrollToElement(el) {
-          const yPos = el.getBoundingClientRect().top + window.pageYOffset;
-
-          window.scrollTo({ top: yPos, behavior: 'smooth' });
-        }
-
-        // Use this function in place of scrollIntoView
-        smoothScrollToElement(question);
-        window.scrollBy(0, -100);
+        document.addEventListener('click', function(e) {
+          // Get the click coordinates
+          var clickY = e.clientY + window.scrollY;
+      
+          // Store the position in sessionStorage to persist it across page loads
+          sessionStorage.setItem('lastClickPosition', clickY);
+      });
+      
+      // When the page loads, check if there was a last clicked position stored and scroll to it
+      window.addEventListener('load', function() {
+          var lastClickPosition = sessionStorage.getItem('lastClickPosition');
+          if (lastClickPosition) {
+              window.scrollTo({
+                  top: parseInt(lastClickPosition),
+                  behavior: 'smooth'
+              });
+      
+              // Clear the stored position after scrolling
+              sessionStorage.removeItem('lastClickPosition');
+          }
+      }); 
+       
+        window.scrollBy(0, -200);
       }, 1000); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
