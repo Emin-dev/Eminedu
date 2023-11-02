@@ -534,6 +534,16 @@ $(document).ready(function () {
           // Fallback for browsers that do not support `scrollBehavior`
           currentAnswer.scrollIntoView();
         }
+
+        // Function to smoothly scroll an element to the top of the viewport
+        function smoothScrollToElement(el) {
+          const yPos = el.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({ top: yPos, behavior: 'smooth' });
+        }
+
+        // Use this function in place of scrollIntoView
+        smoothScrollToElement(currentAnswer);
         window.scrollBy(0, -100);
       }, 1000); // Adjust the timeout to the duration of your CSS transitions if needed
     });
