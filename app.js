@@ -538,7 +538,7 @@ $(document).ready(function () {
           behavior: 'smooth'
         });
 
-      }, 900); // Adjust the timeout to the duration of your CSS transitions if needed
+      }, 500); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
