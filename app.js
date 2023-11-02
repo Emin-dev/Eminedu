@@ -528,9 +528,14 @@ $(document).ready(function () {
 
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
-        currentAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.scrollBy(0, -100); 
-      }, 1200); // Adjust the timeout to the duration of your CSS transitions if needed
+        if ('scrollBehavior' in document.documentElement.style) {
+          currentAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          // Fallback for browsers that do not support `scrollBehavior`
+          currentAnswer.scrollIntoView();
+        }
+        window.scrollBy(0, -100);
+      }, 1000); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
