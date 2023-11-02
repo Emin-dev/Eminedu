@@ -529,8 +529,8 @@ $(document).ready(function () {
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
         currentAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.scrollBy(0, -60); 
-      }, 700); // Adjust the timeout to the duration of your CSS transitions if needed
+        window.scrollBy(0, -100); 
+      }, 900); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
