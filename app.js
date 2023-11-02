@@ -529,10 +529,10 @@ $(document).ready(function () {
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
         if ('scrollBehavior' in document.documentElement.style) {
-          currentAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          question.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           // Fallback for browsers that do not support `scrollBehavior`
-          currentAnswer.scrollIntoView();
+          question.scrollIntoView();
         }
 
         // Function to smoothly scroll an element to the top of the viewport
@@ -543,7 +543,7 @@ $(document).ready(function () {
         }
 
         // Use this function in place of scrollIntoView
-        smoothScrollToElement(currentAnswer);
+        smoothScrollToElement(question);
         window.scrollBy(0, -100);
       }, 1000); // Adjust the timeout to the duration of your CSS transitions if needed
     });
