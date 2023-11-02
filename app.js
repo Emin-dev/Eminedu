@@ -507,6 +507,13 @@ $(document).ready(function () {
 
 
   let faqQuestions = document.querySelectorAll('.faq-question');
+  document.addEventListener('click', function(e) {
+    // Get the click coordinates
+    var clickY = e.clientY + window.scrollY;
+
+    // Store the position in sessionStorage to persist it across page loads
+    sessionStorage.setItem('lastClickPosition', clickY);
+});
 
 
   faqQuestions.forEach(function (question) {
@@ -528,14 +535,7 @@ $(document).ready(function () {
 
       // Wait for the potential transition to finish before scrolling
       setTimeout(() => {
-        document.addEventListener('click', function(e) {
-          // Get the click coordinates
-          var clickY = e.clientY + window.scrollY;
-      
-          // Store the position in sessionStorage to persist it across page loads
-          sessionStorage.setItem('lastClickPosition', clickY);
-      });
-      
+        
       // When the page loads, check if there was a last clicked position stored and scroll to it
       window.addEventListener('load', function() {
           var lastClickPosition = sessionStorage.getItem('lastClickPosition');
@@ -551,7 +551,7 @@ $(document).ready(function () {
       }); 
        
         window.scrollBy(0, -200);
-      }, 1000); // Adjust the timeout to the duration of your CSS transitions if needed
+      }, 1600); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
