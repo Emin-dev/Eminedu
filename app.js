@@ -530,7 +530,7 @@ $(document).ready(function () {
       setTimeout(() => {
         currentAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         window.scrollBy(0, -100); 
-      }, 900); // Adjust the timeout to the duration of your CSS transitions if needed
+      }, 1200); // Adjust the timeout to the duration of your CSS transitions if needed
     });
   });
 
