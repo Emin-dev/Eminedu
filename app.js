@@ -544,92 +544,92 @@ $(document).ready(function () {
 
 
 
-  ////////
-  // Create the scroll indicator element
-  const scrollIndicator = document.createElement("div");
-  scrollIndicator.classList.add("scroll-indicator");
-  document.body.appendChild(scrollIndicator);
+  // ////////
+  // // Create the scroll indicator element
+  // const scrollIndicator = document.createElement("div");
+  // scrollIndicator.classList.add("scroll-indicator");
+  // document.body.appendChild(scrollIndicator);
 
-  // Create the arrow element
-  const arrow = document.createElement("div");
-  arrow.classList.add("arrow");
-  scrollIndicator.appendChild(arrow);
+  // // Create the arrow element
+  // const arrow = document.createElement("div");
+  // arrow.classList.add("arrow");
+  // scrollIndicator.appendChild(arrow);
 
-  // Create the CSS styles dynamically with a glassmorphism design
-  const q = document.createElement("style");
-  q.textContent = `
-  .scroll-indicator {
-    z-index:999;
-    position: fixed;
-    bottom: 30vh;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s;
-  }
+  // // Create the CSS styles dynamically with a glassmorphism design
+  // const q = document.createElement("style");
+  // q.textContent = `
+  // .scroll-indicator {
+  //   z-index:999;
+  //   position: fixed;
+  //   bottom: 30vh;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   background: rgba(255, 255, 255, 0.5);
+  //   backdrop-filter: blur(10px);
+  //   border: 1px solid rgba(255, 255, 255, 0.3);
+  //   border-radius: 10px;
+  //   padding: 10px;
+  //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  //   transition: opacity 0.5s;
+  // }
 
-  .arrow {
-    z-index:999;
-    width: 50px;
-    height: 50px;
-    border: 4px solid rgba(255, 255, 255, 0.5);
-    border-width: 2px 2px 0 0;
-    transform: rotate(-45deg);
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: bounce 2s infinite;
-  }
+  // .arrow {
+  //   z-index:999;
+  //   width: 50px;
+  //   height: 50px;
+  //   border: 4px solid rgba(255, 255, 255, 0.5);
+  //   border-width: 2px 2px 0 0;
+  //   transform: rotate(-45deg);
+  //   margin-top: 30px;
+  //   background: rgba(255, 255, 255, 0.8);
+  //   backdrop-filter: blur(15px);
+  //   border-radius: 50%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   animation: bounce 2s infinite;
+  // }
 
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-  }
-  `;
+  // @keyframes bounce {
+  //   0%, 20%, 50%, 80%, 100% {
+  //     transform: translateY(0);
+  //   }
+  //   40% {
+  //     transform: translateY(-30px);
+  //   }
+  // }
+  // `;
 
-  // Flag to track whether the user has scrolled
-  let userScrolled = false;
+  // // Flag to track whether the user has scrolled
+  // let userScrolled = false;
 
-  // Function to handle scroll event
-  function handleScroll() {
-    userScrolled = true;
-    // Hide the scroll indicator with a smooth fade-out
-    scrollIndicator.style.opacity = 0;
-    // Remove the scroll event listener
-    window.removeEventListener("scroll", handleScroll);
-  }
+  // // Function to handle scroll event
+  // function handleScroll() {
+  //   userScrolled = true;
+  //   // Hide the scroll indicator with a smooth fade-out
+  //   scrollIndicator.style.opacity = 0;
+  //   // Remove the scroll event listener
+  //   window.removeEventListener("scroll", handleScroll);
+  // }
 
-  setTimeout(function () {
+  // setTimeout(function () {
 
-    document.body.style.overflow = 'auto';
+  //   document.body.style.overflow = 'auto';
 
-    document.body.classList.remove('no-scroll');
-  }, 4000);
-  //   ////////
-
-
+  //   document.body.classList.remove('no-scroll');
+  // }, 4000);
+  // //   ////////
 
 
-  setTimeout(() => {
-    window.addEventListener("scroll", handleScroll);
-    document.head.appendChild(q);
-  }, 6000);
+
+
+  // setTimeout(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   document.head.appendChild(q);
+  // }, 6000);
 
 
 
@@ -994,71 +994,71 @@ $(document).ready(function () {
 
 
 
-  (function () {
-    let touchStartPosition = null;
-    let touchEndPosition = null;
-    let startTime = null;
-    let isLocked = false;
-    let initialScrollPosition = null;  // Store the initial scroll position
+//   (function () {
+//     let touchStartPosition = null;
+//     let touchEndPosition = null;
+//     let startTime = null;
+//     let isLocked = false;
+//     let initialScrollPosition = null;  // Store the initial scroll position
 
-    function onTouchStart(e) {
-      touchStartPosition = e.touches[0].clientY;
-      startTime = new Date().getTime();
-      initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
-    }
+//     function onTouchStart(e) {
+//       touchStartPosition = e.touches[0].clientY;
+//       startTime = new Date().getTime();
+//       initialScrollPosition = window.scrollY;  // Save the scroll position at touch start
+//     }
 
-    function onTouchMove(e) {
-      if (touchStartPosition !== null) {
-        touchEndPosition = e.touches[0].clientY;
-        let elapsedTime = new Date().getTime() - startTime;
-        let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
-        let speed = traveledDistance / elapsedTime;
+//     function onTouchMove(e) {
+//       if (touchStartPosition !== null) {
+//         touchEndPosition = e.touches[0].clientY;
+//         let elapsedTime = new Date().getTime() - startTime;
+//         let traveledDistance = Math.abs(touchEndPosition - touchStartPosition);
+//         let speed = traveledDistance / elapsedTime;
 
-        if (speed > 3 && !isLocked) {
-          // Prevent the default scrolling behavior
-          e.preventDefault();
+//         if (speed > 3 && !isLocked) {
+//           // Prevent the default scrolling behavior
+//           e.preventDefault();
 
-          document.body.style.overflow = 'hidden';
-          isLocked = true;
-          showPreloader();
-          setTimeout(() => {
+//           document.body.style.overflow = 'hidden';
+//           isLocked = true;
+//           showPreloader();
+//           setTimeout(() => {
 
-            window.scrollTo(0, initialScrollPosition);
-          }, 1000);
-          setTimeout(function () {
-            window.scrollTo(0, initialScrollPosition);
+//             window.scrollTo(0, initialScrollPosition);
+//           }, 1000);
+//           setTimeout(function () {
+//             window.scrollTo(0, initialScrollPosition);
 
-            setTimeout(() => {
-              isLocked = false;
+//             setTimeout(() => {
+//               isLocked = false;
 
-              document.body.style.overflow = 'auto';
-            }, 1000);
-          }, 2000);
-        }
-      }
-    }
+//               document.body.style.overflow = 'auto';
+//             }, 1000);
+//           }, 2000);
+//         }
+//       }
+//     }
 
-    function onTouchEnd() {
-      touchStartPosition = null;
-      touchEndPosition = null;
-      startTime = null;
-    }
+//     function onTouchEnd() {
+//       touchStartPosition = null;
+//       touchEndPosition = null;
+//       startTime = null;
+//     }
 
-    function onWheel(e) {
-      if (isLocked) {
-        // Prevent the default scrolling behavior
-        e.preventDefault();
-      }
-    }
+//     function onWheel(e) {
+//       if (isLocked) {
+//         // Prevent the default scrolling behavior
+//         e.preventDefault();
+//       }
+//     }
 
-    setTimeout(function () {
-      window.addEventListener('touchstart', onTouchStart, false);
-      window.addEventListener('touchmove', onTouchMove, false);
-      window.addEventListener('touchend', onTouchEnd, false);
-      window.addEventListener('wheel', onWheel, false);
-    }, 9000);
-  })();
-});
+//     setTimeout(function () {
+//       window.addEventListener('touchstart', onTouchStart, false);
+//       window.addEventListener('touchmove', onTouchMove, false);
+//       window.addEventListener('touchend', onTouchEnd, false);
+//       window.addEventListener('wheel', onWheel, false);
+//     }, 9000);
+//   })();
+// });
 
 function clearAllSiteData() {
   // Clear cookies
