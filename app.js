@@ -6,7 +6,7 @@
 
 
 $(document).ready(function () {
-  document.body.classList.add('no-scroll');
+  // document.body.classList.add('no-scroll');
 
 
   const scrollToTop = () => window.scrollTo(0, 0);
