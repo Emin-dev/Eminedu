@@ -1058,7 +1058,7 @@ $(document).ready(function () {
 //       window.addEventListener('wheel', onWheel, false);
 //     }, 9000);
 //   })();
-// });
+// 
 
 function clearAllSiteData() {
   // Clear cookies
@@ -1078,3 +1078,5 @@ function clearAllSiteData() {
   // This is more complicated and requires setting up a Service Worker.
   // Leaving this out for now.
 }
+
+});
