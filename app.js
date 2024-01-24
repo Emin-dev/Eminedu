@@ -20,48 +20,48 @@ $(document).ready(function () {
 
 
   // CSS styles
-  const styles = `
+  // const styles = `
 
-    .loading {
-      color: white;
-      font-size: 5em;
-      margin-bottom: 50px; // Space between text and ghost
-    }
+  //   .loading {
+  //     color: white;
+  //     font-size: 5em;
+  //     margin-bottom: 50px; // Space between text and ghost
+  //   }
 
-    .loading span {
-      display: inline-block;
-      animation: bounce 0.3s ease infinite alternate;
-      animation-delay: calc(0.1s * var(--i));
-    }
+  //   .loading span {
+  //     display: inline-block;
+  //     animation: bounce 0.3s ease infinite alternate;
+  //     animation-delay: calc(0.1s * var(--i));
+  //   }
 
-    @keyframes bounce {
-      0% {
-        text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4);
-        transform: translateY(20px);
-      }
-      100% {
-        text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
-        transform: translateY(-20px);
-      }
-    }
+  //   @keyframes bounce {
+  //     0% {
+  //       text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 10px rgba(0, 0, 0, 0.4);
+  //       transform: translateY(20px);
+  //     }
+  //     100% {
+  //       text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb, 0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
+  //       transform: translateY(-20px);
+  //     }
+  //   }
 
-    .ghost {
-      animation: float 3s ease-out infinite;
-      position: relative;
-      filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
-    }
+  //   .ghost {
+  //     animation: float 3s ease-out infinite;
+  //     position: relative;
+  //     filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
+  //   }
 
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
+  //   @keyframes float {
+  //     0%, 100% {
+  //       transform: translateY(0);
+  //     }
+  //     50% {
+  //       transform: translateY(-10px);
+  //     }
+  //   }
 
-    `;
+  //   `;
 
 
 
